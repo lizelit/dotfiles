@@ -48,11 +48,8 @@
 
     # GUI applications
     casks = [
-      "google-chrome"
-      "visual-studio-code"
-      "iterm2"
-      "rectangle"
-      "alfred"
+      "karabiner-elements"
+      "ghostty"
     ];
 
     # CLI tools that aren't available in Nix
