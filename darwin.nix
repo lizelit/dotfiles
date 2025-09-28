@@ -5,8 +5,12 @@
   nix = {
     settings = {
       experimental-features = "nix-command flakes";
-      auto-optimise-store = true;
       trusted-users = [ "${username}" "root" "@admin" ];
+    };
+    
+    # auto-optimise-store の代わりに optimise.automatic を使用
+    optimise = {
+      automatic = true;
     };
     
     gc = {
@@ -19,6 +23,9 @@
       options = "--delete-older-than 30d";
     };
   };
+
+  # プライマリユーザーの設定（必須）
+  system.primaryUser = username;
 
   # 最小限のシステムパッケージ
   environment.systemPackages = with pkgs; [
@@ -89,13 +96,13 @@
     hostPlatform = "x86_64-darwin"; # Intel Mac用
   };
 
-  # Services
+  # Services (nix-daemon設定を削除)
   services = {
-    nix-daemon.enable = true;
+    # nix-daemon.enable は不要になったため削除
   };
 
   # セキュリティ設定
-  security.pam.enableSudoTouchIdAuth = true;
+  security.pam.services.sudo_local.touchIdAuth = true;
 
   # プログラム設定
   programs = {
