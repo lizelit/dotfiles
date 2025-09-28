@@ -22,7 +22,7 @@
 
   outputs = inputs@{ self, nixpkgs, nix-darwin, home-manager, neovim-nightly-overlay, ... }: 
   let
-    system = "x86_64-darwin"; # Intel Mac用
+    system = "aarch64-darwin"; # Intel Mac用
     
     # overlayを適用したpkgsを作成
     pkgs = import nixpkgs {
