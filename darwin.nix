@@ -39,7 +39,6 @@
   # Homebrew設定
   homebrew = {
     enable = true;
-    brewPrefix = "/opt/homebrew";
     
     onActivation = {
       autoUpdate = false;
@@ -52,7 +51,7 @@
       # 例: 基本的なアプリ
       # "google-chrome"
       # "visual-studio-code" 
-      # "iterm2"
+      ghostty
     ];
 
     brews = [
@@ -97,7 +96,7 @@
       inputs.neovim-nightly-overlay.overlays.default
     ];
     
-    hostPlatform = "x86_64-darwin"; # Intel Mac用
+    hostPlatform = "aarch64-darwin"; # Intel Mac用
   };
 
   # Services (nix-daemon設定を削除)
