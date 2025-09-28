@@ -45,7 +45,7 @@
       inherit system;
       modules = [
         ./darwin.nix
-        nix-homebrew.darwinModules.nix-homebrew
+        inputs.nix-homebrew.darwinModules.nix-homebrew
         {
           nix-homebrew = {
             enable = true;
