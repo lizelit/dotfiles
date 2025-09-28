@@ -96,7 +96,7 @@
       inputs.neovim-nightly-overlay.overlays.default
     ];
     
-    hostPlatform = "aarch64-darwin"; # Intel Mac用
+    hostPlatform = "x86_64-darwin"; # Intel Mac用
   };
 
   # Services (nix-daemon設定を削除)
