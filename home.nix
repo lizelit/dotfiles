@@ -8,8 +8,8 @@
 
     sessionVariables = {
       EDITOR = "nvim";
-      BROWSER = "google-chrome";
-      TERMINAL = "iterm2";
+      BROWSER = "safari";
+      TERMINAL = "ghostty";
     };
 
     packages = with pkgs; [
@@ -23,9 +23,10 @@
       yq               # YAML processor
       tree             # directory tree
       htop             # process monitor
+      yabai
+      skhd
       
       # Development tools
-      tmux
       lazygit
       gh               # GitHub CLI
       
@@ -231,7 +232,7 @@
   programs.git = {
     enable = true;
     userName = "lizelit";
-    userEmail = "your.email@example.com";
+    userEmail = "takku.hana@icloud.com";
     
     aliases = {
       co = "checkout";
