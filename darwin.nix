@@ -39,7 +39,7 @@
   # Homebrew設定
   homebrew = {
     enable = true;
-    prefix = "/opt/homebrew";
+    brewPrefix = "/opt/homebrew";
     
     onActivation = {
       autoUpdate = false;
