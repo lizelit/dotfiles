@@ -21,10 +21,10 @@
     ];
   };
 
-  # Neovim設定 (Nightly版)
+  # Neovim設定 (まずは通常のNeovimで試す)
   programs.neovim = {
     enable = true;
-    package = pkgs.neovim-nightly;
+    package = pkgs.neovim;  # 一時的に通常のneovimを使用
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
