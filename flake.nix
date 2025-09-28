@@ -49,8 +49,8 @@
         {
           nix-homebrew = {
             enable = true;
-            # Apple Silicon用
-            enableRosetta = true;
+            # enableRosettaを無効化
+            # enableRosetta = true;
             # ユーザーを指定
             user = username;
             # 既存のHomebrewインストールを自動移行
