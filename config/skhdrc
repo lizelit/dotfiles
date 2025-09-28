@@ -1,0 +1,9 @@
+# アプリケーションの起動
+cmd + shift - return : open -n -a "Safari"
+cmd + return : open -n -a "ghostty"
+
+# ウィンドウの移動
+alt - h : yabai -m window --focus west
+alt - j : yabai -m window --focus south
+alt - k : yabai -m window --focus north
+alt - l : yabai -m window --focus east
