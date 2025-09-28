@@ -50,9 +50,9 @@
           home-manager.backupFileExtension = "backup";
           home-manager.users.${username} = import ./home.nix;
           
-          # home-managerにspecialArgsを渡す
+          # home-managerにspecialArgsとpkgsを渡す
           home-manager.extraSpecialArgs = { 
-            inherit inputs username homeDirectory; 
+            inherit inputs username homeDirectory pkgs; 
           };
           
           # ユーザー情報の共有
@@ -72,7 +72,7 @@
       inherit pkgs;
       modules = [ ./home.nix ];
       extraSpecialArgs = { 
-        inherit inputs username homeDirectory; 
+        inherit inputs username homeDirectory pkgs; 
       };
     };
   };
