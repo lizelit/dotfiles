@@ -34,7 +34,21 @@
     git
     curl
     wget
+    yabai
   ];
+
+  services.yabai = {
+    enable = true;
+    config = {
+      window_gap = 10;
+      top_padding = 10;
+      bottom_padding = 10;
+      left_padding = 10;
+      right_padding = 10;
+      layout = "bsp";
+    };
+    enableScriptingAddition = true;
+  };
 
   # Homebrew configuration
   homebrew = {

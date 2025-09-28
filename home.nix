@@ -23,10 +23,9 @@
       yq               # YAML processor
       tree             # directory tree
       htop             # process monitor
-      yabai
-      skhd
       
       # Development tools
+      skhd
       lazygit
       gh               # GitHub CLI
       
@@ -47,7 +46,10 @@
       imagemagick
       pandoc
     ];
+    file.".skhdrc".source = ./config/skhdrc;
   };
+
+  services.skhd.enable = true;
 
   # Neovim Nightly with basic plugins
   programs.neovim = {
