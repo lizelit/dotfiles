@@ -1,17 +1,19 @@
 { config, pkgs, inputs, username, hostname, homeDirectory, ... }:
 
 {
-  # Nix build user group IDの修正
+  # Nix build user group ID configuration
   ids.gids.nixbld = 350;
 
-  # Nix設定
+  # Primary user configuration (required for homebrew and system defaults)
+  system.primaryUser = username;
+
+  # Nix configuration
   nix = {
     settings = {
       experimental-features = "nix-command flakes";
       trusted-users = [ "${username}" "root" "@admin" ];
     };
     
-    # auto-optimise-store の代わりに optimise.automatic を使用
     optimise = {
       automatic = true;
     };
@@ -27,29 +29,16 @@
     };
   };
 
-  # プライマリユーザーの設定（必須）
-  system.primaryUser = username;
+  # System packages
+  environment.systemPackages = with pkgs; [
+    git
+    curl
+    wget
+  ];
 
-  # 最小限のシステムパッケージ
-  environment = {
-    systemPackages = with pkgs; [
-      git
-    ];
-    
-    # 環境変数でHomebrewのパスを確実に設定
-    variables = {
-      HOMEBREW_PREFIX = "/opt/homebrew";
-    };
-    
-    systemPath = [ "/opt/homebrew/bin" ];
-  };
-
-  # Homebrew設定
+  # Homebrew configuration
   homebrew = {
     enable = true;
-    
-    # brewPrefixは/binを含まないディレクトリを指定
-    brewPrefix = "/opt/homebrew";
     
     onActivation = {
       autoUpdate = false;
@@ -57,67 +46,104 @@
       cleanup = "zap";
     };
 
+    # GUI applications
     casks = [
-      # 例: 基本的なアプリ
-      # "google-chrome"
-      # "visual-studio-code" 
-      # "iterm2"
+      "google-chrome"
+      "visual-studio-code"
+      "iterm2"
+      "rectangle"
+      "alfred"
     ];
 
+    # CLI tools that aren't available in Nix
     brews = [
-      # 例: CLIツール
+      # Add tools here as needed
     ];
 
+    # Mac App Store apps
     masApps = {
-      # 例: Mac App Store アプリ
-      # "Xcode" = 497799835;
+      "Xcode" = 497799835;
     };
   };
 
-  # システム設定
+  # System defaults
   system = {
     stateVersion = 4;
     
-    # 基本的なmacOS設定
     defaults = {
       dock = {
         autohide = true;
+        autohide-delay = 0.0;
+        autohide-time-modifier = 0.2;
+        orientation = "bottom";
+        tilesize = 48;
+        minimize-to-application = true;
+        show-recents = false;
       };
-      
+
       finder = {
         AppleShowAllExtensions = true;
+        FXPreferredViewStyle = "clmv";
         ShowPathbar = true;
+        ShowStatusBar = true;
       };
-      
+
       NSGlobalDomain = {
+        InitialKeyRepeat = 15;
+        KeyRepeat = 2;
         AppleShowAllExtensions = true;
+        ApplePressAndHoldEnabled = false;
+        NSAutomaticCapitalizationEnabled = false;
+        NSAutomaticDashSubstitutionEnabled = false;
+        NSAutomaticPeriodSubstitutionEnabled = false;
+        NSAutomaticQuoteSubstitutionEnabled = false;
+        NSAutomaticSpellingCorrectionEnabled = false;
       };
+
+      trackpad = {
+        Clicking = true;
+        TrackpadThreeFingerDrag = true;
+      };
+
+      loginwindow = {
+        GuestEnabled = false;
+        DisableConsoleAccess = true;
+      };
+
+      screencapture = {
+        location = "~/Screenshots";
+        type = "png";
+      };
+    };
+
+    keyboard = {
+      enableKeyMapping = true;
+      remapCapsLockToControl = true;
     };
   };
 
-  # Nixpkgs設定
+  # Nixpkgs configuration
   nixpkgs = {
     config = {
       allowUnfree = true;
     };
     
-    # neovim-nightly-overlayを適用
     overlays = [
       inputs.neovim-nightly-overlay.overlays.default
     ];
     
-    hostPlatform = "x86_64-darwin"; # Intel Mac用
+    hostPlatform = "aarch64-darwin";
   };
 
-  # Services (nix-daemon設定を削除)
-  services = {
-    # nix-daemon.enable は不要になったため削除
-  };
+  # Fonts
+  fonts.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" "Hack" ]; })
+  ];
 
-  # セキュリティ設定
+  # Security
   security.pam.services.sudo_local.touchIdAuth = true;
 
-  # プログラム設定
+  # Programs
   programs = {
     zsh.enable = true;
   };

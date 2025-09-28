@@ -18,25 +18,20 @@
       url = "github:nix-community/neovim-nightly-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
-    # nix-homebrewを追加
-    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
   };
 
   outputs = inputs@{ self, nixpkgs, nix-darwin, home-manager, neovim-nightly-overlay, ... }: 
   let
-    system = "aarch64-darwin"; # Intel Mac用
+    system = "aarch64-darwin";
     
-    # overlayを適用したpkgsを作成
     pkgs = import nixpkgs {
       inherit system;
       config.allowUnfree = true;
       overlays = [ neovim-nightly-overlay.overlays.default ];
     };
     
-    # 共通の設定値
-    username = "lizelit";  # 実際のユーザー名に変更
-    hostname = "Mac";      # 実際のホスト名に変更
+    username = "lizelit";
+    hostname = "Mac";
     homeDirectory = "/Users/${username}";
   in
   {
@@ -45,35 +40,18 @@
       inherit system;
       modules = [
         ./darwin.nix
-        inputs.nix-homebrew.darwinModules.nix-homebrew
-        {
-          nix-homebrew = {
-            enable = true;
-            # ユーザーを指定
-            user = username;
-            # 既存のHomebrewインストールを自動移行
-            autoMigrate = true;
-            # Apple Silicon用のパスを明示的に指定
-            mutableTaps = false;
-            taps = {
-              "homebrew/homebrew-core" = inputs.nix-homebrew.inputs.brew-src;
-            };
-          };
-        }
         home-manager.darwinModules.home-manager
         {
-          # home-manager の統合設定
+          # home-manager integration
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.backupFileExtension = "backup";
           home-manager.users.${username} = import ./home.nix;
           
-          # home-managerにspecialArgsとpkgsを渡す
           home-manager.extraSpecialArgs = { 
             inherit inputs username homeDirectory pkgs; 
           };
           
-          # ユーザー情報の共有
           users.users.${username} = {
             name = username;
             home = homeDirectory;
@@ -85,7 +63,7 @@
       };
     };
 
-    # Home configuration (standalone用)
+    # Home configuration (standalone)
     homeConfigurations."${username}" = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
       modules = [ ./home.nix ];
