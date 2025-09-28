@@ -49,12 +49,15 @@
         {
           nix-homebrew = {
             enable = true;
-            # enableRosettaを無効化
-            # enableRosetta = true;
             # ユーザーを指定
             user = username;
             # 既存のHomebrewインストールを自動移行
             autoMigrate = true;
+            # Apple Silicon用のパスを明示的に指定
+            mutableTaps = false;
+            taps = {
+              "homebrew/homebrew-core" = inputs.nix-homebrew.inputs.brew-src;
+            };
           };
         }
         home-manager.darwinModules.home-manager
