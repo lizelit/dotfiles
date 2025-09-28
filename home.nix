@@ -11,9 +11,8 @@
       EDITOR = "nvim";
     };
 
-    # 最小限のパッケージ
     packages = with pkgs; [
-      # ここに必要なパッケージを追加
+      # 必要なパッケージを追加
       # 例:
       # curl
       # git
@@ -21,17 +20,17 @@
     ];
   };
 
-  # Neovim設定 (まずは通常のNeovimで試す)
+  # Neovim Nightly設定
   programs.neovim = {
     enable = true;
-    package = pkgs.neovim;  # 一時的に通常のneovimを使用
+    package = pkgs.neovim-nightly;
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
     
     # プラグインなし、基本設定のみ
     extraLuaConfig = ''
-      -- 基本設定のみ
+      -- 基本設定
       vim.opt.number = true
       vim.opt.relativenumber = true
       vim.opt.expandtab = true
@@ -49,11 +48,11 @@
     '';
   };
 
-  # Git設定（最小限）
+  # Git設定
   programs.git = {
     enable = true;
-    userName = "lizelit";  # 実際の名前に変更
-    userEmail = "your.email@example.com";  # 実際のメールアドレスに変更
+    userName = "lizelit";
+    userEmail = "your.email@example.com";
     
     extraConfig = {
       init.defaultBranch = "main";
@@ -61,7 +60,7 @@
     };
   };
 
-  # Zsh設定（基本のみ）
+  # Zsh設定
   programs.zsh = {
     enable = true;
     

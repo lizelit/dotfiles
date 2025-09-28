@@ -36,32 +36,9 @@
     git
   ];
 
-  # Homebrew設定
+  # Homebrew設定（一時的に無効化）
   homebrew = {
-    enable = true;
-    
-    onActivation = {
-      autoUpdate = false;
-      upgrade = false;
-      cleanup = "zap";
-    };
-
-    # ここに必要なアプリを追加
-    casks = [
-      # 例: 基本的なアプリ
-      # "google-chrome"
-      # "visual-studio-code" 
-      "darwin"
-    ];
-
-    brews = [
-      # 例: Nixで管理できないCLIツール
-    ];
-
-    masApps = {
-      # 例: Mac App Store アプリ
-      # "Xcode" = 497799835;
-    };
+    enable = false;  # まず基本設定を動作させる
   };
 
   # システム設定

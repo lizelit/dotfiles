@@ -1,4 +1,4 @@
-{
+}{
   description = "My personal Darwin system configuration";
 
   inputs = {
