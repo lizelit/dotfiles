@@ -29,13 +29,6 @@
       lazygit
       gh               # GitHub CLI
       
-      # Language runtimes
-      nodejs
-      python3
-      go
-      rustc
-      cargo
-      
       # Language servers
       nil              # Nix LSP
       rust-analyzer

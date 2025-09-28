@@ -64,6 +64,8 @@
     casks = [
       "karabiner-elements"
       "ghostty"
+      "discord"
+      "slack"
     ];
 
     # CLI tools that aren't available in Nix
