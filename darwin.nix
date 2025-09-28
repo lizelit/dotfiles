@@ -135,13 +135,6 @@
     hostPlatform = "aarch64-darwin";
   };
 
-  # Fonts
-  fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" "Hack" ]; })
-  ];
-
-  # Security
-  security.pam.services.sudo_local.touchIdAuth = true;
 
   # Programs
   programs = {
