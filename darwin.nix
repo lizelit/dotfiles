@@ -1,0 +1,104 @@
+{ config, pkgs, inputs, username, hostname, homeDirectory, ... }:
+
+{
+  # Nix設定
+  nix = {
+    settings = {
+      experimental-features = "nix-command flakes";
+      auto-optimise-store = true;
+      trusted-users = [ "${username}" "root" "@admin" ];
+    };
+    
+    gc = {
+      automatic = true;
+      interval = {
+        Weekday = 0;
+        Hour = 0;
+        Minute = 0;
+      };
+      options = "--delete-older-than 30d";
+    };
+  };
+
+  # 最小限のシステムパッケージ
+  environment.systemPackages = with pkgs; [
+    # 基本的なツールのみ
+    git
+  ];
+
+  # Homebrew設定
+  homebrew = {
+    enable = true;
+    
+    onActivation = {
+      autoUpdate = false;
+      upgrade = false;
+      cleanup = "zap";
+    };
+
+    # ここに必要なアプリを追加
+    casks = [
+      # 例: 基本的なアプリ
+      # "google-chrome"
+      # "visual-studio-code" 
+      # "iterm2"
+    ];
+
+    brews = [
+      # 例: Nixで管理できないCLIツール
+    ];
+
+    masApps = {
+      # 例: Mac App Store アプリ
+      # "Xcode" = 497799835;
+    };
+  };
+
+  # システム設定
+  system = {
+    stateVersion = 4;
+    
+    # 基本的なmacOS設定
+    defaults = {
+      dock = {
+        autohide = true;
+      };
+      
+      finder = {
+        AppleShowAllExtensions = true;
+        ShowPathbar = true;
+      };
+      
+      NSGlobalDomain = {
+        AppleShowAllExtensions = true;
+      };
+    };
+  };
+
+  # Nixpkgs設定
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+    };
+    
+    # neovim-nightly-overlayを適用
+    overlays = [
+      inputs.neovim-nightly-overlay.overlays.default
+    ];
+    
+    hostPlatform = "aarch64-darwin"; # Intel Macの場合は "x86_64-darwin"
+  };
+
+  # Services
+  services = {
+    nix-daemon.enable = true;
+  };
+
+  # セキュリティ設定
+  security.pam.enableSudoTouchIdAuth = true;
+
+  # プログラム設定
+  programs = {
+    zsh.enable = true;
+  };
+}
