@@ -1,6 +1,9 @@
 { config, pkgs, inputs, username, hostname, homeDirectory, ... }:
 
 {
+  # Nix build user group IDの修正
+  ids.gids.nixbld = 350;
+
   # Nix設定
   nix = {
     settings = {
