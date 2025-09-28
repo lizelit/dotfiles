@@ -51,7 +51,7 @@
       # 例: 基本的なアプリ
       # "google-chrome"
       # "visual-studio-code" 
-      ghostty
+      "darwin"
     ];
 
     brews = [
