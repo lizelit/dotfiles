@@ -39,6 +39,7 @@
   # Homebrew設定
   homebrew = {
     enable = true;
+    path = "/opt/homebrew";
     
     onActivation = {
       autoUpdate = false;
