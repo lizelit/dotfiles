@@ -22,7 +22,7 @@
 
   outputs = inputs@{ self, nixpkgs, nix-darwin, home-manager, neovim-nightly-overlay, ... }: 
   let
-    system = "aarch64-darwin"; # Intel Macの場合は "x86_64-darwin"
+    system = "x86_64-darwin"; # Intel Mac用
     
     # overlayを適用したpkgsを作成
     pkgs = import nixpkgs {
@@ -32,8 +32,8 @@
     };
     
     # 共通の設定値
-    username = "lizelit";
-    hostname = "lizelit";
+    username = "lizelit";  # 実際のユーザー名に変更
+    hostname = "Mac";      # 実際のホスト名に変更
     homeDirectory = "/Users/${username}";
   in
   {
@@ -69,14 +69,6 @@
       extraSpecialArgs = { 
         inherit inputs username homeDirectory; 
       };
-    };
-
-    # Development shell
-    devShells.${system}.default = pkgs.mkShell {
-      buildInputs = with pkgs; [
-        nil # Nix LSP
-        nixpkgs-fmt # Nix formatter
-      ];
     };
   };
 }

@@ -86,7 +86,7 @@
       inputs.neovim-nightly-overlay.overlays.default
     ];
     
-    hostPlatform = "aarch64-darwin"; # Intel Macの場合は "x86_64-darwin"
+    hostPlatform = "x86_64-darwin"; # Intel Mac用
   };
 
   # Services

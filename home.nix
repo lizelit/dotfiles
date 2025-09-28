@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, username ? "your-username", homeDirectory ? "/Users/your-username", ... }:
+{ config, pkgs, inputs, username ? "lizelit", homeDirectory ? "/Users/lizelit", ... }:
 
 {
   # Home Manager設定
@@ -52,8 +52,8 @@
   # Git設定（最小限）
   programs.git = {
     enable = true;
-    userName = "Your Name";
-    userEmail = "your.email@example.com";
+    userName = "lizelit";  # 実際の名前に変更
+    userEmail = "your.email@example.com";  # 実際のメールアドレスに変更
     
     extraConfig = {
       init.defaultBranch = "main";
