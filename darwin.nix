@@ -37,7 +37,16 @@
   ];
 
   # Homebrew設定（一時的に無効化）
-  homebrew.enable = false;
+  homebrew = {
+    enable = true;
+    
+    onActivation = {
+      autoUpdate = false;
+      upgrade = false;
+      cleanup = "zap";
+    };
+    casks = [ "iterm2" ];
+      };
 
   # システム設定
   system = {
