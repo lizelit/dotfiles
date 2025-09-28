@@ -37,9 +37,7 @@
   ];
 
   # Homebrew設定（一時的に無効化）
-  homebrew = {
-    enable = false;  # まず基本設定を動作させる
-  };
+  homebrew.enable = false;
 
   # システム設定
   system = {
