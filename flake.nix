@@ -18,6 +18,9 @@
       url = "github:nix-community/neovim-nightly-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    
+    # nix-homebrewを追加
+    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
   };
 
   outputs = inputs@{ self, nixpkgs, nix-darwin, home-manager, neovim-nightly-overlay, ... }: 
@@ -42,6 +45,18 @@
       inherit system;
       modules = [
         ./darwin.nix
+        nix-homebrew.darwinModules.nix-homebrew
+        {
+          nix-homebrew = {
+            enable = true;
+            # Apple Silicon用
+            enableRosetta = true;
+            # ユーザーを指定
+            user = username;
+            # 既存のHomebrewインストールを自動移行
+            autoMigrate = true;
+          };
+        }
         home-manager.darwinModules.home-manager
         {
           # home-manager の統合設定

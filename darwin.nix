@@ -31,22 +31,48 @@
   system.primaryUser = username;
 
   # 最小限のシステムパッケージ
-  environment.systemPackages = with pkgs; [
-    # 基本的なツールのみ
-    git
-  ];
+  environment = {
+    systemPackages = with pkgs; [
+      git
+    ];
+    
+    # 環境変数でHomebrewのパスを確実に設定
+    variables = {
+      HOMEBREW_PREFIX = "/opt/homebrew";
+    };
+    
+    systemPath = [ "/opt/homebrew/bin" ];
+  };
 
-  # Homebrew設定（一時的に無効化）
+  # Homebrew設定
   homebrew = {
     enable = true;
+    
+    # brewPrefixは/binを含まないディレクトリを指定
+    brewPrefix = "/opt/homebrew";
     
     onActivation = {
       autoUpdate = false;
       upgrade = false;
       cleanup = "zap";
     };
-    casks = [ "iterm2" ];
-      };
+
+    casks = [
+      # 例: 基本的なアプリ
+      # "google-chrome"
+      # "visual-studio-code" 
+      # "iterm2"
+    ];
+
+    brews = [
+      # 例: CLIツール
+    ];
+
+    masApps = {
+      # 例: Mac App Store アプリ
+      # "Xcode" = 497799835;
+    };
+  };
 
   # システム設定
   system = {

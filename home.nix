@@ -36,7 +36,7 @@
   programs.git = {
     enable = true;
     userName = "lizelit";
-    userEmail = "takku.hana@icloud.com";
+    userEmail = "your.email@example.com";
     
     extraConfig = {
       init.defaultBranch = "main";
