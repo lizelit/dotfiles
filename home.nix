@@ -284,7 +284,7 @@
       nf = "nix flake";
       
       # Darwin aliases
-      dr = "darwin-rebuild switch --flake ~/dotfiles";
+      dr = "sudo darwin-rebuild switch --flake ~/dotfiles";
       hm = "home-manager switch --flake ~/dotfiles";
     };
     
