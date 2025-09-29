@@ -40,7 +40,7 @@
       imagemagick
       pandoc
 
-      (nerdfonts.override { fonts = ["JetBrainsMono"];})
+      pkgs.nerd-fonts.jetbrains.mono
     ];
   };
 
