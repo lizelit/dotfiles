@@ -43,7 +43,7 @@
   };
 
   home.file = {
-    ".config/nvim/init.lua".source = "${config.home.homeDirectory}/dotfiles/nvim/init.lua";
+    ".config/nvim/init.lua".source = "./nvim/init.lua";
   };
 
 
