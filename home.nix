@@ -61,7 +61,6 @@
     };
     plugins.lightline.enable = true;
 
-    colorschemes.everforest.enable = true;
   };
 
 
