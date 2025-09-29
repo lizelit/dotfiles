@@ -52,7 +52,7 @@
 
   services.skhd = {
     enable = true;
-    packages = pkgs.skhd;
+    package = pkgs.skhd;
     skhdConfig = "ctrl + return : open -a terminal";
   };
 
