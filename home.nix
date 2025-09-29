@@ -137,5 +137,6 @@
     cacheHome = "${homeDirectory}/.cache";
     configFile."nvim".source = ./nvim;
     configFile."wezterm/wezterm.lua".source = ./config/wezterm.lua;
+    configFile."ghostty/config".source = ./config/ghostty/config;
   };
 }

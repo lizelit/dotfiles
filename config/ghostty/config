@@ -1,0 +1,27 @@
+# Theme
+theme = everforest
+
+# Font
+font-family = JetBrainsMono Nerd Font Mono
+font-size = 14
+
+font-style-bold = false
+font-style-italic = false
+font-style-bold-italic = false
+
+# macOS
+macos-titlebar-style = hidden
+macos-window-shadow = false
+
+# Shell
+shell-integration-features = no-cursor
+
+# Cursor
+cursor-style = block
+cursor-style-blink = false
+cursor-invert-fg-bg = true
+cursor-opacity = 0.8
+
+# Other
+mouse-hide-while-typing = true
+resize-overlay = never
