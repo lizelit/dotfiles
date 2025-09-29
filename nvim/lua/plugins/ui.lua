@@ -1,14 +1,13 @@
 return {
   -- Colorscheme
   {
-    "folke/tokyonight.nvim",
+    "neanias/everforest-nvim",
     lazy = false,
-    priority = 1000,
     config = function()
-      require("tokyonight").setup({
-        style = "night",
+      require("everforest-nvim").setup({
+        style = "medium",
       })
-      vim.cmd([[colorscheme tokyonight]])
+      vim.cmd([[colorscheme everforest]])
     end,
   },
 
@@ -18,7 +17,7 @@ return {
     event = "VeryLazy",
     opts = {
       options = {
-        theme = "tokyonight",
+        theme = "auto",
         globalstatus = true,
       },
     },
