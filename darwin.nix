@@ -71,6 +71,7 @@
       "discord"
       "slack"
       "wezterm"
+      "ghostty"
     ];
 
     # CLI tools that aren't available in Nix

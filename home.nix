@@ -65,6 +65,10 @@
     enable = true;
   };
 
+  programs.ghostty = {
+    enable = true;
+  };
+
   # Zsh with Oh My Zsh and useful plugins
   programs.zsh = {
     enable = true;
