@@ -1,6 +1,6 @@
 # アプリケーションの起動
 cmd + shift - return : open -n -a "Safari"
-cmd + return : open -n -a "ghostty"
+cmd + return : open -n -a "wezterm"
 
 # ウィンドウの移動
 alt - h : yabai -m window --focus west

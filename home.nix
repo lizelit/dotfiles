@@ -9,7 +9,7 @@
     sessionVariables = {
       EDITOR = "nvim";
       BROWSER = "safari";
-      TERMINAL = "ghostty";
+      TERMINAL = "wezterm";
     };
 
     packages = with pkgs; [
