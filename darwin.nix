@@ -53,7 +53,7 @@
 
   services.skhd = {
     enable = true;
-    skhdConfig = builtins.readFile ./config/skhdrc;
+    skhdConfig = "ctrl + return : open -a terminal";
   };
 
   # Homebrew configuration
