@@ -53,14 +53,6 @@
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
-    options = {
-      number = true;
-      relativenumber = true;
-
-      shiftwidth = 2;
-    };
-    plugins.lightline.enable = true;
-
   };
 
 
