@@ -129,7 +129,6 @@
     configHome = "${homeDirectory}/.config";
     dataHome = "${homeDirectory}/.local/share";
     cacheHome = "${homeDirectory}/.cache";
-    configFile."nvim/init.lua".source = ./nvim/init.lua;
-    configFile."nvim/lua".source = ./nvim/lua;
+    configFile."nvim".source = ./nvim;
   };
 }
