@@ -33,6 +33,8 @@
       nil              # Nix LSP
       rust-analyzer
       nodePackages.typescript-language-server
+
+      mas
       
       # Other tools
       ffmpeg
