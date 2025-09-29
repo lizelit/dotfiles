@@ -34,6 +34,7 @@
       nodePackages.typescript-language-server
 
       mas
+      kitty
       
       # Other tools
       ffmpeg
@@ -67,9 +68,10 @@
 
   programs.kitty = {
     enable = true;
-    font = "JetBrainsMono";
-    themeFile = "everforest";
-  }
+    font.name = "JetBrains Mono";
+    font.size = 14;
+    themeFile = "Everforest_Dark_Medium";
+  };
 
 
   # Zsh with Oh My Zsh and useful plugins
