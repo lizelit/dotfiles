@@ -38,7 +38,7 @@
 
   services.yabai = {
     enable = true;
-    packages = pkgs.yabai;
+    package = pkgs.yabai;
     config = {
       window_gap = 10;
       top_padding = 10;
