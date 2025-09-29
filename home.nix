@@ -65,6 +65,13 @@
     enable = true;
   };
 
+  programs.kitty = {
+    enable = true;
+    font = "JetBrainsMono";
+    themeFile = "everforest";
+  }
+
+
   # Zsh with Oh My Zsh and useful plugins
   programs.zsh = {
     enable = true;
@@ -137,6 +144,5 @@
     cacheHome = "${homeDirectory}/.cache";
     configFile."nvim".source = ./nvim;
     configFile."wezterm/wezterm.lua".source = ./config/wezterm.lua;
-    configFile."ghostty/config".source = ./config/ghostty/config;
   };
 }
