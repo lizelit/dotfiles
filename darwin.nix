@@ -50,8 +50,19 @@
     enableScriptingAddition = true;
   };
 
-  services.skhd.enable = true; # test
+  services.skhd = {
+    enable = true;
+    package = pkgs.skhd;
+    config = ''
+      ctrl + return : open -a "wezterm"
+      ctrl + shift - return : open -a "Safari"
 
+      alt - h : yabai -m window --focus west
+      alt - j : yabai -m window --focus south
+      alt - k : yabai -m window --focus north
+      alt - l : yabai -m window --focus east
+    '';
+  };
   # Homebrew configuration
   homebrew = {
     enable = true;
