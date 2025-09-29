@@ -35,6 +35,7 @@
     curl
     wget
     yabai
+    skhd
   ];
 
   services.yabai = {
