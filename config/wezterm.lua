@@ -1,5 +1,11 @@
 local wezterm = require 'wezterm'
 
+local wezterm = require 'wezterm'
+
+for name, _ in pairs(wezterm.get_builtin_color_schemes()) do
+  wezterm.log_info("Color scheme available: " .. name)
+end
+
 return {
   color_scheme = "Everforest Dark (Medium)",  -- ここを好きなバリエーションに
   font = wezterm.font("JetBrainsMono Nerd Font"),

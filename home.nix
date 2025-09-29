@@ -63,17 +63,6 @@
 
   programs.wezterm = {
     enable = true;
-
-    extraConfig = ''
-      return {
-        color_scheme = "Everforest Dark (Medium)",
-        font = wezterm.font("JetBrainsMono Nerd Font"),
-        font_size = 14.0,
-        hide_tab_bar_if_only_one_tab = true,
-        window_background_blur = 20,
-        front_end = "WebGpu",
-      }
-    '';
   };
 
   # Zsh with Oh My Zsh and useful plugins
