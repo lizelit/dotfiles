@@ -41,10 +41,8 @@
       imagemagick
       pandoc
     ];
-    file.".skhdrc".source = ./config/skhdrc;
   };
 
-  services.skhd.enable = true;
 
   # Neovim Nightly with basic plugins
   programs.neovim = {

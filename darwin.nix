@@ -50,7 +50,11 @@
     enableScriptingAddition = true;
   };
 
-  services.skhd.enable = true;
+  services.skhd = {
+    enable = true;
+    skhdConfig = builtins.readFIle ./config/skhdrc;
+  };
+
   # Homebrew configuration
   homebrew = {
     enable = true;
