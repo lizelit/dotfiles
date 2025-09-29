@@ -130,5 +130,6 @@
     dataHome = "${homeDirectory}/.local/share";
     cacheHome = "${homeDirectory}/.cache";
     configFile."nvim".source = ./nvim;
+    configFile."wezterm/wezterm.lua".source = ./config/wezterm.lua;
   };
 }
