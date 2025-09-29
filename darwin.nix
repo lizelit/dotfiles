@@ -50,6 +50,8 @@
     enableScriptingAddition = true;
   };
 
+  services.skhd.enable = true; # test
+
   # Homebrew configuration
   homebrew = {
     enable = true;
