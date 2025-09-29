@@ -53,6 +53,10 @@
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
+
+    options = {
+      relativenumber = true;
+    };
     
     plugins = with pkgs.vimPlugins; [nvim-lspconfig];
   };
