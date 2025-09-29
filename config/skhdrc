@@ -1,6 +1,6 @@
 # アプリケーションの起動
-ctrl + shift - return : open -n -a "Safari"
-ctrl + return : open -n -a "wezterm"
+ctrl + shift - return : open -a "Safari"
+ctrl + return : open -a "wezterm"
 
 # ウィンドウの移動
 alt - h : yabai -m window --focus west
