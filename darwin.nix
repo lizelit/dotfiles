@@ -34,12 +34,11 @@
     git
     curl
     wget
-    yabai
-    skhd
   ];
 
   services.yabai = {
     enable = true;
+    packages = pkgs.yabai;
     config = {
       window_gap = 10;
       top_padding = 10;
@@ -53,6 +52,7 @@
 
   services.skhd = {
     enable = true;
+    packages = pkgs.skhd;
     skhdConfig = "ctrl + return : open -a terminal";
   };
 
