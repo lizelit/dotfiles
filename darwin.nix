@@ -52,7 +52,7 @@
 
   services.skhd = {
     enable = true;
-    skhdConfig = builtins.readFIle ./config/skhdrc;
+    skhdConfig = builtins.readFile ./config/skhdrc;
   };
 
   # Homebrew configuration
