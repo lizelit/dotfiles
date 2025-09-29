@@ -6,7 +6,7 @@ return {
     lazy = false,
     priority = 1000,
     config = function()
-      require("everforest-nvim").setup({
+      require("everforest").setup({
         style = "medium",
       })
       vim.cmd([[colorscheme everforest]])
