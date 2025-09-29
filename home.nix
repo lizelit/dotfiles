@@ -40,7 +40,7 @@
       imagemagick
       pandoc
 
-      pkgs.nerd-fonts.jetbrains.mono
+      pkgs.nerd-fonts.jetbrains-mono
     ];
   };
 
