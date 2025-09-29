@@ -72,7 +72,7 @@
     font.size = 14;
     themeFile = "Everforest_Dark_Medium";
     extraConfig = ''
-      hide_window_decorations no
+      hide_window_decorations titlebar-only
     '';
   };
 
