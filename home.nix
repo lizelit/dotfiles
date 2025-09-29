@@ -34,7 +34,6 @@
       nodePackages.typescript-language-server
 
       mas
-      kitty
       
       # Other tools
       ffmpeg
@@ -64,16 +63,6 @@
 
   programs.wezterm = {
     enable = true;
-  };
-
-  programs.kitty = {
-    enable = true;
-    font.name = "JetBrains Mono";
-    font.size = 14;
-    themeFile = "Everforest_Dark_Medium";
-    extraConfig = ''
-      hide_window_decorations titlebar-only
-    '';
   };
 
 
