@@ -39,6 +39,8 @@
       ffmpeg
       imagemagick
       pandoc
+
+      (nerdfonts.override { fonts = ["JetBrainsMono"];})
     ];
   };
 

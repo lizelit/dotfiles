@@ -6,6 +6,6 @@ return {
   font_size = 14.0,
   hide_tab_bar_if_only_one_tab = true,
   window_background_opacity = 0.9,
-  macos_window_background_blua = 20,
+  macos_window_background_blur = 20,
 }
 
