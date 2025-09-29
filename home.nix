@@ -43,205 +43,144 @@
   };
 
   # Neovim Nightly with basic plugins
-  
-
-programs.neovim = {
-  enable = true;
-  defaultEditor = true;
-  viAlias = true;
-  vimAlias = true;
-  
-  plugins = with pkgs.vimPlugins; [
-    # LSP基盤
-    nvim-lspconfig
-    nvim-cmp
-    cmp-nvim-lsp
-    cmp-buffer
-    cmp-path
-    
-    # カラースキーム
-    tokyonight-nvim
-    
-    # ファイラー
-    nvim-tree-lua
-    nvim-web-devicons
-    
-    # ファジーファインダー
-    telescope-nvim
-    plenary-nvim
-    
-    # タブ・バッファライン
-    bufferline-nvim
-    
-    # ホーム画面
-    alpha-nvim
-    
-    # ステータスライン
-    lualine-nvim
-    
-    # シンタックスハイライト
-    nvim-treesitter.withAllGrammars
-    
-    # Git統合
-    gitsigns-nvim
-    
-    # コメントアウト
-    comment-nvim
-    
-    # 括弧の自動補完
-    nvim-autopairs
-    
-    # インデントガイド
-    indent-blankline-nvim
-    
-    # キーバインド表示
-    which-key-nvim
-  ];
-  
-  extraPackages = with pkgs; [
-    ripgrep
-    fd
-    gcc
-  ];
-  
   programs.neovim = {
-  enable = true;
-  defaultEditor = true;
-  viAlias = true;
-  vimAlias = true;
+    enable = true;
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
   
-  plugins = with pkgs.vimPlugins; [
-    # LSP基盤
-    nvim-lspconfig
-    nvim-cmp
-    cmp-nvim-lsp
-    cmp-buffer
-    cmp-path
+    plugins = with pkgs.vimPlugins; [
+      # LSP基盤
+      nvim-lspconfig
+      nvim-cmp
+      cmp-nvim-lsp
+      cmp-buffer
+      cmp-path
+      
+      # カラースキーム
+      tokyonight-nvim
     
-    # カラースキーム
-    tokyonight-nvim
+      # ファイラー
+      nvim-tree-lua
+      nvim-web-devicons
     
-    # ファイラー
-    nvim-tree-lua
-    nvim-web-devicons
+      # ファジーファインダー
+      telescope-nvim
+      plenary-nvim
     
-    # ファジーファインダー
-    telescope-nvim
-    plenary-nvim
+      # タブ・バッファライン
+      bufferline-nvim
     
-    # タブ・バッファライン
-    bufferline-nvim
+      # ホーム画面
+      alpha-nvim
     
-    # ホーム画面
-    alpha-nvim
+      # ステータスライン
+      lualine-nvim
     
-    # ステータスライン
-    lualine-nvim
+      # シンタックスハイライト
+      nvim-treesitter.withAllGrammars
     
-    # シンタックスハイライト
-    nvim-treesitter.withAllGrammars
+      # Git統合
+      gitsigns-nvim
     
-    # Git統合
-    gitsigns-nvim
+      # コメントアウト
+      comment-nvim
     
-    # コメントアウト
-    comment-nvim
+      # 括弧の自動補完
+      nvim-autopairs
     
-    # 括弧の自動補完
-    nvim-autopairs
+      # インデントガイド
+      indent-blankline-nvim
     
-    # インデントガイド
-    indent-blankline-nvim
-    
-    # キーバインド表示
-    which-key-nvim
-  ];
+      # キーバインド表示
+      which-key-nvim
+    ];
   
-  extraPackages = with pkgs; [
-    ripgrep
-    fd
-    gcc
-  ];
-  extraLuaConfig = ''
-    -- カラースキーム
-    vim.cmd[[colorscheme tokyonight]]
+    extraPackages = with pkgs; [
+      ripgrep
+      fd
+      gcc
+    ];
+    extraLuaConfig = ''
+      -- カラースキーム
+      vim.cmd[[colorscheme tokyonight]]
     
-    -- 基本設定
-    vim.opt.number = true
-    vim.opt.relativenumber = true
-    vim.opt.expandtab = true
-    vim.opt.shiftwidth = 2
-    vim.opt.tabstop = 2
+      -- 基本設定
+      vim.opt.number = true
+      vim.opt.relativenumber = true
+      vim.opt.expandtab = true
+      vim.opt.shiftwidth = 2
+      vim.opt.tabstop = 2
     
-    -- nvim-tree
-    require("nvim-tree").setup()
-    vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>')
+      -- nvim-tree
+      require("nvim-tree").setup()
+      vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>')
     
-    -- telescope
-    require('telescope').setup{}
-    vim.keymap.set('n', '<leader>ff', ':Telescope find_files<CR>')
-    vim.keymap.set('n', '<leader>fg', ':Telescope live_grep<CR>')
-    vim.keymap.set('n', '<leader>fb', ':Telescope buffers<CR>')
+      -- telescope
+      require('telescope').setup{}
+      vim.keymap.set('n', '<leader>ff', ':Telescope find_files<CR>')
+      vim.keymap.set('n', '<leader>fg', ':Telescope live_grep<CR>')
+      vim.keymap.set('n', '<leader>fb', ':Telescope buffers<CR>')
     
-    -- bufferline
-    require("bufferline").setup{}
-    vim.keymap.set('n', '<Tab>', ':BufferLineCycleNext<CR>')
-    vim.keymap.set('n', '<S-Tab>', ':BufferLineCyclePrev<CR>')
+      -- bufferline
+      require("bufferline").setup{}
+      vim.keymap.set('n', '<Tab>', ':BufferLineCycleNext<CR>')
+      vim.keymap.set('n', '<S-Tab>', ':BufferLineCyclePrev<CR>')
     
-    -- lualine
-    require('lualine').setup()
+      -- lualine
+      require('lualine').setup()
     
-    -- alpha
-    require('alpha').setup(require('alpha.themes.startify').config)
+      -- alpha
+      require('alpha').setup(require('alpha.themes.startify').config)
     
-    -- treesitter
-    require('nvim-treesitter.configs').setup {
-      highlight = { enable = true },
-      indent = { enable = true },
-    }
+      -- treesitter
+      require('nvim-treesitter.configs').setup {
+        highlight = { enable = true },
+        indent = { enable = true },
+      }
     
-    -- gitsigns
-    require('gitsigns').setup()
+      -- gitsigns
+      require('gitsigns').setup()
     
-    -- comment
-    require('Comment').setup()
+      -- comment
+      require('Comment').setup()
     
-    -- autopairs
-    require('nvim-autopairs').setup()
+      -- autopairs
+      require('nvim-autopairs').setup()
     
-    -- indent-blankline
-    require('ibl').setup()
+      -- indent-blankline
+      require('ibl').setup()
     
-    -- which-key
-    require('which-key').setup()
+      -- which-key
+      require('which-key').setup()
     
-    -- LSP設定
-    local lspconfig = require('lspconfig')
-    local capabilities = require('cmp_nvim_lsp').default_capabilities()
+      -- LSP設定
+      local lspconfig = require('lspconfig')
+      local capabilities = require('cmp_nvim_lsp').default_capabilities()
     
-    -- LSPキーマップ
-    vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover)
-    vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename)
-    vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action)
+      -- LSPキーマップ
+      vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
+      vim.keymap.set('n', 'K', vim.lsp.buf.hover)
+      vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename)
+      vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action)
     
-    -- nvim-cmp
-    local cmp = require('cmp')
-    cmp.setup({
-      mapping = cmp.mapping.preset.insert({
-        ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-        ['<C-f>'] = cmp.mapping.scroll_docs(4),
-        ['<C-Space>'] = cmp.mapping.complete(),
-        ['<CR>'] = cmp.mapping.confirm({ select = true }),
-      }),
-      sources = cmp.config.sources({
-        { name = 'nvim_lsp' },
-        { name = 'buffer' },
-        { name = 'path' },
+      -- nvim-cmp
+      local cmp = require('cmp')
+      cmp.setup({
+        mapping = cmp.mapping.preset.insert({
+          ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+          ['<C-f>'] = cmp.mapping.scroll_docs(4),
+          ['<C-Space>'] = cmp.mapping.complete(),
+          ['<CR>'] = cmp.mapping.confirm({ select = true }),
+        }),
+        sources = cmp.config.sources({
+          { name = 'nvim_lsp' },
+          { name = 'buffer' },
+          { name = 'path' },
+        })
       })
-    })
-  '';
-};
+    '';
+  };
 
 
   # Zsh with Oh My Zsh and useful plugins
