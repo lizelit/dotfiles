@@ -53,7 +53,6 @@
   services.skhd = {
     enable = true;
     package = pkgs.skhd;
-    skhdConfig = "ctrl + return : open -a terminal";
   };
 
   # Homebrew configuration
