@@ -8,7 +8,7 @@
 
     sessionVariables = {
       EDITOR = "nvim";
-      BROWSER = "safari";
+      BROWSER = "Safari";
       TERMINAL = "wezterm";
     };
 
