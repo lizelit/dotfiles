@@ -30,9 +30,24 @@ return {
           vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, opts)
         end,
       })
-
-      -- LSP servers will be provided by project-specific dev shells
-      -- Add any global LSP servers here if needed
+      if vim.fn.executable("texlab") == 1 then
+        lspconfig.texlab.setup({
+          capabilities = capabilities,
+          settings = {
+            texlab = {
+              build = {
+                executable = "latexmk",
+                args = { "-lualatex", "-interaction=nonstopmode", "-synctex=1", "%f" },
+                onSave = true,
+              },
+              forwardSearch = {
+                executable = "open",  -- macOSの場合
+                args = { "%p" },
+              },
+            },
+          },
+        })
+      end
     end,
   },
 
