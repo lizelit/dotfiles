@@ -48,6 +48,17 @@ return {
           },
         })
       end
+
+      if vim.fn.executable("solargraph") == 1 then
+        lspconfig.solargraph.setup({
+          capabilities = capabilities,
+          settings = {
+            solargraph = {
+              idagnostics = true,
+            },
+          },
+        })
+      end
     end,
   },
 
