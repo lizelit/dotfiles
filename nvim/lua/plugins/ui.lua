@@ -1,7 +1,7 @@
 return {
   -- Colorscheme
   {
-    "sainnhe/everforest-nvim",
+    "neanias/everforest-nvim",
     version = false,
     lazy = false,
     priority = 1000,
