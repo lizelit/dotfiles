@@ -31,6 +31,22 @@ return {
       })
 
       -- LSP servers configuration using new vim.lsp.config API
+      if vim.fn.executable("haskell-language-server-wrapper") == 1 then
+        vim.lsp.config.hls = {
+          cmd = { "haskell-language-server-wrapper", "--lsp" },
+          filetypes = { "haskell", "lhaskell", "cabal" },
+          root_markers = { "stack.yaml", "cabal.project", "package.yaml", "hie.yaml", ".git" },
+          capabilities = capabilities,
+          settings = {
+            haskell = {
+              formattingProvider = "fourmolu",
+              -- または "ormolu", "stylish-haskell"
+            },
+          },
+        }
+        vim.lsp.enable("hls")
+      end
+
       -- Ruby
       if vim.fn.executable("solargraph") == 1 then
         vim.lsp.config.solargraph = {
