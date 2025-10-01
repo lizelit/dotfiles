@@ -47,11 +47,9 @@
   # Neovim Nightly with basic plugins
   programs.neovim = {
     extraPackages = with pkgs; [
-# LazyVim
       lua-language-server
-        stylua
-# Telescope
-        ripgrep
+      stylua
+      ripgrep
     ];
 
     plugins = with pkgs.vimPlugins; [
@@ -61,8 +59,7 @@
     extraLuaConfig =
       let
       plugins = with pkgs.vimPlugins; [
-# LazyVim
-      LazyVim
+        LazyVim
         bufferline-nvim
         cmp-buffer
         cmp-nvim-lsp
@@ -103,20 +100,20 @@
         vim-startuptime
         which-key-nvim
         { name = "LuaSnip"; path = luasnip; }
-    { name = "catppuccin"; path = catppuccin-nvim; }
-    { name = "mini.ai"; path = mini-nvim; }
-    { name = "mini.bufremove"; path = mini-nvim; }
-    { name = "mini.comment"; path = mini-nvim; }
-    { name = "mini.indentscope"; path = mini-nvim; }
-    { name = "mini.pairs"; path = mini-nvim; }
-    { name = "mini.surround"; path = mini-nvim; }
-    ];
-    mkEntryFromDrv = drv:
-      if lib.isDerivation drv then
-      { name = "${lib.getName drv}"; path = drv; }
-      else
+        { name = "catppuccin"; path = catppuccin-nvim; }
+        { name = "mini.ai"; path = mini-nvim; }
+        { name = "mini.bufremove"; path = mini-nvim; }
+        { name = "mini.comment"; path = mini-nvim; }
+        { name = "mini.indentscope"; path = mini-nvim; }
+        { name = "mini.pairs"; path = mini-nvim; }
+        { name = "mini.surround"; path = mini-nvim; }
+      ];
+      mkEntryFromDrv = drv:
+        if lib.isDerivation drv then
+          { name = "${lib.getName drv}"; path = drv; }
+        else
         drv;
-    lazyPath = pkgs.linkFarm "lazy-plugins" (builtins.map mkEntryFromDrv plugins);
+      lazyPath = pkgs.linkFarm "lazy-plugins" (builtins.map mkEntryFromDrv plugins);
     in
       ''
       require("lazy").setup({
