@@ -7,7 +7,6 @@ return {
       "hrsh7th/cmp-nvim-lsp",
     },
     config = function()
-      local lspconfig = require("lspconfig")
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
       -- Keymaps
@@ -30,8 +29,30 @@ return {
           vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, opts)
         end,
       })
+
+      -- LSP servers configuration using new vim.lsp.config API
+      -- Ruby
+      if vim.fn.executable("solargraph") == 1 then
+        vim.lsp.config.solargraph = {
+          cmd = { "solargraph", "stdio" },
+          filetypes = { "ruby" },
+          root_markers = { "Gemfile", ".git" },
+          capabilities = capabilities,
+          settings = {
+            solargraph = {
+              diagnostics = true,
+            },
+          },
+        }
+        vim.lsp.enable("solargraph")
+      end
+      
+      -- LaTeX
       if vim.fn.executable("texlab") == 1 then
-        lspconfig.texlab.setup({
+        vim.lsp.config.texlab = {
+          cmd = { "texlab" },
+          filetypes = { "tex", "plaintex", "bib" },
+          root_markers = { ".latexmkrc", ".git", "main.tex" },
           capabilities = capabilities,
           settings = {
             texlab = {
@@ -46,18 +67,8 @@ return {
               },
             },
           },
-        })
-      end
-
-      if vim.fn.executable("solargraph") == 1 then
-        lspconfig.solargraph.setup({
-          capabilities = capabilities,
-          settings = {
-            solargraph = {
-              idagnostics = true,
-            },
-          },
-        })
+        }
+        vim.lsp.enable("texlab")
       end
     end,
   },
