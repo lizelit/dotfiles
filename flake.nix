@@ -53,12 +53,11 @@
           
           # ユーザーの設定ファイル
           home-manager.users.${username} = {
-            imports = [
-              # ★ Home ManagerでNixVimモジュールを読み込む
-              nixvim.homeManagerModules.nixvim
-              ./home.nix
-            ];
           };
+          home-manager.modules = [
+            ./home.nix
+            nixvim.homeModules.nixvim
+          ];
         }
       ];
       specialArgs = { 
