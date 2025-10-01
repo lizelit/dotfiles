@@ -2,32 +2,36 @@
   description = "My personal Darwin system configuration";
 
   inputs = {
+    # 1. Nixpkgs: すべてのパッケージの源
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     
+    # 2. Nix-Darwin: macOSシステム設定の管理
     nix-darwin = {
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     
+    # 3. Home Manager: ユーザー環境の設定を管理
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-24.05"; # バージョン指定を推奨
       inputs.nixpkgs.follows = "nixpkgs";
     };
     
-    neovim-nightly-overlay = {
-      url = "github:nix-community/neovim-nightly-overlay";
+    # 4. NixVim: Neovimの設定モジュール
+    nixvim = {
+      url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, nix-darwin, home-manager, neovim-nightly-overlay, ... }: 
+  outputs = inputs@{ self, nixpkgs, nix-darwin, home-manager, nixvim, ... }: 
   let
-    system = "aarch64-darwin";
+    # 🍎 あなたのシステムアーキテクチャに合わせて設定
+    system = "aarch64-darwin"; 
     
     pkgs = import nixpkgs {
       inherit system;
       config.allowUnfree = true;
-      overlays = [ neovim-nightly-overlay.overlays.default ];
     };
     
     username = "lizelit";
@@ -35,40 +39,30 @@
     homeDirectory = "/Users/${username}";
   in
   {
-    # Darwin configuration
+    # 🌟 Darwin system configuration
     darwinConfigurations."${hostname}" = nix-darwin.lib.darwinSystem {
       inherit system;
       modules = [
         ./darwin.nix
-        home-manager.darwinModules.home-manager
+        home-manager.darwinModules.home-manager # nix-darwin経由でHome Managerをインポート
         {
-          # home-manager integration
+          # Home Managerの設定ブロック
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.backupFileExtension = "backup";
-          home-manager.users.${username} = import ./home.nix;
           
-          home-manager.extraSpecialArgs = { 
-            inherit inputs username homeDirectory pkgs; 
-          };
-          
-          users.users.${username} = {
-            name = username;
-            home = homeDirectory;
+          # ユーザーの設定ファイル
+          home-manager.users.${username} = {
+            imports = [
+              # ★ Home ManagerでNixVimモジュールを読み込む
+              nixvim.homeManagerModules.nixvim
+              ./home.nix
+            ];
           };
         }
       ];
       specialArgs = { 
         inherit inputs username hostname homeDirectory pkgs; 
-      };
-    };
-
-    # Home configuration (standalone)
-    homeConfigurations."${username}" = home-manager.lib.homeManagerConfiguration {
-      inherit pkgs;
-      modules = [ ./home.nix ];
-      extraSpecialArgs = { 
-        inherit inputs username homeDirectory pkgs; 
       };
     };
   };

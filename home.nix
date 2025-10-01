@@ -1,6 +1,10 @@
 { config, pkgs, inputs, username ? "lizelit", homeDirectory ? "/Users/lizelit", ... }:
 
 {
+  imports = [
+    inputs.nixvim.homeManagerModules.nixvim
+    ./nvim/default.nix
+  ];
   # Home Manager basic configuration
   home = {
     inherit username homeDirectory;
@@ -44,121 +48,71 @@
     ];
   };
 
-  # Neovim Nightly with basic plugins
-  programs.neovim = {
-    extraPackages = with pkgs; [
-      lua-language-server
-      stylua
-      ripgrep
-    ];
-
-    plugins = with pkgs.vimPlugins; [
-      lazy-nvim
-    ];
-
-    extraLuaConfig =
-      let
-      plugins = with pkgs.vimPlugins; [
-        LazyVim
-        bufferline-nvim
-        cmp-buffer
-        cmp-nvim-lsp
-        cmp-path
-        cmp_luasnip
-        conform-nvim
-        dashboard-nvim
-        dressing-nvim
-        flash-nvim
-        friendly-snippets
-        gitsigns-nvim
-        indent-blankline-nvim
-        lualine-nvim
-        neo-tree-nvim
-        neoconf-nvim
-        neodev-nvim
-        noice-nvim
-        nui-nvim
-        nvim-cmp
-        nvim-lint
-        nvim-lspconfig
-        nvim-notify
-        nvim-spectre
-        nvim-treesitter
-        nvim-treesitter-context
-        nvim-treesitter-textobjects
-        nvim-ts-autotag
-        nvim-ts-context-commentstring
-        nvim-web-devicons
-        persistence-nvim
-        plenary-nvim
-        telescope-fzf-native-nvim
-        telescope-nvim
-        todo-comments-nvim
-        tokyonight-nvim
-        trouble-nvim
-        vim-illuminate
-        vim-startuptime
-        which-key-nvim
-        { name = "LuaSnip"; path = luasnip; }
-        { name = "catppuccin"; path = catppuccin-nvim; }
-        { name = "mini.ai"; path = mini-nvim; }
-        { name = "mini.bufremove"; path = mini-nvim; }
-        { name = "mini.comment"; path = mini-nvim; }
-        { name = "mini.indentscope"; path = mini-nvim; }
-        { name = "mini.pairs"; path = mini-nvim; }
-        { name = "mini.surround"; path = mini-nvim; }
-      ];
-      mkEntryFromDrv = drv:
-        if lib.isDerivation drv then
-          { name = "${lib.getName drv}"; path = drv; }
-        else
-        drv;
-      lazyPath = pkgs.linkFarm "lazy-plugins" (builtins.map mkEntryFromDrv plugins);
-    in
-      ''
-      require("lazy").setup({
-          defaults = {
-          lazy = true,
-          },
-          dev = {
-          -- reuse files from pkgs.vimPlugins.*
-          path = "${lazyPath}",
-          patterns = { "" },
-          -- fallback to download
-          fallback = true,
-          },
-          spec = {
-          { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-          -- The following configs are needed for fixing lazyvim on nix
-          -- force enable telescope-fzf-native.nvim
-          { "nvim-telescope/telescope-fzf-native.nvim", enabled = true },
-          -- disable mason.nvim, use programs.neovim.extraPackages
-          { "williamboman/mason-lspconfig.nvim", enabled = false },
-          { "williamboman/mason.nvim", enabled = false },
-          -- import/override with your plugins
-          { import = "plugins" },
-          -- treesitter handled by xdg.configFile."nvim/parser", put this line at the end of spec to clear ensure_installed
-          { "nvim-treesitter/nvim-treesitter", opts = { ensure_installed = {} } },
-          },
-      })
-    '';
-  };
-
-# https://github.com/nvim-treesitter/nvim-treesitter#i-get-query-error-invalid-node-type-at-position
-  xdg.configFile."nvim/parser".source =
-    let
-    parsers = pkgs.symlinkJoin {
-      name = "treesitter-parsers";
-      paths = (pkgs.vimPlugins.nvim-treesitter.withPlugins (plugins: with plugins; [
-            c
-            lua
-      ])).dependencies;
+  programs.nixvim = {
+    enable = true;
+    
+    # 💡 基本的なエディタオプション
+    options = {
+      relativenumber = true;
+      number = true;
+      expandtab = true;
+      tabstop = 2;
+      shiftwidth = 2;
+      # 行折り返しをオフ
+      wrap = false; 
     };
-  in
-    "${parsers}/parser";
 
-# Normal LazyVim config here, see https://github.com/LazyVim/starter/tree/main/lua
-  xdg.configFile."nvim/lua".source = ./lua;
+    # 🌈 カラースキームと見た目
+    colorScheme = "catppuccin";
+    colorschemes.catppuccin = {
+      enable = true;
+      settings.flavour = "mocha"; # dark theme
+    };
+
+    # 🌟 LazyVim風のモダンな機能の有効化
+    plugins = {
+      # 起動高速化のためのプラグインローダー
+      lazy.enable = true;
+      
+      # LSPクライアントの有効化
+      lsp.enable = true;
+      
+      # 補完エンジン
+      cmp.enable = true;
+      
+      # 構文解析とハイライト
+      treesitter = {
+        enable = true;
+        settings.ensure_installed = [ 
+          "lua" "nix" "javascript" "typescript" "html" "css"
+        ];
+      };
+
+      # ファイル・バッファ・Gitなどのファジーファインダー
+      telescope.enable = true;
+      
+      # ファイルツリー
+      neo-tree.enable = true;
+      
+      # Git連携 (行単位の変更表示など)
+      gitsigns.enable = true;
+      
+      # ステータスライン
+      lualine.enable = true;
+      
+      # 言語サーバーのインストール (mason.nvimの代わり)
+      # 必要な言語サーバーをここで定義すれば、Nixがインストールしてくれます。
+      mason = {
+        enable = true;
+        # 例: TypeScript/JavaScriptとNixのLSPをインストール
+        ensureInstalled = [
+          "typescript-language-server"
+          "nil" # Nix Language Server
+        ];
+      };
+
+    };
+  };
 
   programs.wezterm = {
     enable = true;
@@ -235,7 +189,6 @@
     configHome = "${homeDirectory}/.config";
     dataHome = "${homeDirectory}/.local/share";
     cacheHome = "${homeDirectory}/.cache";
-    configFile."nvim".source = ./nvim;
     configFile."wezterm/wezterm.lua".source = ./config/wezterm.lua;
   };
 }
