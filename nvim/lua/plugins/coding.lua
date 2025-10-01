@@ -31,6 +31,7 @@ return {
       })
 
       -- LSP servers configuration using new vim.lsp.config API
+      -- Haskell
       if vim.fn.executable("haskell-language-server-wrapper") == 1 then
         vim.lsp.config.hls = {
           cmd = { "haskell-language-server-wrapper", "--lsp" },
@@ -46,7 +47,7 @@ return {
         }
         vim.lsp.enable("hls")
       end
-
+      
       -- Ruby
       if vim.fn.executable("solargraph") == 1 then
         vim.lsp.config.solargraph = {
