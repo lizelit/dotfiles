@@ -31,7 +31,7 @@
     };
     
     username = "lizelit";
-    hostname = "Mac";
+    hostname = "Mac-2";
     homeDirectory = "/Users/${username}";
   in
   {
