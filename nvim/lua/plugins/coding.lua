@@ -87,6 +87,27 @@ return {
         }
         vim.lsp.enable("texlab")
       end
+
+      -- Python
+      if vim.fn.executable("pyright-langserver") == 1 then
+        vim.lsp.config.pyright = {
+          cmd = { "pyright-langserver", "--stdio" },
+          filetypes = { "python" },
+          root_markers = { "pyproject.toml", "setup.py", "setup.cfg", "requirements.txt", ".git" },
+          capabilities = capabilities,
+          settings = {
+            python = {
+              analysis = {
+                typeCheckingMode = "basic", -- "off", "basic", "strict" に変更可
+                autoImportCompletions = true,
+                diagnosticMode = "workspace", -- or "openFilesOnly"
+              },
+            },
+          },
+        }
+        vim.lsp.enable("pyright")
+      end
+
     end,
   },
 
