@@ -49,15 +49,14 @@
           # Home Managerの設定ブロック
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.backupFileExtension = "backup";
           
           # ユーザーの設定ファイル
           home-manager.users.${username} = {
+            imports = [
+              nixvim.homeModules.nixvim
+              ./home.nix
+            ];
           };
-          home-manager.modules = [
-            ./home.nix
-            nixvim.homeModules.nixvim
-          ];
         }
       ];
       specialArgs = { 

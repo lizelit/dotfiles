@@ -1,10 +1,6 @@
 { config, pkgs, inputs, username ? "lizelit", homeDirectory ? "/Users/lizelit", ... }:
 
 {
-  imports = [
-    inputs.nixvim.homeManagerModules.nixvim
-    ./nvim/default.nix
-  ];
   # Home Manager basic configuration
   home = {
     inherit username homeDirectory;
@@ -64,9 +60,11 @@
 
     # 🌈 カラースキームと見た目
     colorScheme = "catppuccin";
-    colorschemes.catppuccin = {
-      enable = true;
-      settings.flavour = "mocha"; # dark theme
+    colorschemes = {
+      catppuccin = {
+        enable = true;
+        settings.flavour = "mocha";
+      };
     };
 
     # 🌟 LazyVim風のモダンな機能の有効化
