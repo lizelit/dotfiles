@@ -150,10 +150,6 @@
       allowUnfree = true;
     };
     
-    overlays = [
-      inputs.neovim-nightly-overlay.overlays.default
-    ];
-    
     hostPlatform = "aarch64-darwin";
   };
 

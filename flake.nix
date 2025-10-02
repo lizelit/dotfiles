@@ -15,9 +15,6 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    neovim-nightly-overlay = {
-      url = "github:nix-community/neovim-nightly-overlay";
-    };
   };
 
   outputs = { self, nixpkgs, nix-darwin, home-manager, nixvim, neovim-nightly-overlay, ... }@inputs: {
@@ -26,7 +23,7 @@
       specialArgs = {
         inherit inputs;
         username = "lizelit";
-        hostname = "Mac";
+        hostname = "Mac-2";
         homeDirectory = "/Users/lizelit";
       };
       modules = [
