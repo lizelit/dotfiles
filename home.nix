@@ -5,8 +5,7 @@
   username,
   homeDirectory,
   ...
-}:
-{
+}: {
   home.username = lib.mkForce username;
   home.homeDirectory = lib.mkForce homeDirectory;
   home.stateVersion = "24.05";
@@ -49,8 +48,11 @@
     lua-language-server
     stylua
     alejandra
-
   ];
+
+  programs.wezterm = {
+    enable = true;
+  };
 
   # NixVim設定
   programs.nixvim = {
@@ -158,7 +160,7 @@
           defaults = {
             prompt_prefix = " ";
             selection_caret = " ";
-            path_display = [ "truncate" ];
+            path_display = ["truncate"];
             sorting_strategy = "ascending";
             layout_config = {
               horizontal = {
@@ -267,10 +269,10 @@
             "<S-Tab>" = "cmp.mapping(cmp.mapping.select_prev_item(), {'i', 's'})";
           };
           sources = [
-            { name = "nvim_lsp"; }
-            { name = "path"; }
-            { name = "buffer"; }
-            { name = "luasnip"; }
+            {name = "nvim_lsp";}
+            {name = "path";}
+            {name = "buffer";}
+            {name = "luasnip";}
           ];
           snippet.expand = "function(args) require('luasnip').lsp_expand(args.body) end";
         };
@@ -391,7 +393,7 @@
         settings = {
           formatters_by_ft = {
             # Nix
-            nix = [ "alejandra" ];
+            nix = ["alejandra"];
 
             # Python
             python = [
@@ -400,23 +402,23 @@
             ];
 
             # Haskell
-            haskell = [ "fourmolu" ];
+            haskell = ["fourmolu"];
 
             # TypeScript/JavaScript
-            javascript = [ "prettier" ];
-            typescript = [ "prettier" ];
-            javascriptreact = [ "prettier" ];
-            typescriptreact = [ "prettier" ];
+            javascript = ["prettier"];
+            typescript = ["prettier"];
+            javascriptreact = ["prettier"];
+            typescriptreact = ["prettier"];
 
             # Rust
-            rust = [ "rustfmt" ];
+            rust = ["rustfmt"];
 
             # LaTeX
-            latex = [ "latexindent" ];
-            tex = [ "latexindent" ];
+            latex = ["latexindent"];
+            tex = ["latexindent"];
 
             # Lua
-            lua = [ "stylua" ];
+            lua = ["stylua"];
           };
           format_on_save = {
             lsp_fallback = true;
@@ -430,20 +432,20 @@
         enable = true;
         lintersByFt = {
           # Python
-          python = [ "ruff" ];
+          python = ["ruff"];
 
           # JavaScript/TypeScript
-          javascript = [ "eslint" ];
-          typescript = [ "eslint" ];
-          javascriptreact = [ "eslint" ];
-          typescriptreact = [ "eslint" ];
+          javascript = ["eslint"];
+          typescript = ["eslint"];
+          javascriptreact = ["eslint"];
+          typescriptreact = ["eslint"];
 
           # Haskell (hlintはLSPに含まれることが多い)
           # haskell = ["hlint"];
 
           # LaTeX
-          latex = [ "chktex" ];
-          tex = [ "chktex" ];
+          latex = ["chktex"];
+          tex = ["chktex"];
         };
       };
     };
@@ -785,16 +787,46 @@
     syntaxHighlighting.enable = true;
 
     shellAliases = {
+      # Basic aliases
       ll = "eza -la";
-      vim = "nvim";
+      la = "eza -la";
+      lt = "eza --tree";
       cat = "bat";
-      rebuild = "darwin-rebuild switch --flake ~/dotfiles";
+      grep = "rg";
+
+      # Git aliases
+      g = "git";
+      gs = "git status";
+      ga = "git add";
+      gc = "git commit";
+      gp = "git push";
+      gl = "git pull";
+
+      # Nix aliases
+      nr = "nix run";
+      ns = "nix shell";
+      nf = "nix flake";
+
+      # Darwin aliases
+      dr = "sudo darwin-rebuild switch --flake ~/dotfiles";
+      hm = "home-manager switch --flake ~/dotfiles";
     };
 
-    initContent = ''
-      export EDITOR=nvim
-      export VISUAL=nvim
-    '';
+    history = {
+      size = 10000;
+      path = "${config.xdg.dataHome}/zsh/history";
+    };
+
+    oh-my-zsh = {
+      enable = true;
+      plugins = ["git" "fzf" "docker"];
+      theme = "robbyrussell";
+    };
+  };
+
+  xdg = {
+    enable = true;
+    configFile."wezterm/wezterm.lua".source = ./config/wezterm.lua;
   };
 
   programs.home-manager.enable = true;
