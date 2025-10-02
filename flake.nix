@@ -15,21 +15,33 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    neovim-nightly-overlay = {
+      url = "github:nix-community/neovim-nightly-overlay";
+    };
   };
 
-  outputs = { self, nixpkgs, nix-darwin, home-manager, nixvim, ... }: {
+  outputs = { self, nixpkgs, nix-darwin, home-manager, nixvim, neovim-nightly-overlay, ... }@inputs: {
     darwinConfigurations."Mac-2" = nix-darwin.lib.darwinSystem {
       system = "aarch64-darwin";
+      specialArgs = {
+        inherit inputs;
+        username = "lizelit";
+        hostname = "Mac";
+        homeDirectory = "/Users/lizelit";
+      };
       modules = [
         ./darwin.nix
         home-manager.darwinModules.home-manager
         {
           home-manager = {
+            backupFileExtension = "backup";
             useGlobalPkgs = true;
             useUserPackages = true;
+            extraSpecialArgs = { inherit inputs; };
             users.lizelit = import ./home.nix;
+            # NixVimをHome-ManagerのsharedModulesとしてインポート
             sharedModules = [
-              nixvim.homeManagerModules.nixvim
+              nixvim.homeModules.nixvim
             ];
           };
         }

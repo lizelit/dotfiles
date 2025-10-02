@@ -1,8 +1,8 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   home.username = "lizelit";
-  home.homeDirectory = "/Users/lizelit";
+  home.homeDirectory = lib.mkForce "/Users/lizelit";  # NixVimのnull設定を強制上書き
   home.stateVersion = "24.05";
 
   # 基本パッケージ
@@ -288,8 +288,6 @@
         };
       };
     };
-
-
   };
 
   # direnv
