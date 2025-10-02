@@ -89,11 +89,9 @@
     globals.maplocalleader = " ";
 
     # カラースキーム
-    colorschemes.catppuccin = {
+    colorschemes.everforest = {
       enable = true;
       settings = {
-        flavour = "mocha";
-        transparent_background = false;
         integrations = {
           cmp = true;
           gitsigns = true;
@@ -111,6 +109,7 @@
       web-devicons.enable = true;
 
       # UI関連
+
       lualine = {
         enable = true;
         settings = {
