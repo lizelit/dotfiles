@@ -39,7 +39,7 @@
             extraSpecialArgs = specialArgs;
             users.lizelit = import ./home.nix;
             sharedModules = [
-              # nixvim.homeModules.nixvim
+              nixvim.homeModules.nixvim
             ];
           };
         }

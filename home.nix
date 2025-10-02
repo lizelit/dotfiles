@@ -1,11 +1,9 @@
-{ config, lib, pkgs,username,homeDirectory,inputs, ... }:
-
+{ config, lib, pkgs, username, homeDirectory, ... }:
 {
-  imports = [inputs.nixvim.homeModules.nixvim];
-
   home.username = lib.mkForce username;
   home.homeDirectory = lib.mkForce homeDirectory;
   home.stateVersion = "24.05";
+
   # 基本パッケージ
   home.packages = with pkgs; [
     ripgrep
@@ -16,13 +14,30 @@
     tree
     wget
     curl
+    fzf
+    bat
+    eza
   ];
 
   # NixVim設定
   programs.nixvim = {
-    enable = true;
-  };
+	  enable = true;
 
+	  options = {
+		  number = true;
+		  relativenumber = true;
+		  tabstop = 2;
+		  shiftwidth = 2;
+		  expandtab = true;
+	  };
+
+
+	  plugins = {
+		  lualine.enable = true;
+		  telescope.enable = true;
+		  treesitter.enable = true;
+	  };
+  };
   # direnv
   programs.direnv = {
     enable = true;
@@ -45,13 +60,15 @@
     syntaxHighlighting.enable = true;
     
     shellAliases = {
-      ll = "ls -la";
+      ll = "eza -la";
       vim = "nvim";
+      cat = "bat";
       rebuild = "darwin-rebuild switch --flake ~/dotfiles";
     };
     
     initContent = ''
       export EDITOR=nvim
+      export VISUAL=nvim
     '';
   };
 
