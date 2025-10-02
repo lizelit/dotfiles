@@ -1,10 +1,7 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, home, ... }:
 
 {
-  home.username = "lizelit";
-  home.homeDirectory = "Users/lizelit";
-  home.stateVersion = "24.05";
-
+  home.stateVerson = "24.05";
   # 基本パッケージ
   home.packages = with pkgs; [
     ripgrep

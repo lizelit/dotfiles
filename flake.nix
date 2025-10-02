@@ -17,7 +17,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, nix-darwin, home-manager, nixvim, neovim-nightly-overlay, ... }@inputs: {
+  outputs = { self, nixpkgs, nix-darwin, home-manager, nixvim, ... }@inputs: {
     darwinConfigurations."Mac-2" = nix-darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       specialArgs = {
@@ -36,7 +36,6 @@
             useUserPackages = true;
             extraSpecialArgs = { inherit inputs; };
             users.lizelit = import ./home.nix;
-            # NixVimをHome-ManagerのsharedModulesとしてインポート
             sharedModules = [
               nixvim.homeModules.nixvim
             ];
