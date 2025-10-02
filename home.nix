@@ -1,8 +1,10 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs,username,homeDirectory,inputs, ... }:
 
 {
-  home.username = "lizelit";
-  home.homeDirectory = "/Users/lizelit/";
+  imports = [inputs.nixvim.homeModules.nixvim];
+
+  home.username = lib.mkForce username;
+  home.homeDirectory = lib.mkForce homeDirectory;
   home.stateVersion = "24.05";
   # 基本パッケージ
   home.packages = with pkgs; [
@@ -48,7 +50,7 @@
       rebuild = "darwin-rebuild switch --flake ~/dotfiles";
     };
     
-    initExtra = ''
+    initContent = ''
       export EDITOR=nvim
     '';
   };

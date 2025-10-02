@@ -1,6 +1,5 @@
 {
   description = "Darwin system with NixVim and Home Manager";
-
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nix-darwin = {
@@ -16,16 +15,19 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-
-  outputs = { self, nixpkgs, nix-darwin, home-manager, nixvim, ... }@inputs: {
+  outputs = { self, nixpkgs, nix-darwin, home-manager, nixvim, ... }@inputs: 
+  let
+    username = "lizelit";
+    hostname = "Mac-2";
+    homeDirectory = "/Users/lizelit";
+    specialArgs = {
+      inherit inputs username hostname homeDirectory;
+    };
+  in
+  {
     darwinConfigurations."Mac-2" = nix-darwin.lib.darwinSystem {
       system = "aarch64-darwin";
-      specialArgs = {
-        inherit inputs;
-        username = "lizelit";
-        hostname = "Mac-2";
-        homeDirectory = "/Users/lizelit";
-      };
+      inherit specialArgs;
       modules = [
         ./darwin.nix
         home-manager.darwinModules.home-manager
@@ -34,10 +36,10 @@
             backupFileExtension = "backup";
             useGlobalPkgs = true;
             useUserPackages = true;
-            extraSpecialArgs = { inherit inputs; };
+            extraSpecialArgs = specialArgs;
             users.lizelit = import ./home.nix;
             sharedModules = [
-              nixvim.homeModules.nixvim
+              # nixvim.homeModules.nixvim
             ];
           };
         }
