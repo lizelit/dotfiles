@@ -367,7 +367,7 @@
       toggleterm = {
         enable = true;
         settings = {
-          direction = "float";
+          direction = "horizontal";
           float_opts = {
             border = "curved";
             height = 30;
