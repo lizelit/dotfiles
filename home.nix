@@ -87,6 +87,7 @@
       smartcase = true;
       mouse = "a";
       clipboard = "unnamedplus";
+      completeopt = ["menu" "menuone" "noselect"];
     };
 
     globals.mapleader = " ";
@@ -221,6 +222,7 @@
       # LSP
       lsp = {
         enable = true;
+
         servers = {
           # Nix
           nil_ls.enable = true;
@@ -249,9 +251,10 @@
           # LaTeX
           texlab.enable = true;
 
-          # Lua (for Neovim config)
+          # Lua
           lua_ls.enable = true;
         };
+
         keymaps = {
           diagnostic = {
             "<leader>cd" = "open_float";
@@ -272,7 +275,7 @@
         };
       };
 
-      # 補完
+      # 補完設定（修正版）
       cmp = {
         enable = true;
         autoEnableSources = true;
@@ -283,19 +286,32 @@
             "<C-f>" = "cmp.mapping.scroll_docs(4)";
             "<C-e>" = "cmp.mapping.close()";
             "<CR>" = "cmp.mapping.confirm({ select = true })";
-            "<Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
-            "<S-Tab>" = "cmp.mapping(cmp.mapping.select_prev_item(), {'i', 's'})";
+            "<C-n>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
+            "<C-p>" = "cmp.mapping(cmp.mapping.select_prev_item(), {'i', 's'})";
           };
           sources = [
-            {name = "nvim_lsp";}
-            {name = "path";}
-            {name = "buffer";}
-            {name = "luasnip";}
+            {
+              name = "nvim_lsp";
+              priority = 1000;
+            }
+            {
+              name = "luasnip";
+              priority = 750;
+            }
+            {
+              name = "path";
+              priority = 250;
+            }
+            {
+              name = "buffer";
+              priority = 500;
+            }
           ];
           snippet.expand = "function(args) require('luasnip').lsp_expand(args.body) end";
         };
       };
 
+      # これらは順序が重要
       cmp-nvim-lsp.enable = true;
       cmp-buffer.enable = true;
       cmp-path.enable = true;
