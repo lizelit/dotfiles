@@ -1,7 +1,10 @@
 [window]
+padding = { x = 2, y = 2}
 opacity = 0.8
 blur = true
+decorations = "Buttonless"
 
 [font]
 size = 14.0
-normal = { family = "JetBrains Nerd Mono", style = "Regular"}
+normal = { family = "JetBrainsMono Nerd Font", style = "Regular"}
+

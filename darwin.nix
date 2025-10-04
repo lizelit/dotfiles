@@ -53,12 +53,28 @@
       right_padding = 10;
       layout = "bsp";
     };
-    enableScriptingAddition = true;
+    extraConfig = ''
+      yabai -m rule --add app="Finder" manage=off
+      yabai -m rule --add app="System Settings" manage=off
+      yabai -m rule --add app="Spotify" manage=off
+    '';
   };
 
   services.skhd = {
     enable = true;
     package = pkgs.skhd;
+    skhdConfig = ''
+      ctrl - return : open -a "Alacritty"
+      shift + ctrl - return : open -a "Safari"
+      alt - h : yabai -m window --focus west
+      alt - j : yabai -m window --focus south
+      alt - k : yabai -m window --focus north
+      alt - l : yabai -m window --focus east
+      shift + alt - h : yabai -m window --swap west
+      shift + alt - j : yabai -m window --swap south
+      shift + alt - k : yabai -m window --swap north
+      shift + alt - l : yabai -m window --swap east
+    '';
   };
 
   # Homebrew configuration
@@ -76,8 +92,10 @@
       "karabiner-elements"
       "discord"
       "slack"
+      "spotify"
       "wezterm"
       "alacritty"
+      "font-jetbrains-mono-nerd-font"
     ];
 
     # CLI tools that aren't available in Nix
