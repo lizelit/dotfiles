@@ -93,18 +93,27 @@
     globals.maplocalleader = " ";
 
     # カラースキーム
-    colorschemes.everforest = {
+    # colorschemes.everforest = {
+    #   enable = true;
+    #   settings = {
+    #     integrations = {
+    #       cmp = true;
+    #       gitsigns = true;
+    #       treesitter = true;
+    #       notify = true;
+    #       mini = true;
+    #       telescope = true;
+    #       neotree = true;
+    #       transparent_background = 2;
+    #     };
+    #   };
+    # };
+
+    colorschemes.catppuccin = {
       enable = true;
       settings = {
-        integrations = {
-          cmp = true;
-          gitsigns = true;
-          treesitter = true;
-          notify = true;
-          mini = true;
-          telescope = true;
-          neotree = true;
-        };
+        transparent_background = true;
+        term_colors = true;
       };
     };
 
@@ -113,6 +122,10 @@
       web-devicons.enable = true;
 
       lean.enable = true;
+
+      remote-nvim = {
+        enable = true;
+      };
 
       # UI関連
 
