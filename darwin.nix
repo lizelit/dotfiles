@@ -46,11 +46,13 @@
     enable = true;
     package = pkgs.yabai;
     config = {
-      window_gap = 10;
-      top_padding = 10;
-      bottom_padding = 10;
-      left_padding = 10;
-      right_padding = 10;
+      window_shadow = false;
+      window_topmost = true;
+      window_gap = 4;
+      top_padding = 4;
+      bottom_padding = 4;
+      left_padding = 4;
+      right_padding = 4;
       layout = "bsp";
     };
     extraConfig = ''
