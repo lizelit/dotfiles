@@ -1,0 +1,7 @@
+[window]
+opacity = 0.8
+blur = true
+
+[font]
+size = 14.0
+normal = { family = "JetBrains Nerd Mono", style = "Regular"}
