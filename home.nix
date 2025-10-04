@@ -54,6 +54,10 @@
     enable = true;
   };
 
+  programs.alacritty = {
+    enable = true;
+  };
+
   # NixVim設定
   programs.nixvim = {
     enable = true;

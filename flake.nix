@@ -15,17 +15,22 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { self, nixpkgs, nix-darwin, home-manager, nixvim, ... }@inputs: 
-  let
+  outputs = {
+    self,
+    nixpkgs,
+    nix-darwin,
+    home-manager,
+    nixvim,
+    ...
+  } @ inputs: let
     username = "lizelit";
-    hostname = "Mac-2";
+    hostname = "Mac";
     homeDirectory = "/Users/lizelit";
     specialArgs = {
       inherit inputs username hostname homeDirectory;
     };
-  in
-  {
-    darwinConfigurations."Mac-2" = nix-darwin.lib.darwinSystem {
+  in {
+    darwinConfigurations."Mac" = nix-darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       inherit specialArgs;
       modules = [

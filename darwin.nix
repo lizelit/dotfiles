@@ -1,6 +1,12 @@
-{ config, pkgs, inputs, username, hostname, homeDirectory, ... }:
-
 {
+  config,
+  pkgs,
+  inputs,
+  username,
+  hostname,
+  homeDirectory,
+  ...
+}: {
   # Nix build user group ID configuration
   ids.gids.nixbld = 350;
 
@@ -11,13 +17,13 @@
   nix = {
     settings = {
       experimental-features = "nix-command flakes";
-      trusted-users = [ "${username}" "root" "@admin" ];
+      trusted-users = ["${username}" "root" "@admin"];
     };
-    
+
     optimise = {
       automatic = true;
     };
-    
+
     gc = {
       automatic = true;
       interval = {
@@ -58,7 +64,7 @@
   # Homebrew configuration
   homebrew = {
     enable = true;
-    
+
     onActivation = {
       autoUpdate = false;
       upgrade = false;
@@ -71,6 +77,7 @@
       "discord"
       "slack"
       "wezterm"
+      "alacritty"
     ];
 
     # CLI tools that aren't available in Nix
@@ -91,7 +98,7 @@
   # System defaults
   system = {
     stateVersion = 4;
-    
+
     defaults = {
       dock = {
         autohide = true;
@@ -149,10 +156,9 @@
     config = {
       allowUnfree = true;
     };
-    
+
     hostPlatform = "aarch64-darwin";
   };
-
 
   # Programs
   programs = {
