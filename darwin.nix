@@ -48,11 +48,11 @@
     config = {
       window_shadow = false;
       window_topmost = true;
-      window_gap = 4;
-      top_padding = 4;
-      bottom_padding = 4;
-      left_padding = 4;
-      right_padding = 4;
+      window_gap = 8;
+      top_padding = 8;
+      bottom_padding = 8;
+      left_padding = 8;
+      right_padding = 8;
       layout = "bsp";
     };
     extraConfig = ''
