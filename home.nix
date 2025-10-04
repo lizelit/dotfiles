@@ -112,6 +112,8 @@
       # アイコン（明示的に有効化）
       web-devicons.enable = true;
 
+      lean.enable = true;
+
       # UI関連
 
       lualine = {

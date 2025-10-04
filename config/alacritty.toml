@@ -1,5 +1,5 @@
 [window]
-padding = { x = 2, y = 2}
+padding = { x = 8, y = 8}
 opacity = 0.8
 blur = true
 decorations = "Buttonless"
