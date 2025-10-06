@@ -826,7 +826,7 @@
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
-    defaultKeymap = "viins";
+    defaultKeymap = "vicmd";
 
     shellAliases = {
       # Basic aliases
