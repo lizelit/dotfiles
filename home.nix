@@ -72,6 +72,7 @@
       shiftwidth = 2;
       showmode = false;
       smartindent = true;
+      cursorline = true;
       wrap = false;
       swapfile = false;
       backup = false;
