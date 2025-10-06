@@ -24,13 +24,13 @@
     ...
   } @ inputs: let
     username = "lizelit";
-    hostname = "Mac";
+    hostname = "Mac-2";
     homeDirectory = "/Users/lizelit";
     specialArgs = {
       inherit inputs username hostname homeDirectory;
     };
   in {
-    darwinConfigurations."Mac" = nix-darwin.lib.darwinSystem {
+    darwinConfigurations."Mac-2" = nix-darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       inherit specialArgs;
       modules = [

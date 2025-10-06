@@ -66,9 +66,11 @@
     opts = {
       number = true;
       relativenumber = true;
+      cmdheight = 0;
       expandtab = true;
       tabstop = 2;
       shiftwidth = 2;
+      showmode = false;
       smartindent = true;
       wrap = false;
       swapfile = false;
@@ -156,6 +158,10 @@
             ];
           };
         };
+      };
+
+      noice = {
+        enable = true;
       };
 
       # ファイルエクスプローラー
@@ -819,7 +825,6 @@
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
-    defaultKeymap = "vicmd";
 
     shellAliases = {
       # Basic aliases
