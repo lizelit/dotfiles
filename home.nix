@@ -132,6 +132,7 @@
       };
 
       # UI関連
+      zen-mode.enable = true;
 
       lualine = {
         enable = true;
@@ -790,18 +791,11 @@
         action = "<Plug>(YankyCycleBackward)";
         options.desc = "Cycle backward";
       }
-
-      # Save file
       {
-        mode = [
-          "i"
-          "x"
-          "n"
-          "s"
-        ];
-        key = "<C-s>";
-        action = "<cmd>w<cr><esc>";
-        options.desc = "Save file";
+        mode = "n";
+        key = "<leader>z";
+        action = "<cmd>ZenMode<cr>";
+        options.desc = "Toggle ZenMode";
       }
     ];
   };
