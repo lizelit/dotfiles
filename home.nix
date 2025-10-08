@@ -798,6 +798,18 @@
         options.desc = "Toggle ZenMode";
       }
     ];
+    autoCmd = [
+      {
+        event = "InsertLeave";
+        pattern = "*";
+        command = "lua vim.fn.jobstart({'macism', 'com.apple.keylayout.ABC'})";
+      }
+      {
+        event = "FocusGained";
+        pattern = "*";
+        command = "lua if vim.fn.mode() == 'n' then vim.fn.jobstart({'macism', 'com.apple.keylayout.ABC'}) end";
+      }
+    ];
   };
 
   # direnv
