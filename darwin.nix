@@ -88,6 +88,9 @@
       upgrade = false;
       cleanup = "zap";
     };
+    taps = [
+      "laishulu/homebrew"
+    ];
 
     # GUI applications
     casks = [
@@ -106,7 +109,7 @@
     # CLI tools that aren't available in Nix
     brews = [
       # Add tools here as needed
-      "im-select"
+      "macism"
     ];
 
     # Mac App Store apps
