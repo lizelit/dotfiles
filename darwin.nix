@@ -98,11 +98,15 @@
       "wezterm"
       "alacritty"
       "font-jetbrains-mono-nerd-font"
+      "visual-studio-code"
+      "obsidian"
+      "balenaetcher"
     ];
 
     # CLI tools that aren't available in Nix
     brews = [
       # Add tools here as needed
+      "im-select"
     ];
 
     # Mac App Store apps
