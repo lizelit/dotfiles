@@ -104,6 +104,7 @@
       "visual-studio-code"
       "obsidian"
       "balenaetcher"
+      "aquaskk"
     ];
 
     # CLI tools that aren't available in Nix
