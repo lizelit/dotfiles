@@ -59,6 +59,7 @@
       yabai -m rule --add app="Finder" manage=off
       yabai -m rule --add app="System Settings" manage=off
       yabai -m rule --add app="Spotify" manage=off
+      yabai -m rule --add app="Discord" manage=off
     '';
   };
 
