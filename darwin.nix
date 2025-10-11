@@ -106,6 +106,7 @@
       "obsidian"
       "balenaetcher"
       "google-chrome"
+      "hhkb"
     ];
 
     # CLI tools that aren't available in Nix
