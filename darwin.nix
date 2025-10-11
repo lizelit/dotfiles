@@ -105,7 +105,7 @@
       "visual-studio-code"
       "obsidian"
       "balenaetcher"
-      "aquaskk"
+      "google-chrome"
     ];
 
     # CLI tools that aren't available in Nix
