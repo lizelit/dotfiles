@@ -60,6 +60,8 @@
       yabai -m rule --add app="System Settings" manage=off
       yabai -m rule --add app="Spotify" manage=off
       yabai -m rule --add app="Discord" manage=off
+      yabai -m rule --add app="Slack" manage=off
+      yabai -m rule --add app="Mail" manage=off
     '';
   };
 
@@ -107,6 +109,7 @@
       "balenaetcher"
       "google-chrome"
       "hhkb"
+      "orion"
     ];
 
     # CLI tools that aren't available in Nix
