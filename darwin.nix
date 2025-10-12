@@ -70,7 +70,7 @@
     package = pkgs.skhd;
     skhdConfig = ''
       ctrl - return : open -a "Alacritty"
-      shift + ctrl - return : open -a "Safari"
+      shift + ctrl - return : open -a "orion"
       alt - h : yabai -m window --focus west
       alt - j : yabai -m window --focus south
       alt - k : yabai -m window --focus north
