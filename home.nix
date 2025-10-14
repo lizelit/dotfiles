@@ -49,7 +49,7 @@
     stylua
     alejandra
 
-    tmux
+    zellij
   ];
 
   programs.wezterm = {
