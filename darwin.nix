@@ -7,13 +7,10 @@
   homeDirectory,
   ...
 }: {
-  # Nix build user group ID configuration
   ids.gids.nixbld = 350;
 
-  # Primary user configuration (required for homebrew and system defaults)
   system.primaryUser = username;
 
-  # Nix configuration
   nix = {
     settings = {
       experimental-features = "nix-command flakes";
@@ -35,7 +32,6 @@
     };
   };
 
-  # System packages
   environment.systemPackages = with pkgs; [
     git
     curl
@@ -86,7 +82,6 @@
     '';
   };
 
-  # Homebrew configuration
   homebrew = {
     enable = true;
 
@@ -99,7 +94,6 @@
       "laishulu/homebrew"
     ];
 
-    # GUI applications
     casks = [
       "karabiner-elements"
       "discord"
@@ -114,13 +108,10 @@
       "orion"
     ];
 
-    # CLI tools that aren't available in Nix
     brews = [
-      # Add tools here as needed
       "macism"
     ];
 
-    # Mac App Store apps
     masApps = {
       "Xcode" = 497799835;
       "Amphetamine" = 937984704;
@@ -130,7 +121,6 @@
     };
   };
 
-  # System defaults
   system = {
     stateVersion = 4;
 
@@ -186,7 +176,6 @@
     };
   };
 
-  # Nixpkgs configuration
   nixpkgs = {
     config = {
       allowUnfree = true;
@@ -195,7 +184,6 @@
     hostPlatform = "aarch64-darwin";
   };
 
-  # Programs
   programs = {
     zsh.enable = true;
   };

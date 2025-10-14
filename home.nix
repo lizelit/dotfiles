@@ -10,7 +10,6 @@
   home.homeDirectory = lib.mkForce homeDirectory;
   home.stateVersion = "24.05";
 
-  # 基本パッケージ
   home.packages = with pkgs; [
     ripgrep
     fd
@@ -56,11 +55,9 @@
     enable = true;
   };
 
-  # NixVim設定
   programs.nixvim = {
     enable = true;
 
-    # LazyVimのデフォルト設定
     opts = {
       number = true;
       relativenumber = true;
@@ -94,7 +91,6 @@
     globals.mapleader = " ";
     globals.maplocalleader = " ";
 
-    # カラースキーム
     # colorschemes.everforest = {
     #   enable = true;
     #   settings = {
@@ -123,7 +119,6 @@
     # };
 
     plugins = {
-      # アイコン（明示的に有効化）
       web-devicons.enable = true;
 
       lean.enable = true;
@@ -132,7 +127,6 @@
         enable = true;
       };
 
-      # UI関連
       zen-mode.enable = true;
 
       lualine = {
@@ -167,7 +161,6 @@
         enable = true;
       };
 
-      # ファイルエクスプローラー
       neo-tree = {
         enable = true;
         closeIfLastWindow = true;
@@ -177,7 +170,6 @@
         };
       };
 
-      # ファジーファインダー
       telescope = {
         enable = true;
         extensions = {
@@ -202,7 +194,6 @@
         };
       };
 
-      # Treesitter
       treesitter = {
         enable = true;
         nixGrammars = true;
@@ -228,39 +219,31 @@
         };
       };
 
-      # LSP
       lsp = {
         enable = true;
 
         servers = {
-          # Nix
           nil_ls.enable = true;
 
-          # Python
           pyright.enable = true;
           ruff.enable = true;
 
-          # Haskell
           hls = {
             enable = true;
             installGhc = false;
           };
 
-          # TypeScript/JavaScript
           ts_ls.enable = true;
           eslint.enable = true;
 
-          # Rust
           rust_analyzer = {
             enable = true;
             installCargo = false;
             installRustc = false;
           };
 
-          # LaTeX
           texlab.enable = true;
 
-          # Lua
           lua_ls.enable = true;
         };
 
@@ -284,7 +267,6 @@
         };
       };
 
-      # 補完設定（修正版）
       cmp = {
         enable = true;
         autoEnableSources = true;
@@ -320,7 +302,6 @@
         };
       };
 
-      # これらは順序が重要
       cmp-nvim-lsp.enable = true;
       cmp-buffer.enable = true;
       cmp-path.enable = true;
@@ -328,7 +309,6 @@
       cmp_luasnip.enable = true;
       friendly-snippets.enable = true;
 
-      # Git統合
       gitsigns = {
         enable = true;
         settings = {
@@ -349,7 +329,6 @@
 
       lazygit.enable = true;
 
-      # コード編集補助
       comment.enable = true;
       nvim-autopairs.enable = true;
       nvim-surround.enable = true;
@@ -386,7 +365,6 @@
         };
       };
 
-      # インデントガイド
       indent-blankline = {
         enable = true;
         settings = {
@@ -398,7 +376,6 @@
         };
       };
 
-      # 通知
       notify = {
         enable = true;
         settings = {
@@ -407,46 +384,36 @@
         };
       };
 
-      # ヤンク履歴
       yanky.enable = true;
 
-      # その他便利プラグイン
       todo-comments.enable = true;
       trouble.enable = true;
       flash.enable = true;
       persistence.enable = true;
 
-      # フォーマッター
       conform-nvim = {
         enable = true;
         settings = {
           formatters_by_ft = {
-            # Nix
             nix = ["alejandra"];
 
-            # Python
             python = [
               "black"
               "isort"
             ];
 
-            # Haskell
             haskell = ["fourmolu"];
 
-            # TypeScript/JavaScript
             javascript = ["prettier"];
             typescript = ["prettier"];
             javascriptreact = ["prettier"];
             typescriptreact = ["prettier"];
 
-            # Rust
             rust = ["rustfmt"];
 
-            # LaTeX
             latex = ["latexindent"];
             tex = ["latexindent"];
 
-            # Lua
             lua = ["stylua"];
           };
           format_on_save = {
@@ -456,32 +423,23 @@
         };
       };
 
-      # Linter
       lint = {
         enable = true;
         lintersByFt = {
-          # Python
           python = ["ruff"];
 
-          # JavaScript/TypeScript
           javascript = ["eslint"];
           typescript = ["eslint"];
           javascriptreact = ["eslint"];
           typescriptreact = ["eslint"];
 
-          # Haskell (hlintはLSPに含まれることが多い)
-          # haskell = ["hlint"];
-
-          # LaTeX
           latex = ["chktex"];
           tex = ["chktex"];
         };
       };
     };
 
-    # キーマッピング（LazyVim風）
     keymaps = [
-      # 基本操作
       {
         mode = "n";
         key = "<Esc>";
@@ -495,7 +453,6 @@
         options.desc = "Quit all";
       }
 
-      # Telescope
       {
         mode = "n";
         key = "<leader>ff";
@@ -539,7 +496,6 @@
         options.desc = "Switch Buffer";
       }
 
-      # Neo-tree
       {
         mode = "n";
         key = "<leader>e";
@@ -553,7 +509,6 @@
         options.desc = "Focus Explorer";
       }
 
-      # Buffer操作
       {
         mode = "n";
         key = "<S-h>";
@@ -579,7 +534,6 @@
         options.desc = "Switch to Other Buffer";
       }
 
-      # Window操作
       {
         mode = "n";
         key = "<leader>ww";
@@ -629,7 +583,6 @@
         options.desc = "Go to right window";
       }
 
-      # Git
       {
         mode = "n";
         key = "<leader>gg";
@@ -661,7 +614,6 @@
         options.desc = "Prev Hunk";
       }
 
-      # Diagnostics
       {
         mode = "n";
         key = "<leader>xx";
@@ -687,7 +639,6 @@
         options.desc = "Quickfix List (Trouble)";
       }
 
-      # Better indenting
       {
         mode = "v";
         key = "<";
@@ -701,7 +652,6 @@
         options.desc = "Indent right";
       }
 
-      # Move lines
       {
         mode = "n";
         key = "<A-j>";
@@ -727,7 +677,6 @@
         options.desc = "Move up";
       }
 
-      # Yanky
       {
         mode = "n";
         key = "<leader>p";
@@ -785,21 +734,18 @@
     ];
   };
 
-  # direnv
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
     enableZshIntegration = true;
   };
 
-  # Git
   programs.git = {
     enable = true;
     userName = "lizelit";
     userEmail = "lizelit.you@gmail.com";
   };
 
-  # Zsh
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -834,14 +780,12 @@
     '';
 
     shellAliases = {
-      # Basic aliases
       ll = "eza -la";
       la = "eza -la";
       lt = "eza --tree";
       cat = "bat";
       grep = "rg";
 
-      # Git aliases
       g = "git";
       gs = "git status";
       ga = "git add";
@@ -849,12 +793,10 @@
       gp = "git push";
       gl = "git pull";
 
-      # Nix aliases
       nr = "nix run";
       ns = "nix shell";
       nf = "nix flake";
 
-      # Darwin aliases
       dr = "sudo darwin-rebuild switch --flake ~/dotfiles";
       hm = "home-manager switch --flake ~/dotfiles";
     };
