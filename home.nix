@@ -870,7 +870,6 @@
 
   xdg = {
     enable = true;
-    configFile."wezterm/wezterm.lua".source = ./config/wezterm.lua;
     configFile."alacritty/alacritty.toml".source = ./config/alacritty.toml;
   };
 
