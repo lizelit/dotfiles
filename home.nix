@@ -50,8 +50,6 @@
     alejandra
 
     zellij
-    fzf
-    z
   ];
 
   programs.alacritty = {
