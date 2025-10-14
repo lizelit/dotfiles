@@ -105,13 +105,11 @@
       "discord"
       "slack"
       "spotify"
-      "wezterm"
       "alacritty"
       "font-jetbrains-mono-nerd-font"
       "visual-studio-code"
       "obsidian"
       "balenaetcher"
-      "google-chrome"
       "hhkb"
       "orion"
     ];

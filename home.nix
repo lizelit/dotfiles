@@ -52,10 +52,6 @@
     zellij
   ];
 
-  programs.wezterm = {
-    enable = true;
-  };
-
   programs.alacritty = {
     enable = true;
   };
@@ -825,7 +821,12 @@
         session=$(basename "$(realpath "$dir")")
 
         cd "$dir" || return
-        zellij attach --create "$session"
+
+        if zellij list-sessions | grep -q "^$session$"; then
+          zellij attach "$session"
+        else
+          zellij attach --create "$session"
+        fi
       }
     '';
 
