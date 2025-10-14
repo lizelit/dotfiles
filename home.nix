@@ -805,7 +805,29 @@
     enable = true;
     enableCompletion = true;
     autosuggestion.enable = true;
+    autosuggestions.strategy = "completion";
     syntaxHighlighting.enable = true;
+
+    initContent = ''
+      zel() {
+        if [ -z "$1" ]; then
+          echo "Usage: zel <directory>"
+          return 1
+        fi
+
+        local dir="$1"
+        if [ ! -d "$dir" ]; then
+          echo "Error: '$dir' is not a directory"
+          return 1
+        fi
+
+        local session
+        session=$(basename "$(realpath "$dir")")
+
+        cd "$dir" || return
+        zellij attach --create "$session"
+      }
+    '';
 
     shellAliases = {
       # Basic aliases
