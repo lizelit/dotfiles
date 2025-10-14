@@ -48,6 +48,8 @@
     lua-language-server
     stylua
     alejandra
+
+    tmux
   ];
 
   programs.wezterm = {
