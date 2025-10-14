@@ -796,7 +796,7 @@
   programs.git = {
     enable = true;
     userName = "lizelit";
-    userEmail = "takku.hana@icloud.com";
+    userEmail = "lizelit.you@gmail.com";
   };
 
   # Zsh
