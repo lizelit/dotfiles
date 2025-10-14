@@ -874,6 +874,7 @@
   xdg = {
     enable = true;
     configFile."alacritty/alacritty.toml".source = ./config/alacritty.toml;
+    configFile."zellij/config.kdl".source = ./config/zellij.kdl;
   };
 
   programs.home-manager.enable = true;
