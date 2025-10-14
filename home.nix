@@ -110,14 +110,17 @@
     #     };
     #   };
     # };
-
-    colorschemes.catppuccin = {
+    colorschemes.gruvbox-material-nvim = {
       enable = true;
-      settings = {
-        transparent_background = true;
-        term_colors = true;
-      };
     };
+
+    # colorschemes.catppuccin = {
+    #   enable = true;
+    #   settings = {
+    #     transparent_background = true;
+    #     term_colors = true;
+    #   };
+    # };
 
     plugins = {
       # アイコン（明示的に有効化）
