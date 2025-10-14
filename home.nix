@@ -805,7 +805,7 @@
     enable = true;
     enableCompletion = true;
     autosuggestion.enable = true;
-    autosuggestion.strategy = "completion";
+    autosuggestion.strategy = ["history" "completion"];
     syntaxHighlighting.enable = true;
 
     initContent = ''
