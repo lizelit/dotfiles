@@ -77,6 +77,8 @@
       alt - j : yabai -m window --focus south
       alt - k : yabai -m window --focus north
       alt - l : yabai -m window --focus east
+      alt - p : yabai -m display --focus prev
+      alt - n : yabai -m display --focus next
       shift + alt - h : yabai -m window --swap west
       shift + alt - j : yabai -m window --swap south
       shift + alt - k : yabai -m window --swap north
