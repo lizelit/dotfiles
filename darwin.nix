@@ -56,6 +56,8 @@
       layout = "bsp";
     };
     extraConfig = ''
+      yabai -m config focus_follows_mouse autoraise
+      yabai -m config mouse_follows_focus on
       yabai -m rule --add app="Finder" manage=off
       yabai -m rule --add app="System Settings" manage=off
       yabai -m rule --add app="Spotify" manage=off
