@@ -408,20 +408,6 @@
         };
       };
 
-      # ターミナル
-      toggleterm = {
-        enable = true;
-        settings = {
-          direction = "horizontal";
-          float_opts = {
-            border = "curved";
-            height = 30;
-            width = 130;
-          };
-          open_mapping = "[[<c-\\>]]";
-        };
-      };
-
       # ヤンク履歴
       yanky.enable = true;
 
@@ -700,20 +686,6 @@
         key = "<leader>xq";
         action = "<cmd>Trouble qflist toggle<cr>";
         options.desc = "Quickfix List (Trouble)";
-      }
-
-      # Terminal
-      {
-        mode = "n";
-        key = "<leader>ft";
-        action = "<cmd>ToggleTerm<cr>";
-        options.desc = "Terminal";
-      }
-      {
-        mode = "t";
-        key = "<C-\\>";
-        action = "<cmd>close<cr>";
-        options.desc = "Hide Terminal";
       }
 
       # Better indenting
