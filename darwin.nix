@@ -175,7 +175,7 @@
       };
 
       screencapture = {
-        location = "~/Screenshots";
+        location = "~/Pictures/Screenshots";
         type = "png";
       };
     };
