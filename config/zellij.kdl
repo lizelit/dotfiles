@@ -1,2 +1,4 @@
-theme: "gruvbox-dark"
+theme "gruvbox-dark"
+show_startup_tips false
+simplified_ui true
 
