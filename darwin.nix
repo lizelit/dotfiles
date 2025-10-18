@@ -67,8 +67,8 @@
     enable = true;
     package = pkgs.skhd;
     skhdConfig = ''
-      ctrl - return : open -a "Alacritty"
-      ctrl + alt - return : open -a "zen"
+      ctrl + cmd - t : open -a "Alacritty"
+      ctrl + cmd - b : open -a "zen"
       alt - h : yabai -m window --focus west
       alt - j : yabai -m window --focus south
       alt - k : yabai -m window --focus north
