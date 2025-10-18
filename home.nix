@@ -42,6 +42,8 @@
     rust-analyzer
     rustfmt
 
+    elan
+
     texlive.combined.scheme-full
 
     lua-language-server
