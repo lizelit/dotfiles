@@ -68,13 +68,13 @@
     package = pkgs.skhd;
     skhdConfig = ''
       ctrl - return : open -a "Alacritty"
-      ctrl + alt - return : open -a "orion"
+      ctrl + alt - return : open -a "zen"
       alt - h : yabai -m window --focus west
       alt - j : yabai -m window --focus south
       alt - k : yabai -m window --focus north
       alt - l : yabai -m window --focus east
-      alt - left : yabai -m display --focus prev
-      alt - right : yabai -m display --focus next
+      shift + alt - left : yabai -m display --focus prev
+      shift + alt - right : yabai -m display --focus next
       shift + alt - h : yabai -m window --swap west
       shift + alt - j : yabai -m window --swap south
       shift + alt - k : yabai -m window --swap north
@@ -106,6 +106,8 @@
       "balenaetcher"
       "hhkb"
       "orion"
+      "skim"
+      "zen"
     ];
 
     brews = [
