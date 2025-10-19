@@ -62,6 +62,7 @@
 
   programs.nixvim = {
     enable = true;
+    defaultEditor = true;
 
     opts = {
       number = true;
@@ -822,6 +823,9 @@
     enable = true;
     configFile."alacritty/alacritty.toml".source = ./config/alacritty.toml;
     configFile."zellij/config.kdl".source = ./config/zellij.kdl;
+    configFile."zellij/layouts".source = ./config/layouts;
+    configFile."starship.toml".source = ./config/starship.toml;
+    configFile."yazi/yazi.toml".source = ./config/yazi.toml;
   };
 
   programs.btop = {
@@ -874,6 +878,11 @@
   };
 
   programs.starship = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  programs.yazi = {
     enable = true;
     enableZshIntegration = true;
   };

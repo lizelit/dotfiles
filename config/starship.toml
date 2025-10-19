@@ -3,7 +3,7 @@
 # Gruvbox Dark Inspired Prompt 🌿
 
 format = """
-[╭─](fg:#928374)$username$hostname$directory$git_branch$git_status$cmd_duration
+[╭─](fg:#928374)$username$hostname$directory$git_branch$git_status
 [╰─](fg:#928374)$character
 """
 
@@ -47,11 +47,11 @@ vicmd_symbol = "[❮](bold fg:#83a598)"
 
 # === Extras ===
 
-[time]
-disabled = false
-format = "[$time]($style) "
-time_format = "%H:%M"
-style = "fg:#928374"
-
+# [time]
+# disabled = true
+# format = "[$time]($style) "
+# time_format = "%H:%M"
+# style = "fg:#928374"
+#
 [battery]
 disabled = true

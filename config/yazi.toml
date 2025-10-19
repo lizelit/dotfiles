@@ -1,0 +1,12 @@
+[opener]
+edit = [
+  # 選んだファイルを右ペインの nvim に送る
+  { run = "zellij action --target nvim-pane send-keys ':e \"${@}\"<Enter>'", desc = "Open in nvim" }
+]
+
+[open]
+rules = [
+  { name = "*/", use = "edit" },       # ディレクトリは nvim で開く（:e で遷移）
+  { mime = "text/*", use = "edit" },    # テキストファイルも nvim
+  { ext = "png|jpg|pdf", use = "open" } # 画像や PDF は別アプリで開く
+]
