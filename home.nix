@@ -23,6 +23,8 @@
     bat
     eza
     fastfetch
+    yazi
+    lazygit
 
     python3
     black
@@ -825,7 +827,7 @@
   programs.btop = {
     enable = true;
     settings = {
-      color_theme = "gruvbox_material_dark";
+      color_theme = "gruvbox";
     };
     themes = {
       gruvbox = ''
@@ -869,6 +871,11 @@
         theme[upload_end]=""
       '';
     };
+  };
+
+  programs.starship = {
+    enable = true;
+    enableZshIntegration = true;
   };
 
   programs.home-manager.enable = true;
