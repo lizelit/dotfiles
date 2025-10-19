@@ -97,32 +97,9 @@
     globals.mapleader = " ";
     globals.maplocalleader = " ";
 
-    # colorschemes.everforest = {
-    #   enable = true;
-    #   settings = {
-    #     integrations = {
-    #       cmp = true;
-    #       gitsigns = true;
-    #       treesitter = true;
-    #       notify = true;
-    #       mini = true;
-    #       telescope = true;
-    #       neotree = true;
-    #       transparent_background = 2;
-    #     };
-    #   };
-    # };
     colorschemes.gruvbox-material-nvim = {
       enable = true;
     };
-
-    # colorschemes.catppuccin = {
-    #   enable = true;
-    #   settings = {
-    #     transparent_background = true;
-    #     term_colors = true;
-    #   };
-    # };
 
     plugins = {
       web-devicons.enable = true;
@@ -823,6 +800,7 @@
     enable = true;
     configFile."alacritty/alacritty.toml".source = ./config/alacritty.toml;
     configFile."zellij/config.kdl".source = ./config/zellij.kdl;
+    configFile."yazi/keymap.toml".source = ./config/keymap.toml;
     configFile."zellij/layouts".source = ./config/layouts;
     configFile."starship.toml".source = ./config/starship.toml;
     configFile."yazi/yazi.toml".source = ./config/yazi.toml;
