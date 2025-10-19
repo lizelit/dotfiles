@@ -1,0 +1,57 @@
+
+# ~/.config/starship.toml
+# Gruvbox Dark Inspired Prompt 🌿
+
+format = """
+[╭─](fg:#928374)$username$hostname$directory$git_branch$git_status$cmd_duration
+[╰─](fg:#928374)$character
+"""
+
+# === Modules ===
+
+[username]
+style_user = "bold fg:#b8bb26"
+show_always = false
+
+[hostname]
+style = "fg:#fabd2f"
+ssh_only = true
+format = "[@$hostname]($style) "
+
+[directory]
+style = "fg:#83a598"
+truncation_length = 3
+truncate_to_repo = false
+read_only = " "
+read_only_style = "fg:#fb4934"
+format = "[$path]($style)[$read_only]($read_only_style) "
+
+[git_branch]
+symbol = " "
+style = "fg:#d3869b"
+format = "on [$symbol$branch]($style) "
+
+[git_status]
+style = "fg:#fe8019"
+format = "([$all_status$ahead_behind]($style)) "
+
+[cmd_duration]
+min_time = 500
+style = "fg:#bdae93"
+format = "took [$duration]($style) "
+
+[character]
+success_symbol = "[❯](bold fg:#b8bb26)"
+error_symbol = "[❯](bold fg:#fb4934)"
+vicmd_symbol = "[❮](bold fg:#83a598)"
+
+# === Extras ===
+
+[time]
+disabled = false
+format = "[$time]($style) "
+time_format = "%H:%M"
+style = "fg:#928374"
+
+[battery]
+disabled = true
