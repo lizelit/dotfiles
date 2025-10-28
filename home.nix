@@ -32,6 +32,7 @@
     ruff
 
     ghc
+    stack
     haskell-language-server
     fourmolu
 
@@ -57,6 +58,10 @@
   ];
 
   programs.alacritty = {
+    enable = true;
+  };
+
+  programs.helix = {
     enable = true;
   };
 
@@ -356,6 +361,18 @@
             show_start = true;
             show_end = true;
           };
+        };
+      };
+      toggleterm = {
+        enable = true;
+        settings = {
+          direction = "horizontal";
+          float_opts = {
+            border = "curved";
+            height = 30;
+            width = 130;
+          };
+          open_mapping = "[[<c-\\>]]";
         };
       };
 
@@ -710,7 +727,7 @@
         command = "lua vim.fn.jobstart({'macism', 'com.apple.keylayout.ABC'})";
       }
       {
-        event = "FocusGained";
+        event = "WinEnter";
         pattern = "*";
         command = "lua if vim.fn.mode() == 'n' then vim.fn.jobstart({'macism', 'com.apple.keylayout.ABC'}) end";
       }
@@ -760,6 +777,7 @@
           zellij attach --create "$session"
         fi
       }
+      EDITOR=nvim
     '';
 
     shellAliases = {
@@ -804,6 +822,8 @@
     configFile."zellij/layouts".source = ./config/layouts;
     configFile."starship.toml".source = ./config/starship.toml;
     configFile."yazi/yazi.toml".source = ./config/yazi.toml;
+    configFile."helix/config.toml".source = ./config/helix/config.toml;
+    configFile."helix/languages.toml".source = ./config/helix/languages.toml
   };
 
   programs.btop = {

@@ -1,11 +1,11 @@
-layout {
-    pane size="30%" {
-        command "yazi"
-        name "yazi-pane"
-    }
-    pane {
-        command "nvim"
-        name "nvim-pane"
-    }
-}
-
+// layout {
+//     pane size="30%" {
+//         command "yazi"
+//         name "yazi-pane"
+//     }
+//     pane {
+//         command "nvim"
+//         name "nvim-pane"
+//     }
+// }
+//

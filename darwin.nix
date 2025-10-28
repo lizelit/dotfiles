@@ -60,6 +60,12 @@
       yabai -m rule --add app="Discord" manage=off
       yabai -m rule --add app="Slack" manage=off
       yabai -m rule --add app="Mail" manage=off
+      yabai -m signal --add event=window_focused \
+        app="^Alacritty$" \
+        action="/opt/homebrew/bin/macism com.apple.keylayout.ABC"
+      yabai -m signal --add event=application_front_switched \
+        app="^Alacritty$" \
+        action="/opt/homebrew/bin/macism com.apple.keylayout.ABC"
     '';
   };
 
@@ -108,6 +114,9 @@
       "orion"
       "skim"
       "zen"
+      "zoom"
+      "google-chrome"
+      "zed"
     ];
 
     brews = [

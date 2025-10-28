@@ -1,4 +1,4 @@
-theme = "gruvbox"
+theme = "gruvbox-material"
 
 [editor]
 line-number = "relative"
@@ -9,6 +9,7 @@ true-color = true
 rulers = [100]
 scrolloff = 5
 mouse = true
+auto-completion = true
 
 [editor.cursor-shape]
 insert = "bar"
@@ -24,3 +25,9 @@ display-inlay-hints = true
 
 [editor.soft-wrap]
 enable = true
+
+[keys.normal]
+# "esc" = [":sh macism com.apple.keylayout.ABC", "normal_mode"]
+
+[keys.insert]
+"esc" = [":sh macism com.apple.keylayout.ABC", "normal_mode"]
