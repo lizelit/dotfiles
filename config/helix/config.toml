@@ -26,6 +26,9 @@ display-inlay-hints = true
 [editor.soft-wrap]
 enable = true
 
+[editor.indent-guides]
+render = true
+
 [keys.normal]
 # "esc" = [":sh macism com.apple.keylayout.ABC", "normal_mode"]
 

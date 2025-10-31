@@ -117,6 +117,7 @@
       "zoom"
       "google-chrome"
       "zed"
+      "monitorcontrol"
     ];
 
     brews = [

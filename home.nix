@@ -31,6 +31,9 @@
     isort
     ruff
 
+    typst
+    tinymist
+
     ghc
     stack
     haskell-language-server
@@ -777,7 +780,7 @@
           zellij attach --create "$session"
         fi
       }
-      EDITOR=nvim
+      EDITOR=hx
     '';
 
     shellAliases = {
@@ -823,7 +826,7 @@
     configFile."starship.toml".source = ./config/starship.toml;
     configFile."yazi/yazi.toml".source = ./config/yazi.toml;
     configFile."helix/config.toml".source = ./config/helix/config.toml;
-    configFile."helix/languages.toml".source = ./config/helix/languages.toml
+    configFile."helix/languages.toml".source = ./config/helix/languages.toml;
   };
 
   programs.btop = {
