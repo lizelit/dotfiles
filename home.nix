@@ -11,57 +11,23 @@
   home.stateVersion = "24.05";
 
   home.packages = with pkgs; [
-    ripgrep
-    fd
-    git
-    gcc
-    nodejs
-    tree
-    wget
-    curl
-    fzf
-    bat
-    eza
-    fastfetch
-    yazi
-    lazygit
-
-    python3
-    black
-    isort
-    ruff
-
-    typst
-    tinymist
-
-    ghc
-    stack
-    haskell-language-server
-    fourmolu
-
-    nodejs
-    nodePackages.typescript
-    nodePackages.prettier
-    nodePackages.eslint
-
-    rustc
-    cargo
-    rust-analyzer
-    rustfmt
-
-    elan
-
-    texlive.combined.scheme-full
-
-    lua-language-server
-    stylua
-    alejandra
-
-    zellij
+    ripgrep fd tree fzf bat btop delta eza fastfetch yazi lazygit zellij
+    typst tinymist
+    rustc cargo rust-analyzer rustfmt clippy
+    ghc stack haskell-language-server fourmolu
+    (python3.withPackages (ps: with ps; [
+      numpy
+    ]))
+    pyright black isort ruff
   ];
 
   programs.alacritty = {
     enable = true;
+  };
+
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
   };
 
   programs.helix = {
@@ -79,43 +45,20 @@
     userName = "lizelit";
     userEmail = "lizelit.you@gmail.com";
   };
-
+  home.sessionVariables = {
+    EDITOR = "hx";
+    VISUAL = "hx";
+  };
+  
   programs.zsh = {
     enable = true;
     enableCompletion = true;
     autosuggestion.enable = true;
     autosuggestion.strategy = ["history" "completion"];
     syntaxHighlighting.enable = true;
-
-    initContent = ''
-      zel() {
-        if [ -z "$1" ]; then
-          echo "Usage: zel <directory>"
-          return 1
-        fi
-
-        local dir="$1"
-        if [ ! -d "$dir" ]; then
-          echo "Error: '$dir' is not a directory"
-          return 1
-        fi
-
-        local session
-        session=$(basename "$(realpath "$dir")")
-
-        cd "$dir" || return
-
-        if zellij list-sessions | grep -q "^$session$"; then
-          zellij attach "$session"
-        else
-          zellij attach --create "$session"
-        fi
-      }
-      EDITOR=hx
-    '';
-
     shellAliases = {
-      ll = "eza -la";
+      e = "$EDITOR";
+      ls = "eza";
       la = "eza -la";
       lt = "eza --tree";
       cat = "bat";

@@ -7,7 +7,7 @@ color-modes = true
 bufferline = "multiple"
 true-color = true
 rulers = [100]
-scrolloff = 5
+scrolloff = 8
 mouse = true
 auto-completion = true
 
@@ -17,7 +17,7 @@ normal = "block"
 select = "underline"
 
 [editor.file-picker]
-hidden = false
+hidden = true
 
 [editor.lsp]
 display-messages = true

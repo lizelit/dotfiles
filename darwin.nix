@@ -33,6 +33,10 @@
   };
 
   environment.systemPackages = with pkgs; [
+    gcc
+    gnumake
+    pkg-config
+    cmake
     git
     curl
     wget
@@ -92,8 +96,8 @@
     enable = true;
 
     onActivation = {
-      autoUpdate = false;
-      upgrade = false;
+      autoUpdate = true;
+      upgrade = true;
       cleanup = "zap";
     };
     taps = [
