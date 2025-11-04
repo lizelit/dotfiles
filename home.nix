@@ -21,6 +21,10 @@
     pyright black isort ruff
   ];
 
+  programs.spotify-player = {
+    enable = true;
+  };
+
   programs.alacritty = {
     enable = true;
   };
@@ -63,6 +67,8 @@
       lt = "eza --tree";
       cat = "bat";
       grep = "rg";
+
+      spp = "spotify_player";
 
       g = "git";
       gs = "git status";

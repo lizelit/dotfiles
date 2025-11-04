@@ -115,7 +115,7 @@
       "obsidian"
       "balenaetcher"
       "hhkb"
-      "orion"
+      "firefox"
       "skim"
       "zen"
       "zoom"
