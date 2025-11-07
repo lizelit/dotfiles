@@ -21,6 +21,18 @@
     pyright black isort ruff
   ];
 
+  textfox = {
+    enable = true;
+    profile = "default-release";
+    config = {
+      displayHorizontalTabs = false;
+      displayNavButtons = false;
+      displayUrlbarIcons = false;
+      displaySidebarTools = false;
+      displayTitles = false;
+    };
+  };
+
   programs.spotify-player = {
     enable = true;
   };

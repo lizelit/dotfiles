@@ -14,6 +14,10 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    textfox = {
+      url = "github:adriankarlen/textfox";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = {
     self,
@@ -21,6 +25,7 @@
     nix-darwin,
     home-manager,
     nixvim,
+    textfox,
     ...
   } @ inputs: let
     username = "lizelit";
@@ -45,6 +50,7 @@
             users.lizelit = import ./home.nix;
             sharedModules = [
               nixvim.homeModules.nixvim
+              textfox.homeManagerModules.default
             ];
           };
         }
