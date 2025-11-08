@@ -6,10 +6,14 @@ cursorline = true
 color-modes = true
 bufferline = "multiple"
 true-color = true
-rulers = [100]
-scrolloff = 8
-mouse = true
-auto-completion = true
+completion-trigger-len = 1
+completion-timeout = 2
+
+trim-trailing-whitespace = true
+
+rulers = [80]
+
+auto-info = true
 
 [editor.cursor-shape]
 insert = "bar"
@@ -20,8 +24,13 @@ select = "underline"
 hidden = true
 
 [editor.lsp]
+enable = true
 display-messages = true
 display-inlay-hints = true
+auto-signature-help = true
+display-signature-help-docs = true
+snippets = true
+goto-reference-include-declaration = true
 
 [editor.soft-wrap]
 enable = true
@@ -29,8 +38,11 @@ enable = true
 [editor.indent-guides]
 render = true
 
-[keys.normal]
-# "esc" = [":sh macism com.apple.keylayout.ABC", "normal_mode"]
-
 [keys.insert]
 "esc" = [":sh macism com.apple.keylayout.ABC", "normal_mode"]
+
+[editor.statusline]
+left = ["mode", "spinner", "version-control", "file-name", "file-modification-indicator"]
+center = []
+right = ["diagnostics", "selections", "position", "file-encoding"]
+separator = "│"

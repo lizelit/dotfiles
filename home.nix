@@ -25,7 +25,6 @@
     enable = true;
     profile = "default-release";
     config = {
-      displayHorizontalTabs = false;
       displayNavButtons = false;
       displayUrlbarIcons = false;
       displaySidebarTools = false;
