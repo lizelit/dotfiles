@@ -115,11 +115,9 @@
       "balenaetcher"
       "hhkb"
       "zen"
-      "floorp"
       "skim"
       "zoom"
       "google-chrome"
-      "zed"
       "monitorcontrol"
       "notchnook"
     ];
