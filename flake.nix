@@ -1,5 +1,5 @@
 {
-  description = "Darwin system with NixVim and Home Manager";
+  description = "Darwin system and Home Manager";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nix-darwin = {
@@ -10,22 +10,12 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    textfox = {
-      url = "github:adriankarlen/textfox";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
   outputs = {
     self,
     nixpkgs,
     nix-darwin,
     home-manager,
-    nixvim,
-    textfox,
     ...
   } @ inputs: let
     username = "lizelit";
@@ -49,8 +39,6 @@
             extraSpecialArgs = specialArgs;
             users.lizelit = import ./home.nix;
             sharedModules = [
-              nixvim.homeModules.nixvim
-              textfox.homeManagerModules.default
             ];
           };
         }

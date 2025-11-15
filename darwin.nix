@@ -48,11 +48,11 @@
     config = {
       window_shadow = false;
       window_topmost = true;
-      window_gap = 8;
-      top_padding = 8;
-      bottom_padding = 8;
-      left_padding = 8;
-      right_padding = 8;
+      window_gap = 2;
+      top_padding = 0;
+      bottom_padding = 0;
+      left_padding = 0;
+      right_padding = 0;
       layout = "bsp";
     };
     extraConfig = ''
@@ -78,7 +78,7 @@
     package = pkgs.skhd;
     skhdConfig = ''
       ctrl + cmd - t : open -a "Alacritty"
-      ctrl + cmd - b : open -a "firefox"
+      ctrl + cmd - b : open -a "zen"
       alt - h : yabai -m window --focus west
       alt - j : yabai -m window --focus south
       alt - k : yabai -m window --focus north
@@ -112,16 +112,16 @@
       "alacritty"
       "font-jetbrains-mono-nerd-font"
       "visual-studio-code"
-      "obsidian"
       "balenaetcher"
       "hhkb"
-      "firefox"
-      "skim"
       "zen"
+      "floorp"
+      "skim"
       "zoom"
       "google-chrome"
       "zed"
       "monitorcontrol"
+      "notchnook"
     ];
 
     brews = [

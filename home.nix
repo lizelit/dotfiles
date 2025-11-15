@@ -12,25 +12,15 @@
 
   home.packages = with pkgs; [
     ripgrep fd tree fzf bat btop delta eza fastfetch yazi lazygit zellij
-    typst tinymist
     rustc cargo rust-analyzer rustfmt clippy
     ghc stack haskell-language-server fourmolu
     (python3.withPackages (ps: with ps; [
       numpy
     ]))
     pyright black isort ruff
+    chez
   ];
 
-  textfox = {
-    enable = true;
-    profile = "default-release";
-    config = {
-      displayNavButtons = false;
-      displayUrlbarIcons = false;
-      displaySidebarTools = false;
-      displayTitles = false;
-    };
-  };
 
   programs.spotify-player = {
     enable = true;
@@ -64,7 +54,7 @@
     EDITOR = "hx";
     VISUAL = "hx";
   };
-  
+
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -94,6 +84,7 @@
 
       dr = "sudo darwin-rebuild switch --flake ~/dotfiles";
       hm = "home-manager switch --flake ~/dotfiles";
+      ss = "scheme --script";
     };
 
     history = {
@@ -106,6 +97,11 @@
       plugins = ["git" "fzf" "docker"];
       theme = "robbyrussell";
     };
+    initContent = ''
+        if [ -z "$ZELLIJ_PANE_ID" ]; then
+          zellij attach dev 2>/dev/null || zellij --session dev
+        fi
+      '';
   };
 
   xdg = {
