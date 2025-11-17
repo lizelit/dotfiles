@@ -18,7 +18,7 @@
       numpy
     ]))
     pyright black isort ruff
-    chez
+    racket-minimal
   ];
 
 
