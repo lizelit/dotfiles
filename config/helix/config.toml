@@ -11,8 +11,6 @@ completion-timeout = 2
 
 trim-trailing-whitespace = true
 
-rulers = [80]
-
 auto-info = true
 
 [editor.cursor-shape]
@@ -47,69 +45,3 @@ left = ["mode", "spinner", "version-control", "file-name", "file-modification-in
 center = []
 right = ["diagnostics", "selections", "position", "file-encoding"]
 separator = "│"
-
-
-# Match next inner pairs
-[keys.normal.m.n.i]
-
-"(" = "@s\\(<ret>nmim"
-
-"{" = "@s\\{<ret>nmim"
-
-"[" = "@s\\[<ret>nmim"
-
-'"' = '@s\"<ret>nmim'
-
-"'" = "@s\\'<ret>nmim"
-
-"<" = "@s<lt><ret>nmim"
-
-# Match next around pairs
-
-[keys.normal.m.n.a]
-
-"(" = "@s\\(<ret>nmam"
-
-"{" = "@s\\{<ret>nmam"
-
-"[" = "@s\\[<ret>nmam"
-
-'"' = '@s\"<ret>nmam'
-
-"'" = "@s\\'<ret>nmam"
-
-"<" = "@s<lt><ret>nmam"
-
-
-# Match previous inner pairs
-
-[keys.normal.m.p.i]
-
-"(" = "@s\\)<ret>Nmmmim"
-
-"{" = "@s\\}<ret>Nmmmim"
-
-"[" = "@s\\]<ret>Nmmmim"
-
-'"' = '@s\"<ret>Nmmmim'
-
-"'" = "@s\\'<ret>Nmmmim"
-
-"<" = "@s<gt><ret>Nmmmim"
-
-
-# Match previous around pairs
-
-[keys.normal.m.p.a]
-
-"(" = "@s\\)<ret>Nmmmam"
-
-"{" = "@s\\}<ret>Nmmmam"
-
-"[" = "@s\\]<ret>Nmmmam"
-
-'"' = '@s\"<ret>Nmmmam'
-
-"'" = "@s\\'<ret>Nmmmam"
-
-"<" = "@s<gt><ret>Nmmmam"
