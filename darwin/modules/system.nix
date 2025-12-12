@@ -1,6 +1,8 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
+  environment.shells = [ pkgs.fish ];
+
   system = {
     stateVersion = 5;
 
@@ -54,7 +56,6 @@
         type = "png";
       };
 
-      environment.shells = [ pkgs.fish ];
       users.users."${config.system.primaryUser}" = {
         shell = pkgs.fish;
       };
