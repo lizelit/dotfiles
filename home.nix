@@ -111,7 +111,7 @@
 
   xdg = {
     enable = true;
-    configFile."alacritty/alacritty.toml".source = ./config/alacritty.toml;
+    configFile."alacritty/alacritty.toml".source = ./config/alacritty/config.toml;
     configFile."zellij/config.kdl".source = ./config/zellij.kdl;
     configFile."zellij/layouts/default.kdl".source = ./config/layouts.kdl;
     configFile."starship.toml".source = ./config/starship.toml;

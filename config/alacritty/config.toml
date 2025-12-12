@@ -1,5 +1,6 @@
+[general]
 import =  [
-  "./theme/kanagawa-wave.toml"
+  "~/dotfiles/config/alacritty/themes/kanagawa-wave.toml"
 ]
 
 [window]
