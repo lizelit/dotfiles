@@ -109,15 +109,15 @@
       '';
   };
 
-  xdg = {
-    enable = true;
-    configFile."alacritty/alacritty.toml".source = ./config/alacritty/config.toml;
-    configFile."zellij/config.kdl".source = ./config/zellij.kdl;
-    configFile."zellij/layouts/default.kdl".source = ./config/layouts.kdl;
-    configFile."starship.toml".source = ./config/starship.toml;
-    configFile."helix/config.toml".source = ./config/helix/config.toml;
-    configFile."helix/languages.toml".source = ./config/helix/languages.toml;
-  };
+  # xdg = {
+  #   enable = true;
+  #   configFile."alacritty/alacritty.toml".source = ./config/alacritty/config.toml;
+  #   configFile."zellij/config.kdl".source = ./config/zellij.kdl;
+  #   configFile."zellij/layouts/default.kdl".source = ./config/layouts.kdl;
+  #   configFile."starship.toml".source = ./config/starship.toml;
+  #   configFile."helix/config.toml".source = ./config/helix/config.toml;
+  #   configFile."helix/languages.toml".source = ./config/helix/languages.toml;
+  # };
 
   programs.btop = {
     enable = true;

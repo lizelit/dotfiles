@@ -1,41 +1,42 @@
-{ inputs, ... };
+{ inputs, ... }:
 
 let
   inherit (inputs) nixpkgs nix-darwin home-manager;
+
   username = "lizelit";
   hostname = "TMBA-2";
-  homeDiretory = "/Users/${username}";
+  homeDirectory = "/Users/${username}";
 
   specialArgs = {
     inherit inputs username hostname homeDirectory;
   };
+
+  darwinConfigs = {
+    "${hostname}" = nix-darwin.lib.darwinSystem {
+      system = "aarch64-darwin";
+      inherit specialArgs;
+
+      modules = [
+        ../darwin
+        home-manager.darwinModules.home-manager
+        {
+          home-manager = {
+            backupFileExtension = "backup";
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            extraSpecialArgs = specialArgs;
+            users.${username} = import ../home;
+            sharedModules = [ ];
+          };
+        }
+      ];
+    };
+  };
 in
 {
-  darwinConfiguration."${hostname}" = nix-darwin.lib.darwinSystem {
-    system = " aarch64-darwin";
-    inherit specialArgs;
-
-    modules = [
-      ../darwin
-
-      home-manager.darwinModules.home-manager
-      {
-        home-manager = {
-          backupFileExtension = "backup";
-          useGlobalPkgs = true;
-          useUserPackages = true;
-          extraSpecialArgs = specialArgs;
-
-          users.${username} = import ../home;
-
-          sharedModules = [
-          ];
-        };
-      }
-    ];
-  };
+  darwinConfigurations = darwinConfigs;
+  darwinConfiguration = darwinConfigs."${hostname}";
 }
-
 
 
 # {
