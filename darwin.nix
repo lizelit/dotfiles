@@ -106,12 +106,14 @@
 
     casks = [
       "karabiner-elements"
+      "utm"
       "discord"
       "slack"
       "spotify"
       "alacritty"
       "font-jetbrains-mono-nerd-font"
       "visual-studio-code"
+      "zed"
       "balenaetcher"
       "hhkb"
       "zen"
@@ -120,6 +122,10 @@
       "google-chrome"
       "monitorcontrol"
       "notchnook"
+      "steam"
+      "microsoft-powerpoint"
+      "microsoft-excel"
+      "microsoft-word"
     ];
 
     brews = [
@@ -132,6 +138,7 @@
       "AdGuard for Safari" = 1440147259;
       "RunCat" = 1429033973;
       "CleanMyKeyboard" = 6468120888;
+      "Amazon Prime Video" = 545519333;
     };
   };
 

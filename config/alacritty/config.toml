@@ -1,0 +1,19 @@
+import =  [
+  "./theme/kanagawa-wave.toml"
+]
+
+[window]
+padding = { x = 10,y = 4}
+dynamic_padding = true
+opacity = 1
+blur = true
+decorations = "Buttonless"
+option_as_alt = "Both"
+
+[font]
+size = 14.0
+normal = { family = "JetBrainsMono Nerd Font", style = "Regular"}
+
+[mouse]
+hide_when_typing = true
+

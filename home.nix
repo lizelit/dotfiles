@@ -18,7 +18,7 @@
       numpy
     ]))
     pyright black isort ruff
-    racket-minimal
+    lldb
   ];
 
 
@@ -35,6 +35,10 @@
     enableZshIntegration = true;
   };
 
+  programs.neovim = {
+    enable = true;
+  };
+
   programs.helix = {
     enable = true;
   };
@@ -47,8 +51,8 @@
 
   programs.git = {
     enable = true;
-    userName = "lizelit";
-    userEmail = "lizelit.you@gmail.com";
+    settings.user.name = "lizelit";
+    settings.user.email = "lizelit.you@gmail.com";
   };
   home.sessionVariables = {
     EDITOR = "hx";
@@ -101,6 +105,7 @@
         if [ -z "$ZELLIJ_PANE_ID" ]; then
           zellij attach dev 2>/dev/null || zellij --session dev
         fi
+        source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
       '';
   };
 
@@ -108,7 +113,7 @@
     enable = true;
     configFile."alacritty/alacritty.toml".source = ./config/alacritty.toml;
     configFile."zellij/config.kdl".source = ./config/zellij.kdl;
-    configFile."zellij/layouts".source = ./config/layouts;
+    configFile."zellij/layouts/default.kdl".source = ./config/layouts.kdl;
     configFile."starship.toml".source = ./config/starship.toml;
     configFile."helix/config.toml".source = ./config/helix/config.toml;
     configFile."helix/languages.toml".source = ./config/helix/languages.toml;
