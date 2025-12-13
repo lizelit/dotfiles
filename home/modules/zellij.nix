@@ -3,7 +3,8 @@
 {
   programs.zellij = {
     enable = true;
-    
+    enableFishIntegration = true;
+
     settings = {
       pane_frames = false;
       theme = "kanagawa";
@@ -16,16 +17,15 @@
       copy_command = "pbcopy";
       paste_command = "pbpaste";
       system_clipboard = true;
-      default_layout = "default";
-      
+
       ui = {
         pane_frames = {
           hide_session_name = true;
         };
       };
-      
-      prelude = {
-        default = ''
+
+      layouts = {
+        dev = ''
           layout {
             pane size=1 borderless=true {
               plugin location="zellij:compact-bar"

@@ -9,9 +9,9 @@
   programs.neovim.enable = true;
   programs.helix = {
     enable = true;
-    theme = "kanagawa";
     
     settings = {
+      theme = "kanagawa";
       editor = {
         line-number = "relative";
         cursorline = true;
@@ -51,14 +51,14 @@
       };
 
       editor.statusline = {
-        left = ["mode", "spinner", "version-control", "file-name", "file-modification-indicator"];
+        left = ["mode" "spinner" "version-control" "file-name" "file-modification-indicator"];
         center = [];
-        right = ["diagnostics", "selections", "position", "file-encoding"];
+        right = ["diagnostics" "selections" "position" "file-encoding"];
         separator = "│";
       };
 
       keys.insert = {
-        "esc" = [":sh macism com.apple.keylayout.ABC", "normal_mode"];
+        "esc" = [":sh macism com.apple.keylayout.ABC" "normal_mode"];
       };
       
     };

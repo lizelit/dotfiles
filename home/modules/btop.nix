@@ -1,8 +1,5 @@
 { ... }:
 
-let
-  btopThemeDir = ../config/btop/themes;
-in
 {
   programs.btop = {
     enable = true;
@@ -11,7 +8,6 @@ in
     };
 
     themes = {
-      gruvbox = builtins.readFile "${btopThemeDir}/gruvbox.theme";
     };
   };
 }

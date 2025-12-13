@@ -3,6 +3,19 @@
 {
   environment.shells = [ pkgs.fish ];
 
+  users.users."${config.system.primaryUser}" = {
+    shell = pkgs.fish;
+  };
+
+  environment.pathsToLink = [
+    "/opt/homebrew/bin"
+    "/opt/homebrew/sbin"
+  ];
+
+  environment.variables = {
+    DEVELOPER_DIR = "/Library/Developer/CommandLineTools";
+  };
+
   system = {
     stateVersion = 5;
 
@@ -28,7 +41,7 @@
         ShowPathbar = true;
         ShowStatusBar = true;
       };
-      
+
       NSGlobalDomain = {
         InitialKeyRepeat = 15;
         KeyRepeat = 2;
@@ -54,10 +67,6 @@
       screencapture = {
         location = "~/Pictures/Screenshots";
         type = "png";
-      };
-
-      users.users."${config.system.primaryUser}" = {
-        shell = pkgs.fish;
       };
     };
   };

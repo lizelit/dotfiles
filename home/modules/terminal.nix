@@ -1,20 +1,20 @@
 { config, pkgs, ... }:
 
 {
-  programs.zsh.enable = false;
+  programs.zsh.enable = true;
 
   programs.fish = {
     enable = true;
-    
+
     functions = {
       ls = "eza"; la = "eza -la"; lt = "eza --tree"; cat = "bat"; grep = "rg";
-      spp = "spotify_player"; 
+      spp = "spotify_player";
 
       g = "git"; gs = "git status"; ga = "git add"; gc = "git commit"; gp = "git push"; gl = "git pull";
 
       nr = "nix run"; ns = "nix shell"; nf = "nix flake";
-      e = "$EDITOR"; 
-      
+      e = "$EDITOR";
+
       dr = ''
         function dr
           sudo darwin-rebuild switch --flake ~/dotfiles
@@ -22,9 +22,7 @@
       '';
     };
 
-    initContent = ''
-      fish_vi_mode
-      
+    shellInit = ''
       if not set -q ZELLIJ_PANE_ID
           zellij attach dev 2>/dev/null
           if test $status -ne 0
