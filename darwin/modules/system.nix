@@ -7,17 +7,15 @@
     shell = pkgs.fish;
   };
 
-  environment.pathsToLink = [
-    "/opt/homebrew/bin"
-    "/opt/homebrew/sbin"
-  ];
+  # environment.pathsToLink = [
+  #   "/opt/homebrew/bin"
+  #   "/opt/homebrew/sbin"
+  # ];
 
-  environment.variables = {
-    DEVELOPER_DIR = "/Library/Developer/CommandLineTools";
-  };
+  ids.gids.nixbld = 350;
 
   system = {
-    stateVersion = 5;
+    stateVersion = 4;
 
     keyboard = {
       enableKeyMapping = true;
