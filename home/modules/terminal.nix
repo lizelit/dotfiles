@@ -23,12 +23,19 @@
     };
 
     shellInit = ''
-      if not set -q ZELLIJ_PANE_ID
-          zellij attach dev 2>/dev/null
-          if test $status -ne 0
+      fish_add_path -P /opt/homebrew/bin
+      fish_add_path -P /opt/homebrew/sbin
+
+      if status is-interactive
+        if not set -q  ZELLIJ
+          if zellij list-sessions 2>/dev/null | string match -q "*dev*"
+              zellij attach dev
+          else
               zellij --session dev
           end
+        end
       end
+
     '';
   };
 }

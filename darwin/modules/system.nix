@@ -7,10 +7,10 @@
     shell = pkgs.fish;
   };
 
-  # environment.pathsToLink = [
-  #   "/opt/homebrew/bin"
-  #   "/opt/homebrew/sbin"
-  # ];
+  environment.pathsToLink = [
+    "/opt/homebrew/bin"
+    "/opt/homebrew/sbin"
+  ];
 
   ids.gids.nixbld = 350;
 
