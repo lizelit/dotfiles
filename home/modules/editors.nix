@@ -6,10 +6,9 @@
     VISUAL = "hx";
   };
 
-  programs.neovim.enable = true;
   programs.helix = {
     enable = true;
-    
+
     settings = {
       theme = "kanagawa";
       editor = {
@@ -60,7 +59,7 @@
       keys.insert = {
         "esc" = [":sh macism com.apple.keylayout.ABC" "normal_mode"];
       };
-      
+
     };
     languages.language = [];
   };
