@@ -1,20 +1,28 @@
 { config, pkgs, ... }:
 
 {
-  programs.zsh.enable = true;
-
   programs.fish = {
     enable = true;
+    preferAbbrs = true;
+
+    shellAbbrs = {
+      ls = "eza";
+      la = "eza -la";
+      lt = "eza --tree";
+      cat = "bat";
+      grep = "rg";
+
+      g = "git";
+      gs = "git status";
+      ga = "git add";
+      gc = "git commit";
+      gp = "git push";
+      gl = "git pull";
+
+      e = "$EDITOR";
+    };
 
     functions = {
-      ls = "eza"; la = "eza -la"; lt = "eza --tree"; cat = "bat"; grep = "rg";
-      spp = "spotify_player";
-
-      g = "git"; gs = "git status"; ga = "git add"; gc = "git commit"; gp = "git push"; gl = "git pull";
-
-      nr = "nix run"; ns = "nix shell"; nf = "nix flake";
-      e = "$EDITOR";
-
       dr = ''
         function dr
           sudo darwin-rebuild switch --flake ~/dotfiles
@@ -25,6 +33,13 @@
     shellInit = ''
       fish_add_path -P /opt/homebrew/bin
       fish_add_path -P /opt/homebrew/sbin
+
+      fish_vi_key_bindings
+
+      set -g theme_display_vi yes
+
+      set -g theme_display_user no
+      set -g theme_display_hostname no
 
       if status is-interactive
         if not set -q  ZELLIJ

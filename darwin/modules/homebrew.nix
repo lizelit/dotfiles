@@ -40,13 +40,13 @@
       "macism"
     ];
 
-    # masApps = {
-    #   "Xcode" = 497799835;
-    #   "Amphetamine" = 937984704;
-    #   "AdGuard for Safari" = 1440147259;
-    #   "RunCat" = 1429033973;
-    #   "CleanMyKeyboard" = 6468120888;
-    #   "Amazon Prime Video" = 545519333;
-    # };
+    masApps = {
+      # "Xcode" = 497799835;
+      "Amphetamine" = 937984704;
+      "AdGuard for Safari" = 1440147259;
+      "RunCat" = 1429033973;
+      "CleanMyKeyboard" = 6468120888;
+      "Amazon Prime Video" = 545519333;
+    };
   };
 }
