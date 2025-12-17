@@ -1,4 +1,4 @@
-{ config, lib, pkgs, username, homeDirectory, ... }@specialArgs:
+{ config, lib, inputs, pkgs, username, homeDirectory, ... }:
 
 let
   decryptedTokenPath = config.age.secrets.ai_token.path;
@@ -11,7 +11,7 @@ in {
   programs.home-manager.enable = true;
 
   age.secrets.ai_token = {
-    file = ../secrets/ai_token.age;
+    file = "${inputs.self}/secrets/ai_token.age";
   };
 
   imports = [

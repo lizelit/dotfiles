@@ -20,14 +20,7 @@
       gl = "git pull";
 
       e = "$EDITOR";
-    };
-
-    functions = {
-      dr = ''
-        function dr
-          sudo darwin-rebuild switch --flake ~/dotfiles
-        end
-      '';
+      dr = "sudo darwin-rebuild switch --flake ~/dotfiles";
     };
 
     shellInit = ''
@@ -51,6 +44,9 @@
         end
       end
 
+      if test -f "${config.age.secrets.ai_token.path}"
+        set -gx COPILOT_API_TOKEN (cat "${config.age.secrets.ai_token.path}")
+      end
     '';
   };
 }
