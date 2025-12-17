@@ -24,7 +24,7 @@
       };
 
       editor.file-picker = {
-        hidden = false;
+        hidden = true;
       };
 
       editor.lsp = {

@@ -24,4 +24,9 @@
   programs.gh-dash = {
     enable = true;
   };
+
+  programs.skim = {
+    enable = true;
+    enableFishIntegration = true;
+  };
 }

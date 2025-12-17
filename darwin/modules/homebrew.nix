@@ -15,8 +15,6 @@
     casks = [
       "karabiner-elements"
       "utm"
-      "discord"
-      "slack"
       "spotify"
       "alacritty"
       "font-jetbrains-mono-nerd-font"
