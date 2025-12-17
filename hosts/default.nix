@@ -1,7 +1,7 @@
 { inputs, ... }:
 
 let
-  inherit (inputs) nixpkgs nix-darwin home-manager;
+  inherit (inputs) nixpkgs nix-darwin home-manager agenix;
 
   username = "lizelit";
   hostname = "TMBA-2";
@@ -10,8 +10,7 @@ let
   aiTokens = import (inputs.self + "/secrets/ai-tokens.nix");
 
   specialArgs = {
-    inherit inputs username hostname homeDirectory;
-    aiTokens = aiTokens;
+    inherit inputs username hostname homeDirectory aiTokens;
   };
 
   darwinConfigs = {
@@ -21,6 +20,7 @@ let
 
       modules = [
         ../darwin
+        agenix.darwinModules.default
         home-manager.darwinModules.home-manager
         {
           home-manager = {
@@ -29,7 +29,7 @@ let
             useUserPackages = true;
             extraSpecialArgs = specialArgs;
             users.${username} = import ../home;
-            sharedModules = [ ];
+            sharedModules = [ agenix.homeManagerModules.default ];
           };
         }
       ];

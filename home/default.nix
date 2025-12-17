@@ -1,7 +1,7 @@
 { config, lib, pkgs, username, homeDirectory, ... }@specialArgs:
 
 let
-  aiTokens = specialArgs.aiTokens;
+  decryptedTokenPath = config.age.secrets.ai_token.path;
 in {
   home.username = lib.mkForce username;
   home.homeDirectory = lib.mkForce homeDirectory;
@@ -9,6 +9,10 @@ in {
   home.activation.checkAppManagementPermission = lib.mkForce "";
 
   programs.home-manager.enable = true;
+
+  age.secrets.ai_token = {
+    file = ../secrets/ai_token.age;
+  };
 
   imports = [
     ./modules/alacritty.nix
@@ -20,8 +24,4 @@ in {
     ./modules/utilities.nix
     ./modules/zellij.nix
   ];
-
-  home.sessionVariables = {
-    COPILOT_API_KEY = aiTokens.copilotApiKey;
-  };
 }
