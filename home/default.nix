@@ -1,6 +1,8 @@
-{ config, lib, pkgs, username, homeDirectory, ... }:
+{ config, lib, pkgs, username, homeDirectory, ... }@specialArgs:
 
-{
+let
+  aiTokens = specialArgs.aiTokens;
+in {
   home.username = lib.mkForce username;
   home.homeDirectory = lib.mkForce homeDirectory;
   home.stateVersion = "25.11";
@@ -18,4 +20,8 @@
     ./modules/utilities.nix
     ./modules/zellij.nix
   ];
+
+  home.sessionVariables = {
+    COPILOT_API_KEY = aiTokens.copilotApiKey;
+  };
 }

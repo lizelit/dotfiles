@@ -7,8 +7,11 @@ let
   hostname = "TMBA-2";
   homeDirectory = "/Users/${username}";
 
+  aiTokens = import (inputs.self + "/secrets/ai-tokens.nix");
+
   specialArgs = {
     inherit inputs username hostname homeDirectory;
+    aiTokens = aiTokens;
   };
 
   darwinConfigs = {

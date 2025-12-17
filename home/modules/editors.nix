@@ -1,13 +1,9 @@
 { ... }:
 
 {
-  home.sessionVariables = {
-    EDITOR = "hx";
-    VISUAL = "hx";
-  };
-
   programs.helix = {
     enable = true;
+    defaultEditor = true;
 
     settings = {
       theme = "kanagawa";
@@ -28,7 +24,7 @@
       };
 
       editor.file-picker = {
-        hidden = true;
+        hidden = false;
       };
 
       editor.lsp = {
@@ -61,6 +57,8 @@
       };
 
     };
-    languages.language = [];
+    languages = {
+      language = [];
+    };
   };
 }
