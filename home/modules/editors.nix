@@ -68,7 +68,7 @@
         command = "tinymist";
       };
       language-server.rb = {
-        command = "solargraph";
+        command = "$RUBY_LSP_BIN";
       };
       language = [
         {
@@ -78,10 +78,6 @@
         {
           name = "typst";
           language-servers = ["typ" "gpt"];
-        }
-        {
-          name = "ruby";
-          language-servers = ["rb" "gpt"];
         }
       ];
     };
