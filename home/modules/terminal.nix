@@ -45,7 +45,8 @@
       end
 
       if test -f "${config.age.secrets.ai_token.path}"
-        set -gx COPILOT_API_TOKEN (cat "${config.age.secrets.ai_token.path}")
+        set -gx COPILOT_API_KEY (cat "${config.age.secrets.ai_token.path}")
+        set -gx HANDLER copilot
       end
     '';
   };

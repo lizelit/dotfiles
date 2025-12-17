@@ -58,14 +58,16 @@
 
     };
     languages = {
-      language-server.helix-gpt = {
+      language-server.gpt = {
         command = "helix-gpt";
-        args = ["--handler" "copilot"];
+      };
+      language-server.rs = {
+        command = "rust-analyzer";
       };
       language = [
         {
           name = "rust";
-          language-servers = ["rust-analyzer" "helix-gpt"];
+          language-servers = ["rs" "gpt"];
         }
       ];
     };
