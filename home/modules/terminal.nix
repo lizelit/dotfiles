@@ -21,6 +21,7 @@
 
       e = "$EDITOR";
       dr = "sudo darwin-rebuild switch --flake ~/dotfiles";
+      fk = "f";
     };
 
     shellInit = ''
@@ -33,6 +34,8 @@
 
       set -g theme_display_user no
       set -g theme_display_hostname no
+
+      pay-respects init fish | source
 
       if status is-interactive
         if not set -q  ZELLIJ

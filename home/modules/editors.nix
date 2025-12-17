@@ -67,6 +67,9 @@
       language-server.typ = {
         command = "tinymist";
       };
+      language-server.rb = {
+        command = "solargraph";
+      };
       language = [
         {
           name = "rust";
@@ -75,6 +78,10 @@
         {
           name = "typst";
           language-servers = ["typ" "gpt"];
+        }
+        {
+          name = "ruby";
+          language-servers = ["rb" "gpt"];
         }
       ];
     };

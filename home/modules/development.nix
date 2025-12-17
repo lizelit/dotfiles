@@ -10,7 +10,7 @@
       numpy
     ]))
     pyright black isort ruff
-    
+
     lldb
   ];
 
