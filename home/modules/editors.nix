@@ -64,10 +64,17 @@
       language-server.rs = {
         command = "rust-analyzer";
       };
+      language-server.typ = {
+        command = "tinymist";
+      };
       language = [
         {
           name = "rust";
           language-servers = ["rs" "gpt"];
+        }
+        {
+          name = "typst";
+          language-servers = ["typ" "gpt"];
         }
       ];
     };
