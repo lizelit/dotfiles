@@ -6,5 +6,6 @@
     bottom
     yazi lazygit zellij
     helix-gpt
+    nix-search-cli
   ];
 }
