@@ -8,8 +8,8 @@
     shellAbbrs = {
       ls = "eza --icons --group-directories-first";
       la = "eza -la --icons --group-directories-first";
-      lt = "eza --icons --tree --group-directories-first";
-      tree = "eza --icons --tree --group-directories-first";
+      lt = "eza --icons --tree --group-directories-first --git-ignore";
+      tree = "eza --icons --tree --group-directories-first --git-ignore";
       cat = "bat";
       grep = "rg";
 
