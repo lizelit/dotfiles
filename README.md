@@ -1,5 +1,7 @@
 # lizelit's dotfiles
 
+![My Desktop](./pics/screenshot.png)
+
 ## Core Concept
 Nixによって宣言的に管理することをルールとして，可能な限りNix以外のものを置くのを避けています．
 ## Tech Stack
