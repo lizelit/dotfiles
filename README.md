@@ -5,7 +5,8 @@ Nixによって宣言的に管理することをルールとして，可能な�
 ## Tech Stack
 Category | Tool |
 | :--- | :--- |
-| **OS / Package Manager** | macOS / Nix |
+| **OS** | macOS |
+| **Package Manager** | Nix |
 | **Shell** | fish |
 | **Editor** | Helix |
 | **Terminal Emulator** | Alacritty |
