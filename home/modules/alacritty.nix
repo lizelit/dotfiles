@@ -3,7 +3,7 @@
 {
   programs.alacritty = {
     enable = true;
-    
+
     settings = {
       window = {
         padding = { x = 10; y = 4; };
@@ -15,7 +15,7 @@
       };
 
       font = {
-        size = 14.0;
+        size = 12.0;
         normal = { family = "JetBrainsMono Nerd Font"; style = "Regular"; };
       };
 
