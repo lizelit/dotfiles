@@ -52,6 +52,10 @@
         separator = "│";
       };
 
+      keys.normal = {
+        "A-p" = ":sh open http://127.0.0.1:23635";
+      };
+
       keys.insert = {
         "esc" = [":sh macism com.apple.keylayout.ABC" "normal_mode"];
       };
@@ -74,10 +78,6 @@
         {
           name = "rust";
           language-servers = ["rs" "gpt"];
-        }
-        {
-          name = "typst";
-          language-servers = ["typ" "gpt"];
         }
       ];
     };

@@ -6,9 +6,9 @@
     preferAbbrs = true;
 
     shellAbbrs = {
-      ls = "eza";
-      la = "eza -la";
-      lt = "eza --tree";
+      ls = "eza --icons --group-directories-first";
+      la = "eza -la --icons --group-directories-first";
+      lt = "eza --icons --tree --group-directories-first";
       cat = "bat";
       grep = "rg";
 
