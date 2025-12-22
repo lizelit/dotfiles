@@ -18,6 +18,8 @@
       paste_command = "pbpaste";
       system_clipboard = true;
       default_layout = "dev";
+      macos-option-as-alt = "both";
+      support_kitty_keyboard_protocol = false;
 
       ui = {
         pane_frames = {

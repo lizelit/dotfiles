@@ -8,4 +8,14 @@
     helix-gpt
     nix-search-cli
   ];
+
+  programs.eza = {
+    enable = true;
+    enableFishIntegration = true;
+    icons = "auto";
+    extraOptions = [
+      "--group-directories-first"
+      "--header"
+    ];
+  };
 }

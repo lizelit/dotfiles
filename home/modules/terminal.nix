@@ -6,10 +6,10 @@
     preferAbbrs = true;
 
     shellAbbrs = {
-      ls = "eza --icons --group-directories-first";
-      la = "eza -la --icons --group-directories-first";
-      lt = "eza --icons --tree --group-directories-first --git-ignore";
-      tree = "eza --icons --tree --group-directories-first --git-ignore";
+      ls = "eza";
+      la = "eza -la";
+      lt = "eza --tree --git-ignore";
+      tree = "eza --tree --git-ignore";
       cat = "bat";
       grep = "rg";
 
