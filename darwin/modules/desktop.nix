@@ -50,4 +50,12 @@
       shift + alt - l : yabai -m window --swap east
     '';
   };
+
+  stylix = {
+    enable = true;
+
+    image = ../../pics/wallpaper.jpg;
+
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/kanagawa.yaml";
+  };
 }
