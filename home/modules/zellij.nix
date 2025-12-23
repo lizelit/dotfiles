@@ -7,7 +7,7 @@
 
     settings = {
       pane_frames = false;
-      theme = "kanagawa";
+      # theme = "kanagawa";
       copy_on_select = true;
       scrollback_editor = "hx";
       session_serialization = false;

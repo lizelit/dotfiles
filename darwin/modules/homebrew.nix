@@ -25,7 +25,6 @@
       "zen"
       "skim"
       "zoom"
-      "google-chrome"
       "monitorcontrol"
       "notchnook"
       "steam"

@@ -4,10 +4,10 @@
   programs.btop = {
     enable = true;
     settings = {
-      color_theme = "gruvbox";
+      # color_theme = "gruvbox";
     };
 
-    themes = {
-    };
+    # themes = {
+    # };
   };
 }
