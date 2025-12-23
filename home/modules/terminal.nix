@@ -12,6 +12,7 @@
       tree = "eza --tree --git-ignore";
       cat = "bat";
       grep = "rg";
+      cd = "z";
 
       g = "git";
       gs = "git status";
