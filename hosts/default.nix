@@ -1,7 +1,7 @@
 { inputs, ... }:
 
 let
-  inherit (inputs) nixpkgs nix-darwin home-manager agenix;
+  inherit (inputs) nixpkgs nix-darwin home-manager agenix stylix;
 
   username = "lizelit";
   hostname = "TMBA-2";
@@ -22,6 +22,7 @@ let
         ../darwin
         agenix.darwinModules.default
         home-manager.darwinModules.home-manager
+        stylix.darwinModules.stylix
         {
           home-manager = {
             backupFileExtension = "backup";
