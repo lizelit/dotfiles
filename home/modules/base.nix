@@ -2,7 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    ripgrep fd skim bat delta eza fastfetch pay-respects
+    ripgrep fd skim bat delta eza fastfetch
     bottom
     yazi lazygit zellij
     helix-gpt

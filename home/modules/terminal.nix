@@ -38,8 +38,6 @@
       set -g theme_display_user no
       set -g theme_display_hostname no
 
-      pay-respects init fish | source
-
       if status is-interactive
         if not set -q  ZELLIJ
           if zellij list-sessions 2>/dev/null | string match -q "*dev*"
