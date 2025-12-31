@@ -61,25 +61,5 @@
       };
 
     };
-    languages = {
-      language-server.gpt = {
-        command = "helix-gpt";
-      };
-      language-server.rs = {
-        command = "rust-analyzer";
-      };
-      language-server.typ = {
-        command = "tinymist";
-      };
-      language-server.rb = {
-        command = "$RUBY_LSP_BIN";
-      };
-      language = [
-        {
-          name = "rust";
-          language-servers = ["rs" "gpt"];
-        }
-      ];
-    };
   };
 }
