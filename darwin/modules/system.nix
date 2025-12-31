@@ -52,7 +52,7 @@
         NSAutomaticPeriodSubstitutionEnabled = false;
         NSAutomaticQuoteSubstitutionEnabled = false;
         NSAutomaticSpellingCorrectionEnabled = false;
-      };
+     };
 
       trackpad = {
         Clicking = true;
@@ -67,6 +67,13 @@
       screencapture = {
         location = "~/Pictures/Screenshots";
         type = "png";
+      };
+
+      CustomUserPreferences = {
+        NSGlobalDomain = {
+          NSTextInsertionPointBlinkPeriodOn = 0;
+          NSTextInsertionPointBlinkPeriodOff = 0;
+        };
       };
     };
   };
