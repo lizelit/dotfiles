@@ -11,6 +11,8 @@
     ]))
     pyright black isort ruff
 
+    helix-gpt
+
     lldb
   ];
 

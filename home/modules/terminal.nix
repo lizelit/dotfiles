@@ -14,7 +14,7 @@
       grep = "rg";
       cd = "z";
 
-      g = "git";
+      g = "lazygit";
       lg = "lazygit";
       gs = "git status";
       ga = "git add";
