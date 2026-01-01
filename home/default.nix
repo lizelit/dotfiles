@@ -23,5 +23,6 @@ in {
     ./modules/terminal.nix
     ./modules/utilities.nix
     ./modules/zellij.nix
+    ./modules/aerospace.nix
   ];
 }

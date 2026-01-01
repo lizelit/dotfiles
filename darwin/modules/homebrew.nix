@@ -31,10 +31,12 @@
       "microsoft-powerpoint"
       "microsoft-excel"
       "microsoft-word"
+      "nikitabobko/tap/aerospace"
     ];
 
     brews = [
       "macism"
+      "felixkratz/formulae/sketchybar"
     ];
 
     masApps = {
