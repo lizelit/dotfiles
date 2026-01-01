@@ -1,8 +1,13 @@
 { ... }:
 
 {
+  # AeroSpace
   home.file.".config/aerospace/aerospace.toml".text = ''
     start-at-login = true
+
+    on-focus-changed = ['move-mouse window-lazy-center', 'exec-and-forget macism com.apple.keylayout.ABC']
+
+    on-focused-monitor-changed = ['move-mouse window-lazy-center']
 
     [mode.main.binding]
     cmd-ctrl-t = 'exec-and-forget open -a /Applications/Alacritty.app'
@@ -39,5 +44,6 @@
     [[on-window-detected]]
     if.app-id = 'com.apple.systempreference'
     run = 'layout floating'
+
   '';
 }

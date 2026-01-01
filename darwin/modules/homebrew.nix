@@ -32,11 +32,11 @@
       "microsoft-excel"
       "microsoft-word"
       "nikitabobko/tap/aerospace"
+      "jordanbaird-ice"
     ];
 
     brews = [
       "macism"
-      "felixkratz/formulae/sketchybar"
     ];
 
     masApps = {

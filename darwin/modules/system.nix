@@ -74,9 +74,6 @@
           NSTextInsertionPointBlinkPeriodOn = 0;
           NSTextInsertionPointBlinkPeriodOff = 0;
         };
-        "com.apple.WindowManager" = {
-          AppWindowFocusHover = 1;
-        };
       };
     };
   };
