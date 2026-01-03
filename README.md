@@ -9,6 +9,7 @@ Category | Tool |
 | :--- | :--- |
 | **OS** | macOS |
 | **Package Manager** | Nix |
+| **Window Manager** |Aero Space|
 | **Shell** | fish |
 | **Editor** | Helix |
 | **Terminal Emulator** | Alacritty |
