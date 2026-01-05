@@ -30,7 +30,6 @@
       "microsoft-powerpoint"
       "microsoft-excel"
       "microsoft-word"
-      "nikitabobko/tap/aerospace"
       "jordanbaird-ice"
     ];
 
