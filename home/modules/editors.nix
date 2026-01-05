@@ -54,6 +54,8 @@
 
       keys.normal = {
         "A-p" = ":sh open http://127.0.0.1:23635";
+        "H" = "goto_line_start";
+        "L" = "goto_line_end";
       };
 
       keys.insert = {
