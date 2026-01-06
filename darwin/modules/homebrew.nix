@@ -17,7 +17,6 @@
       "spotify"
       "alacritty"
       "font-jetbrains-mono-nerd-font"
-      "visual-studio-code"
       "zed"
       "balenaetcher"
       "hhkb"
