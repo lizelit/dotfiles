@@ -6,6 +6,7 @@
     bottom
     yazi lazygit zellij
     nix-search-cli
+    ghq
   ];
 
   programs.eza = {
