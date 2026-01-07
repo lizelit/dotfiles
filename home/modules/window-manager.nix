@@ -40,7 +40,7 @@
 
       on-window-detected = [
         {
-          "if" = { app-id = "io.zen-browser.zen"; };
+          "if" = { app-id = "app.zen-browser.zen"; };
           run = "move-node-to-workspace 1";
         }
         {
@@ -49,6 +49,10 @@
         }
         {
           "if" = { app-id = "com.apple.mail"; };
+          run = "layout floating";
+        }
+        {
+          "if" = { app-id = "com.spotify.client"; };
           run = "layout floating";
         }
         {
