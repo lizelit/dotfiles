@@ -23,6 +23,9 @@
         "alt-k" = "focus up";
         "alt-l" = "focus right";
 
+        "ctrl-alt-minus" = "resize width -50";
+        "ctrl-alt-equal" = "resize width +50";
+
         "alt-ctrl-h" = "focus-monitor left";
         "alt-ctrl-l" = "focus-monitor right";
 
