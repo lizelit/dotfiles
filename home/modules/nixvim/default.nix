@@ -26,10 +26,14 @@
       lsp.enable = true;
       cmp.enable = true;
       treesitter.enable = true;
+      multicursors.enable = true;
+      noice.enable = true;
 
-      mini-icons.enable = true;
       telescope.enable = true;
+      oil.enable = true;
       trouble.enable = true;
+      none-ls.enable = true;
+      bufferline.enable = true;
 
       comment.enable = true;
       nvim-surround.enable = true;
