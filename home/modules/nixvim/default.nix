@@ -13,7 +13,6 @@
       enable = true;
     };
 
-
     plugins = {
       lsp.enable = true;
       cmp.enable = true;
