@@ -9,8 +9,7 @@
       upgrade = true;
       cleanup = "zap";
     };
-    taps = [
-    ];
+    taps = [];
 
     casks = [
       "karabiner-elements"
