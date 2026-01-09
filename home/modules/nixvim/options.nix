@@ -12,6 +12,8 @@
       ignorecase = true;
       smartcase = true;
       termguicolors = true;
+      hidden = false;
+      bufhidden = "wipe";
     };
   };
 }
