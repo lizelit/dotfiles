@@ -10,5 +10,11 @@
     nvim-autopairs.enable = true;
     comment.enable = true;
     gitsigns.enable = true;
+
+    oil.settings = {
+      view_options = {
+        show_hidden = true;
+      };
+    };
   };
 }
