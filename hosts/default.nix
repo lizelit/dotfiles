@@ -1,7 +1,7 @@
 { inputs, ... }:
 
 let
-  inherit (inputs) nixpkgs nix-darwin home-manager agenix stylix;
+  inherit (inputs) nixpkgs nix-darwin home-manager agenix stylix nixvim;
 
   username = "lizelit";
   hostname = "TMBA-2";
@@ -30,7 +30,10 @@ let
             useUserPackages = true;
             extraSpecialArgs = specialArgs;
             users.${username} = import ../home;
-            sharedModules = [ agenix.homeManagerModules.default ];
+            sharedModules = [
+              agenix.homeManagerModules.default
+              nixvim.homeManagerModules.nixvim
+            ];
           };
         }
       ];
