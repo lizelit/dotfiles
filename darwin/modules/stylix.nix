@@ -3,6 +3,7 @@
 {
   home-manager.users.${username} = {
     stylix.targets.helix.enable = false;
+    stylix.tergets.nixvim.enable = false;
   };
 
   stylix = {

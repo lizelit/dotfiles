@@ -6,7 +6,7 @@
     ./modules/nix.nix
     ./modules/programs.nix
     ./modules/homebrew.nix
-    ./modules/desktop.nix
+    ./modules/stylix.nix
   ];
 
   ids.gids.nixld = 350;

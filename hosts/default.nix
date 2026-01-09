@@ -32,7 +32,7 @@ let
             users.${username} = import ../home;
             sharedModules = [
               agenix.homeManagerModules.default
-              nixvim.homeManagerModules.nixvim
+              nixvim.homeModules.nixvim
             ];
           };
         }
