@@ -20,7 +20,7 @@ in {
     ./modules/btop.nix
     ./modules/development.nix
     ./modules/helix.nix
-    ./modules/nixvim.nix
+    ./modules/nixvim
     ./modules/terminal.nix
     ./modules/utilities.nix
     ./modules/zellij.nix
