@@ -19,7 +19,8 @@ in {
     ./modules/base.nix
     ./modules/btop.nix
     ./modules/development.nix
-    ./modules/editors.nix
+    ./modules/helix.nix
+    ./modules/nixvim.nix
     ./modules/terminal.nix
     ./modules/utilities.nix
     ./modules/zellij.nix
