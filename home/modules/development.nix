@@ -6,6 +6,8 @@
 
     ghc stack haskell-language-server fourmolu
 
+    lean4
+
     (python3.withPackages (ps: with ps; [
       numpy
     ]))

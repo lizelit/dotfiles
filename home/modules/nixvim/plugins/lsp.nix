@@ -11,6 +11,29 @@
     cmp-path.enable = true;
     cmp-buffer.enable = true;
 
+    lean = {
+      enable = true;
+
+      mapping = true;
+
+      infoview = {
+        autoOpen = true;
+      };
+
+      lsp = {
+        enable = true;
+      };
+
+      treesitter = {
+        enable = true;
+        nixGrammers = true;
+      };
+
+      extraPackages = with pkgs; [
+        lean4
+      ];
+    };
+
     lsp = {
       diagnostics = {
         virtual_text = false;

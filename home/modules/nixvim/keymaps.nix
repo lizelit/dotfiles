@@ -5,16 +5,19 @@
     globals.mapleader = " ";
 
     keymaps = [
-      { mode = "n"; key = "gh"; action = "0"; }
-      { mode = "n"; key = "gl"; action = "$"; }
-      { mode = "n"; key = "ge"; action = "G"; }
-      { mode = "n"; key = "gg"; action = "gg"; }
+      { mode = ["n" "v"]; key = "gh"; action = "0"; }
+      { mode = ["n" "v"]; key = "gl"; action = "$"; }
+      { mode = ["n" "v"]; key = "ge"; action = "G"; }
+      { mode = ["n" "v"]; key = "gg"; action = "gg"; }
       {
         mode = "n";
         key = "gw";
         action = "<cmd>lua require('flash').jump()<CR>";
         options.desc = "Go to Word";
       }
+
+      { mode = ["n" "v"]; key = "<leader>y"; action = "\"+y"; options.desc = "Yank to system clipboard."; }
+      { mode = ["n" "v"]; key = "<leader>p"; action = "\"+p"; options.desc = "Paste from system clipboard"; }
 
       { mode = "n"; key = "<leader>f"; action = "<cmd>Telescope find_files<CR>"; options.desc = "Files"; }
       { mode = "n"; key = "<leader>/"; action = "<cmd>Telescope live_grep<CR>"; options.desc = "Grep"; }
