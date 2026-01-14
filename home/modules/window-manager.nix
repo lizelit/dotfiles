@@ -31,7 +31,7 @@
         "alt-shift-k" = "move up";
         "alt-shift-l" = "move right";
 
-        "alt-f" = "fullscreen";
+        "alt-shift-f" = "fullscreen";
 
         "alt-1" = "workspace 1";
         "alt-2" = "workspace 2";
