@@ -67,6 +67,7 @@
           };
           onAttach.function = "vim.lsp.inlay_hint.enable(true)";
         };
+        clangd.enable = true;
       };
     };
 
@@ -98,6 +99,7 @@
     extraPackages = with pkgs; [
       nix
       nixpkgs-fmt
+      clangd
     ];
   };
 }
