@@ -68,14 +68,6 @@
       };
 
       on-window-detected = [
-        # {
-        #   "if" = { app-id = "app.zen-browser.zen"; };
-        #   run = "move-node-to-workspace 1";
-        # }
-        # {
-        #   "if" = { app-id = "org.alacritty"; };
-        #   run = "move-node-to-workspace 1";
-        # }
         {
           "if" = { app-id = "com.apple.mail"; };
           run = "layout floating";
@@ -86,6 +78,10 @@
         }
         {
           "if" = { app-id = "com.apple.systempreferences"; };
+          run = "layout floating";
+        }
+        {
+          "if" = { app-id = "com.apple.finder"; };
           run = "layout floating";
         }
       ];
