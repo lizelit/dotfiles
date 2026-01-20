@@ -54,8 +54,11 @@
 
       servers = {
         nixd.enable = true;
+        tinymist.enable = true;
         rust_analyzer = {
           enable = true;
+          installCargo = false;
+          installRustc = false;
           settings = {
             inlayHints = {
               bindingModeHints.enable = true;

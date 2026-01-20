@@ -15,5 +15,13 @@
       hidden = false;
       bufhidden = "wipe";
     };
+
+    autoCmd = [
+      {
+        event = [ "InsertLeave" ];
+        pattern = [ "*" ];
+        command = "silent !macism com.apple.keylayout.ABC";
+      }
+    ];
   };
 }

@@ -31,7 +31,7 @@
       fish_add_path -P /opt/homebrew/bin
       fish_add_path -P /opt/homebrew/sbin
 
-      fish_vi_key_bindings
+      set -gx LIBRARY_PATH $LIBRARY_PATH /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib      fish_vi_key_bindings
 
       set -g theme_display_vi yes
 
