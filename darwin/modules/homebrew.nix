@@ -38,7 +38,6 @@
       "Amphetamine" = 937984704;
       "RunCat" = 1429033973;
       "CleanMyKeyboard" = 6468120888;
-      "Amazon Prime Video" = 545519333;
     };
   };
 }

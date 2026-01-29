@@ -30,8 +30,7 @@
     enableFishIntegration = true;
   };
 
-  # programs.pay-respects = {
-  #   enable = true;
-  #   enableFishIntegration = true;
-  # };
+  programs.opencode = {
+    enable = true;
+  };
 }
