@@ -13,6 +13,8 @@
       cat = "bat";
       grep = "rg";
       cd = "z";
+      vim = "nvim";
+      vi = "nvim";
 
       g = "lazygit";
       lg = "lazygit";
