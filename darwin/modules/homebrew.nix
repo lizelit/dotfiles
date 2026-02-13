@@ -26,7 +26,6 @@
       "microsoft-powerpoint"
       "microsoft-excel"
       "microsoft-word"
-      "jordanbaird-ice"
     ];
 
     brews = [
