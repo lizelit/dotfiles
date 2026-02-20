@@ -26,6 +26,8 @@
       "microsoft-powerpoint"
       "microsoft-excel"
       "microsoft-word"
+      "notion"
+      "obsidian"
     ];
 
     brews = [
