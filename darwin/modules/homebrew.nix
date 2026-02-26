@@ -28,6 +28,7 @@
       "microsoft-word"
       "notion"
       "obsidian"
+      "zed"
     ];
 
     brews = [

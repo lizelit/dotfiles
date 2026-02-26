@@ -16,6 +16,8 @@
     helix-gpt
 
     lldb
+
+    openjdk
   ];
 
   programs.git = {
