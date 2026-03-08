@@ -81,6 +81,10 @@
           run = "layout floating";
         }
         {
+          "if" = { app-id = "com.apple.Notes"; };
+          run = "layout floating";
+        }
+        {
           "if" = { app-id = "com.apple.finder"; };
           run = "layout floating";
         }
