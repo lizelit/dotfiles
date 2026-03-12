@@ -29,6 +29,8 @@
       "notion"
       "obsidian"
       "zed"
+      "antigravity"
+      "google-chrome"
     ];
 
     brews = [

@@ -2,7 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    rustc cargo rust-analyzer rustfmt clippy
+    rustup
 
     ghc stack haskell-language-server fourmolu
 
@@ -18,6 +18,12 @@
     lldb
 
     openjdk
+
+    openssl pkg-config
+
+    nodejs
+
+    pnpm
   ];
 
   programs.git = {
