@@ -12,7 +12,7 @@
       scrollback_editor = "hx";
       session_serialization = false;
       pane_viewport_serialization = false;
-      simplified_ui = true;
+      simplified_ui = false;
       show_startup_tips = false;
       copy_command = "pbcopy";
       paste_command = "pbpaste";
@@ -42,6 +42,13 @@
               };
             }
             { pane = {}; }
+            {
+              pane = {
+                size = 1;
+                borderless = true;
+                plugin = { location = "zellij:status-bar"; };
+              };
+            }
           ];
         };
       };
