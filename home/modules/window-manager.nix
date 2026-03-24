@@ -17,6 +17,7 @@
       mode.main.binding = {
         "cmd-ctrl-t" = "exec-and-forget open -a /Applications/Alacritty.app";
         "cmd-ctrl-b" = "exec-and-forget open -a /Applications/Zen.app";
+        "cmd-ctrl-e" = "exec-and-forget open -a /Applications/Zed.app";
 
         "alt-h" = "focus left";
         "alt-j" = "focus down";

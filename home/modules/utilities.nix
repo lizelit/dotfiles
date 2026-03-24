@@ -29,8 +29,4 @@
     enable = true;
     enableFishIntegration = true;
   };
-
-  programs.opencode = {
-    enable = true;
-  };
 }
