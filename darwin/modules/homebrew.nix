@@ -16,6 +16,7 @@
       "spotify"
       "alacritty"
       "font-jetbrains-mono-nerd-font"
+      "font-noto-color-emoji"
       "hhkb"
       "zen"
       "skim"

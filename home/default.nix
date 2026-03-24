@@ -25,6 +25,5 @@ in {
     ./modules/utilities.nix
     ./modules/zellij.nix
     ./modules/window-manager.nix
-    ./modules/rio.nix
   ];
 }
