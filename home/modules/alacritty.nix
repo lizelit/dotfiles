@@ -6,7 +6,7 @@
 
     settings = {
       window = {
-        padding = { x = 10; y = 4; };
+        padding = { x = 8; y = 4; };
         dynamic_padding = true;
         opacity = 1.0;
         blur = true;
