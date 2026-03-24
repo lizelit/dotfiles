@@ -32,7 +32,6 @@
       "zed"
       "antigravity"
       "google-chrome"
-      "rio"
     ];
 
     brews = [
