@@ -8,6 +8,8 @@
 
     lean4
 
+    nil
+
     (python3.withPackages (ps: with ps; [
       numpy
     ]))

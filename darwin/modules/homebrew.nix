@@ -15,6 +15,7 @@
       "karabiner-elements"
       "spotify"
       "alacritty"
+      "ghostty"
       "font-jetbrains-mono-nerd-font"
       "font-noto-color-emoji"
       "hhkb"
