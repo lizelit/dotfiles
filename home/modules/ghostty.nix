@@ -5,7 +5,7 @@
     enable = true;
     package = pkgs.runCommand "ghostty-dummy" {} "mkdir -p $out";
     settings = {
-      font-size = lib.mkForce 12;
+      font-size = lib.mkForce 12.5;
       macos-titlebar-style = "hidden";
       window-padding-x = 8;
       window-padding-y = 4;
