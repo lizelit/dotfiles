@@ -13,7 +13,7 @@
     image = ../../pics/wallpaper.jpg;
 
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/kanagawa.yaml";
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/onedark.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
 
     fonts = {
       monospace = {

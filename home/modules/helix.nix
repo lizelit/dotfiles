@@ -6,7 +6,7 @@
     defaultEditor = true;
 
     settings = {
-      theme = "zed_onedark";
+      theme = "catppuccin_mocha";
       editor = {
         line-number = "relative";
         cursorline = true;
