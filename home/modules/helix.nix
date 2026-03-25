@@ -6,7 +6,7 @@
     defaultEditor = true;
 
     settings = {
-      theme = "kanagawa";
+      theme = "zed_onedark";
       editor = {
         line-number = "relative";
         cursorline = true;

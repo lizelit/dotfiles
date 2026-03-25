@@ -27,6 +27,7 @@
       e = "$EDITOR";
       dr = "sudo darwin-rebuild switch --flake ~/dotfiles";
       fk = "f";
+      dev = "zellij attach -c dev";
     };
 
     shellInit = ''
@@ -41,16 +42,6 @@
       set -g theme_display_user no
       set -g theme_display_hostname no
 
-      if status is-interactive
-        if not set -q  ZELLIJ
-          if zellij list-sessions 2>/dev/null | string match -q "*dev*"
-              zellij attach dev
-          else
-              zellij --session dev
-          end
-        end
-      end
-
       if test -f "${config.age.secrets.ai_token.path}"
         set -gx COPILOT_API_KEY (cat "${config.age.secrets.ai_token.path}")
         set -gx HANDLER copilot
@@ -58,3 +49,13 @@
     '';
   };
 }
+# if status is-interactive
+#   if not set -q ZELLIJ; and not set -q IS_QUICK_TERMINAL
+#     if zellij list-sessions 2>/dev/null | string match -q "*dev*"
+#         zellij attach dev
+#     else
+#         zellij --session dev
+#     end
+#   end
+# end
+
