@@ -6,7 +6,7 @@
 
     lean4
 
-    nil
+    nil nixd
 
     marksman
 
