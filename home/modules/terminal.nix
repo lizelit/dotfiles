@@ -31,23 +31,27 @@
     };
 
     shellInit = ''
-      fish_add_path -P /opt/homebrew/bin
-      fish_add_path -P /opt/homebrew/sbin
-      fish_add_path -P ~/.cargo/bin
+    fish_add_path -P /opt/homebrew/bin /opt/homebrew/sbin
+    fish_add_path -P ~/.cargo/bin
 
-      set -gx LIBRARY_PATH $LIBRARY_PATH /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib      fish_vi_key_bindings
+    set -gx SDKROOT (xcrun --show-sdk-path)
+    set -gx LIBRARY_PATH $LIBRARY_PATH /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib
 
-      set -g theme_display_vi yes
+    set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME
+    if test -d $GHCUP_INSTALL_BASE_PREFIX/.ghcup/bin
+        fish_add_path -P $GHCUP_INSTALL_BASE_PREFIX/.ghcup/bin
+    end
 
-      set -g theme_display_user no
-      set -g theme_display_hostname no
+    fish_vi_key_bindings
+    set -g theme_display_vi yes
+    set -g theme_display_user no
+    set -g theme_display_hostname no
 
-      if test -f "${config.age.secrets.ai_token.path}"
+    if test -f "${config.age.secrets.ai_token.path}"
         set -gx COPILOT_API_KEY (cat "${config.age.secrets.ai_token.path}")
         set -gx HANDLER copilot
-      end
-    '';
-  };
+    end
+  '';  };
 }
 # if status is-interactive
 #   if not set -q ZELLIJ; and not set -q IS_QUICK_TERMINAL

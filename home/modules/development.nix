@@ -4,11 +4,11 @@
   home.packages = with pkgs; [
     rustup
 
-    ghc stack haskell-language-server fourmolu
-
     lean4
 
     nil
+
+    marksman
 
     (python3.withPackages (ps: with ps; [
       numpy
@@ -24,7 +24,11 @@
     nodejs
 
     pnpm
+
+    libiconv
+    pkg-config
   ];
+
 
   programs.git = {
     enable = true;

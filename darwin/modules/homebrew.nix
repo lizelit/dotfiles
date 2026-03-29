@@ -17,6 +17,7 @@
       "alacritty"
       "ghostty"
       "font-jetbrains-mono-nerd-font"
+      "font-udev-gothic-nf"
       "font-noto-color-emoji"
       "hhkb"
       "zen"
