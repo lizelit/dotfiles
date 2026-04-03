@@ -34,9 +34,6 @@
     fish_add_path -P /opt/homebrew/bin /opt/homebrew/sbin
     fish_add_path -P ~/.cargo/bin
 
-    set -gx SDKROOT (xcrun --show-sdk-path)
-    set -gx LIBRARY_PATH $LIBRARY_PATH /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib
-
     set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME
     if test -d $GHCUP_INSTALL_BASE_PREFIX/.ghcup/bin
         fish_add_path -P $GHCUP_INSTALL_BASE_PREFIX/.ghcup/bin
@@ -53,6 +50,9 @@
     end
   '';  };
 }
+    # set -gx SDKROOT (xcrun --show-sdk-path)
+    # set -gx LIBRARY_PATH $LIBRARY_PATH /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib
+
 # if status is-interactive
 #   if not set -q ZELLIJ; and not set -q IS_QUICK_TERMINAL
 #     if zellij list-sessions 2>/dev/null | string match -q "*dev*"

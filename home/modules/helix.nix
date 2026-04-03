@@ -63,5 +63,17 @@
       };
 
     };
+    languages = {
+      language = [
+        {
+          name = "haskell";
+          auto-format = true;
+          formatter = {
+            command = "fourmolu";
+            args = ["--stdin-input-file" "."];
+          };
+        }
+      ];
+    };
   };
 }

@@ -27,6 +27,8 @@
 
     libiconv
     pkg-config
+
+    fourmolu
   ];
 
 
