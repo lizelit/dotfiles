@@ -12,5 +12,9 @@
     colorschemes.kanagawa = {
       enable = true;
     };
+
+    colorschemes.nord = {
+      enable = false;
+    };
   };
 }

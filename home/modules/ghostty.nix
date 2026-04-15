@@ -10,11 +10,11 @@
       window-padding-x = 8;
       window-padding-y = 4;
       macos-option-as-alt = true;
-      quick-terminal-position = "right";
-      quick-terminal-size = "300px";
-      keybind = [
-        "global:alt+space=toggle_quick_terminal"
-      ];
+      # quick-terminal-position = "center";
+      # quick-terminal-size = "300px";
+      # keybind = [
+      #   "global:alt+space=toggle_quick_terminal"
+      # ];
     };
   };
 }

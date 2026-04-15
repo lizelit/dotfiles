@@ -1,23 +1,52 @@
 { ... }:
 
 {
+  # programs.sketchybar.enable = false;
+  services.jankyborders = {
+    enable = false;
+    settings = {
+      style="round";
+        width=8.0;
+        hidpi="off";
+        active_color="0xffe2e2e3";
+        inactive_color="0xff414550";
+    };
+  };
   programs.aerospace = {
-    enable = true;
+    enable = false;
     launchd.enable = true;
     settings = {
+      gaps = {
+        inner = {
+          horizontal = 14;
+          vertical = 14;
+        };
+        outer = {
+          left = 14;
+          right = 14;
+          top = 14;
+          bottom = 14;
+        };
+      };
       on-focus-changed = [
         "move-mouse window-lazy-center"
         "exec-and-forget macism com.apple.keylayout.ABC"
       ];
 
+      after-startup-command = ["exec-and-forget sketchybar"];
+
       on-focused-monitor-changed = [
         "move-mouse window-lazy-center"
       ];
-
-      mode.main.binding = {
-        "cmd-ctrl-t" = "exec-and-forget open -a /Applications/Ghostty.app";
-        "cmd-ctrl-b" = "exec-and-forget open -a /Applications/Zen.app";
-        "cmd-ctrl-e" = "exec-and-forget open -a /Applications/Zed.app";
+      exec-on-workspace-change = [
+        "/bin/bash"
+        "-c"
+        "sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$(aerospace workspace)"
+      ];
+        mode.main.binding = {
+        "cmd-ctrl-t" = "exec-and-forget open -a Ghostty";
+        "cmd-ctrl-b" = "exec-and-forget open -a Zen";
+        "cmd-ctrl-e" = "exec-and-forget open -a Zed";
 
         "alt-h" = "focus left";
         "alt-j" = "focus down";
@@ -55,14 +84,14 @@
         "alt-shift-8" = "move-node-to-workspace 8";
         "alt-shift-9" = "move-node-to-workspace 9";
         "alt-shift-0" = "move-node-to-workspace 10";
-
+        "alt-tab" = "workspace-back-and-forth";
         "alt-r" = " mode resize";
       };
 
       mode.resize.binding = {
         "h" = "resize width -50";
-        "j" = "resize width +50";
-        "k" = "resize width -50";
+        "j" = "resize height +50";
+        "k" = "resize height -50";
         "l" = "resize width +50";
         "enter" = "mode main";
         "esc" = "mode main";

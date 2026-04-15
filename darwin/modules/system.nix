@@ -14,7 +14,7 @@
 
   ids.gids.nixbld = 350;
 
-  security.pam.services.sudo_local.touchIdAuth = true;
+  # security.pam.services.sudo_local.touchIdAuth = true;
 
   system = {
     stateVersion = 4;

@@ -9,7 +9,11 @@
       upgrade = true;
       cleanup = "zap";
     };
-    taps = [];
+    taps = [
+      "neurosnap/tap"
+      # "glzr-io/tap"
+      "BarutSRB/tap"
+    ];
 
     casks = [
       "karabiner-elements"
@@ -34,15 +38,21 @@
       "zed"
       "antigravity"
       "google-chrome"
+      "visual-studio-code"
+      "orbstack"
+      "sf-symbols"
+      # "glzr-io/tap/glazewm"
+      # "glzr-io/tap/zebar"
+      "BarutSRB/tap/omniwm"
     ];
 
     brews = [
       "macism"
+      "neurosnap/tap/zmx"
     ];
 
     masApps = {
       # "Xcode" = 497799835;
-      "Amphetamine" = 937984704;
       "RunCat" = 1429033973;
       "CleanMyKeyboard" = 6468120888;
     };

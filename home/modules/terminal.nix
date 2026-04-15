@@ -27,10 +27,10 @@
       e = "$EDITOR";
       dr = "sudo darwin-rebuild switch --flake ~/dotfiles";
       fk = "f";
-      dev = "zellij attach -c dev";
+      dev = "zmx attach dev";
     };
 
-    shellInit = ''
+  shellInit = ''
     fish_add_path -P /opt/homebrew/bin /opt/homebrew/sbin
     fish_add_path -P ~/.cargo/bin
 
@@ -48,7 +48,16 @@
         set -gx COPILOT_API_KEY (cat "${config.age.secrets.ai_token.path}")
         set -gx HANDLER copilot
     end
-  '';  };
+    functions -c fish_prompt _original_fish_prompt 2>/dev/null
+
+    function fish_prompt --description 'Write out the prompt'
+      if set -q ZMX_SESSION
+        echo -n "[$ZMX_SESSION] "
+      end
+      _original_fish_prompt
+    end
+  '';
+  };
 }
     # set -gx SDKROOT (xcrun --show-sdk-path)
     # set -gx LIBRARY_PATH $LIBRARY_PATH /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib
