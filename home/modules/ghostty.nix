@@ -10,6 +10,7 @@
       window-padding-x = 8;
       window-padding-y = 4;
       macos-option-as-alt = true;
+      background-opacity = 0.8;
       # quick-terminal-position = "center";
       # quick-terminal-size = "300px";
       # keybind = [

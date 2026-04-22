@@ -44,6 +44,7 @@
       # "glzr-io/tap/glazewm"
       # "glzr-io/tap/zebar"
       "BarutSRB/tap/omniwm"
+      "hammerspoon"
     ];
 
     brews = [
