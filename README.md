@@ -9,11 +9,10 @@ Category | Tool |
 | :--- | :--- |
 | **OS** | macOS |
 | **Package Manager** | Nix |
-| **Window Manager** |Aero Space|
+| **Window Manager** |omniWM|
 | **Shell** | fish |
 | **Editor** | Helix |
-| **Terminal Emulator** | Alacritty |
+| **Terminal Emulator** | Ghostty |
 | **File Manager** | yazi |
-| **Multiplexer** | zellij |
 
 
