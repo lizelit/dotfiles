@@ -41,10 +41,9 @@
       "visual-studio-code"
       "orbstack"
       "sf-symbols"
-      # "glzr-io/tap/glazewm"
-      # "glzr-io/tap/zebar"
       "BarutSRB/tap/omniwm"
       "hammerspoon"
+      "firefox"
     ];
 
     brews = [

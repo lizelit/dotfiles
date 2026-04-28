@@ -6,7 +6,7 @@
     defaultEditor = true;
 
     settings = {
-      theme = "term16_dark";
+      theme = "nord";
       editor = {
         line-number = "relative";
         cursorline = true;

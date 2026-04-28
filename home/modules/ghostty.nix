@@ -9,8 +9,9 @@
       window-padding-x = 8
       window-padding-y = 4
       macos-option-as-alt = true
-      background-opacity = 0.8
+      background-opacity = 0.88
       background-blur = true
     '';
+    force = true;
   };
 }
