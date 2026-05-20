@@ -50,6 +50,45 @@
     end
     functions -c fish_prompt _original_fish_prompt 2>/dev/null
 
+    function r
+      set -l contest (basename (pwd))
+      cargo run --manifest-path ../Cargo.toml -p $contest --bin $argv[1]
+    end
+
+     function mkc
+      set -l contest $argv[1]
+      cargo new $contest
+      rm $contest/src/main.rs
+      mkdir -p $contest/src/bin
+
+      echo "[package]
+name = \"$contest\"
+version = \"0.1.0\"
+edition = \"2021\"
+
+[dependencies]
+proconio.workspace = true
+superslice.workspace = true
+num.workspace = true" > $contest/Cargo.toml
+
+      for prob in a b c d e f g
+          echo "use proconio::input;
+use superslice::Ext;
+use num::integer::gcd;
+
+fn main() {
+    input! {
+        // 入力をここに
+    }
+}" > $contest/src/bin/$prob.rs
+      end
+
+      # Nix環境でも確実に動くように、ワンライナーの perl（または拡張sed）で members の末尾に追記
+      if test -f Cargo.toml
+          # ] の手前にインデント付きで新しいクレート名を追加
+          perl -i -pe "s/^(\s*)]/    \"$contest\",\n\$1]/" Cargo.toml
+      end
+    end
     function fish_prompt --description 'Write out the prompt'
       if set -q ZMX_SESSION
         echo -n "[$ZMX_SESSION] "

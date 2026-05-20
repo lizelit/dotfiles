@@ -43,7 +43,6 @@
       "sf-symbols"
       "BarutSRB/tap/omniwm"
       "hammerspoon"
-      "firefox"
     ];
 
     brews = [

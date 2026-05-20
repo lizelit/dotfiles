@@ -4,8 +4,6 @@
   home.packages = with pkgs; [
     rustup
 
-    lean4
-
     nil nixd
 
     marksman
@@ -19,7 +17,7 @@
 
     openjdk
 
-    openssl pkg-config
+    openssl pkg-config libiconv
 
     nodejs
 

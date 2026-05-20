@@ -28,10 +28,6 @@
         enable = true;
         nixGrammers = true;
       };
-
-      extraPackages = with pkgs; [
-        lean4
-      ];
     };
 
     lsp = {
