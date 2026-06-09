@@ -4,6 +4,8 @@
   home.packages = with pkgs; [
     rustup
 
+    flutter
+
     nil nixd
 
     marksman

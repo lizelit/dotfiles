@@ -8,6 +8,7 @@
       autoUpdate = true;
       upgrade = true;
       cleanup = "zap";
+      extraFlags = ["--force"];
     };
     taps = [
       "neurosnap/tap"
@@ -42,12 +43,16 @@
       "orbstack"
       "sf-symbols"
       "BarutSRB/tap/omniwm"
-      "hammerspoon"
+      # "hammerspoon"
+      "android-studio"
+      # "aquaskk"
+      "macskk"
     ];
 
     brews = [
       "macism"
       "neurosnap/tap/zmx"
+      "cocoapods"
     ];
 
     masApps = {
