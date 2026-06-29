@@ -7,13 +7,10 @@
     onActivation = {
       autoUpdate = true;
       upgrade = true;
-      cleanup = "zap";
+      cleanup = "none";
       extraFlags = ["--force"];
     };
     taps = [
-      "neurosnap/tap"
-      # "glzr-io/tap"
-      "BarutSRB/tap"
     ];
 
     casks = [
@@ -43,9 +40,7 @@
       "orbstack"
       "sf-symbols"
       "BarutSRB/tap/omniwm"
-      # "hammerspoon"
       "android-studio"
-      # "aquaskk"
       "macskk"
       "flutter"
     ];
@@ -60,6 +55,7 @@
       "Xcode" = 497799835;
       "RunCat" = 1429033973;
       "CleanMyKeyboard" = 6468120888;
+      "Amazon Prime Video" = 545519333;
     };
   };
 }
