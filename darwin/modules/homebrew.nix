@@ -47,6 +47,7 @@
       "android-studio"
       # "aquaskk"
       "macskk"
+      "flutter"
     ];
 
     brews = [
@@ -56,7 +57,7 @@
     ];
 
     masApps = {
-      # "Xcode" = 497799835;
+      "Xcode" = 497799835;
       "RunCat" = 1429033973;
       "CleanMyKeyboard" = 6468120888;
     };

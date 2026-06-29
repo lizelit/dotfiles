@@ -4,8 +4,6 @@
   home.packages = with pkgs; [
     rustup
 
-    flutter
-
     nil nixd
 
     marksman
@@ -29,6 +27,16 @@
     pkg-config
 
     fourmolu
+
+    firebase-tools
+
+    ruby
+
+    docker docker-compose
+
+    coq
+
+    pipx
   ];
 
 

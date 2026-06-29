@@ -31,8 +31,15 @@
     };
 
   shellInit = ''
+    set -U fish_greeting
     fish_add_path -P /opt/homebrew/bin /opt/homebrew/sbin
     fish_add_path -P ~/.cargo/bin
+    fish_add_path ~/.pub-cache/bin
+    fish_add_path ~/.local/bin
+
+    set -gx LIBRARY_PATH "${pkgs.libiconv}/lib:$LIBRARY_PATH"
+    set -gx CPATH "${pkgs.libiconv}/include:$CPATH"
+    set -gx RUSTFLAGS "-L ${pkgs.libiconv}/lib $RUSTFLAGS"
 
     set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME
     if test -d $GHCUP_INSTALL_BASE_PREFIX/.ghcup/bin

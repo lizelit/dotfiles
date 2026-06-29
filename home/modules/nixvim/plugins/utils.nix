@@ -12,7 +12,6 @@
     comment.enable = true;
     gitsigns.enable = true;
     lazygit.enable = true;
-
     oil.settings = {
       view_options = {
         show_hidden = true;

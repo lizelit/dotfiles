@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -8,6 +8,10 @@
   ];
   programs.nixvim = {
     enable = true;
+
+    extraPlugins = with pkgs.vimPlugins; [
+      Coqtail
+    ];
 
     colorschemes.kanagawa = {
       enable = true;

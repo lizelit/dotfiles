@@ -10,6 +10,9 @@
     cmp-nvim-lsp.enable = true;
     cmp-path.enable = true;
     cmp-buffer.enable = true;
+    rocq = {
+      enable = true;
+    };
 
     lean = {
       enable = true;
