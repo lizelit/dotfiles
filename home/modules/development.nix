@@ -37,6 +37,8 @@
     pipx
 
     texliveFull
+
+    spotify-player spotifyd
   ];
 
 
