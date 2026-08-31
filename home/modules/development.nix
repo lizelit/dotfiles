@@ -34,9 +34,9 @@
 
     docker docker-compose
 
-    coq
-
     pipx
+
+    texliveFull
   ];
 
 

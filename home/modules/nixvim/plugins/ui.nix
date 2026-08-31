@@ -9,5 +9,8 @@
     bufferline.enable = true;
     indent-blankline.enable = true;
     which-key.enable = true;
+    which-key.settings = {
+      delay = 1;
+    };
   };
 }

@@ -56,6 +56,7 @@
       "RunCat" = 1429033973;
       "CleanMyKeyboard" = 6468120888;
       "Amazon Prime Video" = 545519333;
+      "Amazon Kindle" = 302584613;
     };
   };
 }

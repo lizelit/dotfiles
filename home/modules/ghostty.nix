@@ -4,7 +4,7 @@
   xdg.configFile."ghostty/config" = {
     text = ''
       font-family = "UDEV Gothic NFLG"
-      font-size = 14
+      font-size = 14.5
       macos-titlebar-style = "hidden"
       window-padding-x = 8
       window-padding-y = 4

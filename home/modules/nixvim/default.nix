@@ -13,6 +13,10 @@
       Coqtail
     ];
 
+    extraPackages = [
+      (pkgs.python3.withPackages (ps: [ps.pynvim]))
+    ];
+
     colorschemes.kanagawa = {
       enable = true;
     };

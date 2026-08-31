@@ -28,6 +28,11 @@
       { mode = "n"; key = "<leader>g"; action = "<cmd>LazyGit<CR>"; options.desc = "LazyGit"; }
 
       { mode = "n"; key = "<C-c>"; action = "<cmd> lua require('Comment.api').toggle.linewise.current()<CR>"; options.desc = "Comment"; }
+
+      { mode = "n"; key = "<leader>j"; action = "<cmd>RocqNext<CR>"; options.desc = "Next"; }
+      { mode = "n"; key = "<leader>k"; action = "<cmd>RocqUndo<CR>"; options.desc = "Undo"; }
+      { mode = "n"; key = "<leader>l"; action = "<cmd>RocqToLine<CR>"; options.desc = "ToLine"; }
+      { mode = "n"; key = "<leader>gg"; action = "<cmd>RocqStart<CR>"; options.desc = "Start"; }
     ];
   };
 }
