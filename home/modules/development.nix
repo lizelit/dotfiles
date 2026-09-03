@@ -36,7 +36,7 @@
 
     pipx
 
-    texliveFull
+    texliveFull texlab
 
     spotify-player spotifyd
   ];

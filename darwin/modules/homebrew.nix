@@ -34,15 +34,15 @@
       "notion"
       "obsidian"
       "zed"
-      "antigravity"
+      # "antigravity"
       "google-chrome"
       "visual-studio-code"
       "orbstack"
       "sf-symbols"
       "BarutSRB/tap/omniwm"
-      "android-studio"
+      # "android-studio"
       "macskk"
-      "flutter"
+      # "flutter"
     ];
 
     brews = [
