@@ -9,8 +9,11 @@
     plugins.blink-cmp = {
       enable = true;
       settings = {
-        keymap.preset = "enter";
+        keymap.preset = "default";
         sources.default = [ "lsp" "path" "buffer" "snippets" ];
+        sources.per_filetype = {
+          tex = ["lsp" "path" "snippets" ];
+        };
       };
     };
   };

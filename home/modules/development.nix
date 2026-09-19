@@ -39,6 +39,8 @@
     texliveFull texlab
 
     spotify-player spotifyd
+
+    # concord-tui
   ];
 
 

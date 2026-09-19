@@ -13,8 +13,8 @@
       cat = "bat";
       grep = "rg";
       cd = "z";
-      vim = "nvim";
       vi = "nvim";
+      v = "nvim";
 
       g = "lazygit";
       lg = "lazygit";
@@ -28,6 +28,8 @@
       dr = "sudo darwin-rebuild switch --flake ~/dotfiles";
       fk = "f";
       dev = "zmx attach dev";
+      spp = "spotify_player";
+      dis = "concord";
     };
 
   shellInit = ''

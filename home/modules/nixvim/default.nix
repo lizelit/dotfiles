@@ -18,11 +18,15 @@
     ];
 
     colorschemes.kanagawa = {
-      enable = true;
+      enable = false;
     };
 
     colorschemes.nord = {
       enable = false;
+    };
+
+    colorschemes.everforest = {
+      enable = true;
     };
   };
 }
