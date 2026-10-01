@@ -14,7 +14,13 @@
     snacks = {
       enable = true;
       settings = {
-        picker.enabled = true;
+        picker = {
+          enable = true;
+          matcher = {
+            smartcase = false;
+            ignorecase = true;
+          };
+        };
         terminal.enabled = true;
         indent.enabled = true;
         notifier.enabled = true;

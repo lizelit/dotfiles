@@ -5,6 +5,8 @@
     plugins.lspconfig.enable = true;
     lsp = {
       servers.texlab.enable = true;
+      servers.rust_analyzer.enable = true;
+      servers.nixd.enable = true;
     };
     plugins.blink-cmp = {
       enable = true;

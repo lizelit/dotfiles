@@ -43,6 +43,7 @@
       # "android-studio"
       "macskk"
       # "flutter"
+      "zotero"
     ];
 
     brews = [
