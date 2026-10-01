@@ -9,10 +9,8 @@ Category | Tool |
 | :--- | :--- |
 | **OS** | macOS |
 | **Package Manager** | Nix |
-| **Window Manager** |omniWM|
+| **Window Manager** | omniWM |
 | **Shell** | fish |
 | **Editor** | Helix |
 | **Terminal Emulator** | Ghostty |
 | **File Manager** | yazi |
-
-
