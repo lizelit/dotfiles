@@ -3,9 +3,7 @@
 {
   environment.shells = [ pkgs.fish ];
 
-  users.users."${config.system.primaryUser}" = {
-    shell = pkgs.fish;
-  };
+  users.users.${config.system.primaryUser}.shell = pkgs.fish;
 
   environment.pathsToLink = [
     "/opt/homebrew/bin"
@@ -15,6 +13,8 @@
   ids.gids.nixbld = 350;
 
   # security.pam.services.sudo_local.touchIdAuth = true;
+
+  programs.fish.enable = true;
 
   system = {
     stateVersion = 4;
@@ -33,6 +33,7 @@
         tilesize = 48;
         minimize-to-application = true;
         show-recents = false;
+        mru-spaces = false;
       };
 
       finder = {
@@ -78,5 +79,4 @@
     };
   };
 
-  programs.fish.enable = true;
 }

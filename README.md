@@ -11,6 +11,6 @@ Category | Tool |
 | **Package Manager** | Nix |
 | **Window Manager** | omniWM |
 | **Shell** | fish |
-| **Editor** | Helix |
+| **Editor** | Neovim |
 | **Terminal Emulator** | Ghostty |
 | **File Manager** | yazi |

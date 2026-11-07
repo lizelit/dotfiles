@@ -4,7 +4,7 @@
   nix = {
     settings = {
       experimental-features = "nix-command flakes";
-      trusted-users = ["${username}" "root" "@admin"];
+      trusted-users = [ username "root" "@admin"];
     };
 
     optimise = {
@@ -18,7 +18,7 @@
         Hour = 0;
         Minute = 0;
       };
-      options = "--delete-older-that 30d";
+      options = "--delete-older-than 30d";
     };
   };
 }

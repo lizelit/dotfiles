@@ -58,9 +58,9 @@
       "aquaskk"
       # "flutter"
       "zotero"
-      "TheBoredTeam/boring-notch/boring-notch"
       "discord"
       "orion"
+      "TheBoredTeam/boring-notch/boring-notch"
     ];
 
     brews = [
@@ -71,7 +71,6 @@
 
     masApps = {
       "Xcode" = 497799835;
-      "RunCat Neo" = 6757801838;
       "CleanMyKeyboard" = 6468120888;
       "Amazon Prime Video" = 545519333;
       "Amazon Kindle" = 302584613;

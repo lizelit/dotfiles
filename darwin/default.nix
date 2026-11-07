@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, username, hostname, homeDirectory, ... }:
+{ username, ... }:
 
 {
   imports = [
@@ -9,13 +9,10 @@
     ./modules/stylix.nix
   ];
 
-  ids.gids.nixld = 350;
   system.primaryUser = username;
 
   nixpkgs = {
-    config = {
-      allowUnfree = true;
-    };
+    config.allowUnfree = true;
     hostPlatform = "aarch64-darwin";
   };
 }
