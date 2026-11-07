@@ -15,6 +15,7 @@
         sources.default = [ "lsp" "path" "buffer" "snippets" ];
         sources.per_filetype = {
           tex = ["lsp" "path" "snippets" ];
+          typst = ["lsp" "path" "snippets" ];
         };
       };
     };

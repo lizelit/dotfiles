@@ -11,6 +11,7 @@
       macos-option-as-alt = true
       background-opacity = 0.9
       background-blur = true
+      mouse-hide-while-typing = true
     '';
     force = true;
   };

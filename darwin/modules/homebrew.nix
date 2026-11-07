@@ -26,7 +26,7 @@
       "skim"
       "zoom"
       "monitorcontrol"
-      "notchnook"
+      # "notchnook"
       "steam"
       "microsoft-powerpoint"
       "microsoft-excel"
@@ -41,9 +41,13 @@
       "sf-symbols"
       "BarutSRB/tap/omniwm"
       # "android-studio"
-      "macskk"
+      # "macskk"
+      "aquaskk"
       # "flutter"
       "zotero"
+      "TheBoredTeam/boring-notch/boring-notch"
+      "discord"
+      "orion"
     ];
 
     brews = [
@@ -54,7 +58,7 @@
 
     masApps = {
       "Xcode" = 497799835;
-      "RunCat" = 1429033973;
+      "RunCat Neo" = 6757801838;
       "CleanMyKeyboard" = 6468120888;
       "Amazon Prime Video" = 545519333;
       "Amazon Kindle" = 302584613;

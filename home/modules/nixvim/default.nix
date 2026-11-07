@@ -28,5 +28,6 @@
     colorschemes.everforest = {
       enable = true;
     };
+
   };
 }

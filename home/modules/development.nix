@@ -40,6 +40,8 @@
 
     spotify-player spotifyd
 
+    typst tinymist
+
     # concord-tui
   ];
 
