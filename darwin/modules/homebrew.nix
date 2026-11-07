@@ -7,10 +7,26 @@
     onActivation = {
       autoUpdate = true;
       upgrade = true;
-      cleanup = "none";
-      extraFlags = ["--force"];
+      cleanup = "zap";
+
+      extraEnv = {
+        HOMEBREW_NO_ENV_HINTS = "1";
+        HOMEBREW_NO_ANALYTICS = "1";
+      };
     };
     taps = [
+      {
+        name = "laishulu/homebrew";
+        trusted = true;
+      }
+      {
+        name = "neurosnap/tap";
+        trusted = true;
+      }
+      {
+        name = "TheBoredTeam/boring-notch";
+        trusted = true;
+      }
     ];
 
     casks = [
@@ -26,7 +42,6 @@
       "skim"
       "zoom"
       "monitorcontrol"
-      # "notchnook"
       "steam"
       "microsoft-powerpoint"
       "microsoft-excel"
@@ -34,14 +49,12 @@
       "notion"
       "obsidian"
       "zed"
-      # "antigravity"
       "google-chrome"
       "visual-studio-code"
       "orbstack"
       "sf-symbols"
-      "BarutSRB/tap/omniwm"
+      "omniwm"
       # "android-studio"
-      # "macskk"
       "aquaskk"
       # "flutter"
       "zotero"
