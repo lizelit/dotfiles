@@ -16,6 +16,9 @@
       termguicolors = true;
       hidden = false;
       bufhidden = "wipe";
+      swapfile = true;
+      updatecount = 200;
+      updatetime = 1000;
     };
 
     autoCmd = [
