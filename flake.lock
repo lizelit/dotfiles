@@ -291,7 +291,24 @@
         "nix-darwin": "nix-darwin",
         "nixpkgs": "nixpkgs",
         "nixvim": "nixvim",
+        "sshfs-nvim": "sshfs-nvim",
         "stylix": "stylix"
+      }
+    },
+    "sshfs-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1793644527,
+        "narHash": "sha256-DxV1nVB+OqpFOFAn8MtH4pJc6TCboSD5cQnK+oz9d6g=",
+        "owner": "uhs-robert",
+        "repo": "sshfs.nvim",
+        "rev": "a4c61a8b49639dbd37d0c272e0f93a5ffe85e81d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "uhs-robert",
+        "repo": "sshfs.nvim",
+        "type": "github"
       }
     },
     "stylix": {

@@ -42,6 +42,8 @@
 
     typst tinymist
 
+    sshfs-fuse
+
     # concord-tui
   ];
 

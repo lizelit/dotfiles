@@ -28,7 +28,13 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    sshfs-nvim = {
+      url = "github:uhs-robert/sshfs.nvim";
+      flake = false;
+    };
   };
+
 
   outputs = inputs: import ./hosts { inherit inputs; };
 }
