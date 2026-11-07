@@ -13,10 +13,28 @@ in
       sshfs-nvim
     ];
 
+    extraPackages = [
+      pkgs.sshfs-fuse
+    ];
+
     extraConfigLua = ''
       require("sshfs").setup({
+        connections = {
+          ssh_configs = {
+            vim.fn.expand("~/.ssh/config"),
+          },
+          sshfs_options = {
+            backend = "fskit",
+            reconnect = true,
+            ConnectTimeout = 5,
+            compression = "yes",
+            ServerAliveInterval = 15,
+            ServerAliveCountMax = 3,
+          },
+        },
+
         mounts = {
-          base_dir = vim.fn.expand("$HOME") .. "/mnt",
+          base_dir = vim.fn.expand("~/mnt"),
         },
 
         hooks = {
