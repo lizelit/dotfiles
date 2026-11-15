@@ -23,10 +23,10 @@
         name = "neurosnap/tap";
         trusted = true;
       }
-      {
-        name = "TheBoredTeam/boring-notch";
-        trusted = true;
-      }
+      #{
+      #  name = "TheBoredTeam/boring-notch";
+      #  trusted = true;
+      #}
     ];
 
     casks = [
@@ -49,8 +49,6 @@
       "notion"
       "obsidian"
       "zed"
-      "google-chrome"
-      "visual-studio-code"
       "orbstack"
       "sf-symbols"
       "omniwm"
@@ -59,8 +57,7 @@
       # "flutter"
       "zotero"
       "discord"
-      "orion"
-      "TheBoredTeam/boring-notch/boring-notch"
+      "splice"
     ];
 
     brews = [
@@ -74,6 +71,7 @@
       "CleanMyKeyboard" = 6468120888;
       "Amazon Prime Video" = 545519333;
       "Amazon Kindle" = 302584613;
+      "Logic Pro" = 634148309;
     };
   };
 }

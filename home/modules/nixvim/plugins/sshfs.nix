@@ -25,6 +25,8 @@ in
           },
           sshfs_options = {
             backend = "fskit",
+            noappledouble = true,
+            noapplexattr = true,
             reconnect = true,
             ConnectTimeout = 5,
             compression = "yes",
