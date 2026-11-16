@@ -27,6 +27,16 @@
         pattern = [ "*" ];
         command = "silent !macism com.apple.keylayout.ABC";
       }
+      {
+        event = "BufWritePre";
+        pattern = "*";
+        command = "lua MiniTrailspace.trim()";
+      }
+      {
+        event = "BufWritePre";
+        pattern = "*";
+        command = "lua MiniTrailspace.trim_last_lines()";
+      }
     ];
   };
 }

@@ -26,8 +26,10 @@
     };
 
     colorschemes.everforest = {
-      enable = true;
+      enable = false;
     };
+
+    colorschemes.kanagawa-paper.enable = true; 
 
   };
 }

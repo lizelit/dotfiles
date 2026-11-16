@@ -29,7 +29,7 @@
       #}
     ];
 
-    casks = [
+    casks  = [
       "karabiner-elements"
       "spotify"
       "alacritty"
