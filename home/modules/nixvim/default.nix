@@ -29,7 +29,6 @@
       enable = false;
     };
 
-    colorschemes.kanagawa-paper.enable = true; 
-
+    colorschemes.kanagawa-paper.enable = true;
   };
 }

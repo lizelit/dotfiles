@@ -2,6 +2,7 @@
 
 {
   programs.nixvim.plugins = {
+    noice.enable = true;
     oil.enable = true;
     flash.enable = true;
     multicursors.enable = true;
