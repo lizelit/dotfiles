@@ -6,6 +6,7 @@
     oil.enable = true;
     flash.enable = true;
     multicursors.enable = true;
+    render-markdown.enable = true;
 
     mini = {
       enable = true;
@@ -30,7 +31,7 @@
             { mode = "i"; keys = "<C-x>"; }
           ];
 
-          window.delay = 300;
+          window.delay = 100;
         };
         comment = {};
         git = {};
