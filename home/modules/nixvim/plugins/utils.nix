@@ -20,6 +20,11 @@ in
     flash.enable = true;
     multicursors.enable = true;
     render-markdown.enable = true;
+    treesj.enable = true;
+    lualine.enable = true;
+    tiny-inline-diagnostic.enable = true;
+    modicator.enable = true;
+    fidget.enable = true;
     neotab = {
         enable = true;
         settings = {
@@ -78,6 +83,28 @@ in
         statusline = {};
         trailspace = {};
         starter = {};
+        align = {};
+        jump = {};
+        hipatterns = {
+          highlighters = {
+            fixme = {
+              pattern = "%f[%w]()FIXME()%f[%W]";
+              group = "MiniHipatternsFixme";
+            };
+            hack = {
+              pattern = "%f[%w]()HACK()%f[%W]";
+              group = "MiniHipatternsHack";
+            };
+            todo = {
+              pattern = "%f[%w]()TODO()%f[%W]";
+              group = "MiniHipatternsTodo";
+            };
+            note = {
+              pattern = "%f[%w]()NOTE()%f[%W]";
+              group = "MiniHipatternsNote";
+            };
+          };
+        };
       };
     };
 
