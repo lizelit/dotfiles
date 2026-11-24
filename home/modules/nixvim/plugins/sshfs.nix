@@ -18,6 +18,8 @@ in
     ];
 
     extraConfigLua = ''
+      -- vim.env.PATH = "/etc/profiles/per-user/lizelit/bin:" .. vim.env.PATH
+      -- vim.env.TEXMFCNF = nil
       require("sshfs").setup({
         connections = {
           ssh_configs = {

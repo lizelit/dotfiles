@@ -1,12 +1,45 @@
-{ ... }:
+{ pkgs, inputs, ... }:
 
+let
+  nvim-spotify = pkgs.vimUtils.buildVimPlugin {
+      pname = "nvim-spotify";
+      version = inputs.nvim-spotify.shortRev or "dev";
+      src = inputs.nvim-spotify;
+    };
+in
 {
+  # programs.nixvim.extraPlugins = [ nvim-spotify ];
+  # programs.nixvim.extraConfigLua = ''
+  #   require("spotify").setup({
+  #       client_id = "69e60a9265a949a7bcb45c94f2d7bc72",
+  #     })
+  # '';
   programs.nixvim.plugins = {
     noice.enable = true;
     oil.enable = true;
     flash.enable = true;
     multicursors.enable = true;
     render-markdown.enable = true;
+    neotab = {
+        enable = true;
+        settings = {
+            tabkey = "<Tab>";
+            reverse_key = "<S-Tab>";
+            act_as_tab = true;
+            behavior = "nested";
+        };
+    };
+    vimtex = {
+      enable = true;
+      texlivePackage = pkgs.texliveFull;
+      settings = {
+        compiler_method = "latexmk";
+        view_method = "skim";
+
+        view_skim_sync = true;
+        view_skim_activate = true;
+      };
+    };
 
     mini = {
       enable = true;
@@ -68,6 +101,7 @@
         zen.enabled = true;
         gitbrowse.enabled = true;
         lazygit.enabled = true;
+        image.enabled = true;
       };
     };
     oil.settings = {

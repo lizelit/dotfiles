@@ -33,6 +33,11 @@
       url = "github:uhs-robert/sshfs.nvim";
       flake = false;
     };
+
+    nvim-spotify = {
+      url = "github:lizelit/mac-spotify.nvim";
+      flake = false;
+    };
   };
 
 

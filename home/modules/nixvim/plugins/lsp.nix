@@ -1,4 +1,4 @@
-{pkgs, ... }:
+{pkgs, config, ... }:
 
 {
   programs.nixvim = {
@@ -18,6 +18,27 @@
           typst = ["lsp" "path" "snippets" ];
         };
       };
+    };
+    plugins.treesitter = {
+      enable = true;
+
+      grammarPackages =
+        with config.programs.nixvim.plugins.treesitter.package.builtGrammars;
+        [
+          bash
+          json
+          lua
+          markdown
+          nix
+          rust
+          toml
+          vim
+          vimdoc
+          yaml
+        ];
+
+      highlight.enable = true;
+
     };
   };
 }

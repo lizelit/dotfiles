@@ -53,7 +53,7 @@
       "sf-symbols"
       "omniwm"
       # "android-studio"
-      "aquaskk"
+      "mtgto/macskk/macskk"
       # "flutter"
       "zotero"
       "discord"

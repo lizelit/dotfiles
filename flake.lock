@@ -284,6 +284,22 @@
         "type": "github"
       }
     },
+    "nvim-spotify": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1795092858,
+        "narHash": "sha256-cUbVO/bm2hNS/zOEQoXC6voHWT9kgLgElf1+FnfP268=",
+        "owner": "lizelit",
+        "repo": "mac-spotify.nvim",
+        "rev": "a42dec31cb5de9de1020c58356981db38b561413",
+        "type": "github"
+      },
+      "original": {
+        "owner": "lizelit",
+        "repo": "mac-spotify.nvim",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "agenix": "agenix",
@@ -291,6 +307,7 @@
         "nix-darwin": "nix-darwin",
         "nixpkgs": "nixpkgs",
         "nixvim": "nixvim",
+        "nvim-spotify": "nvim-spotify",
         "sshfs-nvim": "sshfs-nvim",
         "stylix": "stylix"
       }
