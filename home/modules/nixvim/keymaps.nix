@@ -5,15 +5,13 @@
     globals.mapleader = " ";
 
     keymaps = [
-      { mode = ["n" "v"]; key = "gh"; action = "0"; }
-      { mode = ["n" "v"]; key = "gl"; action = "$"; }
-      { mode = ["n" "v"]; key = "ge"; action = "G"; }
       {
         mode = "n";
         key = "gw";
         action = "<cmd>lua require('flash').jump()<CR>";
         options.desc = "Flash jump";
       }
+      { mode = "n"; key = "<Esc><Esc>"; action = "<cmd>nohlsearch<CR>"; options.desc = "Clear search highlight"; }
 
       { mode = ["n" "v"]; key = "<leader>y"; action = "\"+y"; options.desc = "Yank to system clipboard."; }
       { mode = ["n" "v"]; key = "<leader>p"; action = "\"+p"; options.desc = "Paste from system clipboard"; }

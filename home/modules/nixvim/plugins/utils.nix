@@ -25,6 +25,18 @@ in
     tiny-inline-diagnostic.enable = true;
     modicator.enable = true;
     fidget.enable = true;
+    bufferline = { enable = true; settings.options.always_show_bufferline = false; };
+    neoscroll = {
+        enable = true;
+        settings = {
+            hide_cursor = true;
+            stop_eof = true;
+            easing = "sine";
+            duration_multiplier = 0.8;
+            respect_scrollof = true;
+            cursor_scrolls_alone = false;
+        };
+    };
     neotab = {
         enable = true;
         settings = {
@@ -69,6 +81,15 @@ in
             { mode = "i"; keys = "<C-x>"; }
           ];
 
+           clues = [
+            # { __raw = "require('mini.clue').gen_clues.g()"; }
+            # { __raw = "require('mini.clue').gen_clues.z()"; }
+            # { __raw = "require('mini.clue').gen_clues.windows()"; }
+            # { __raw = "require('mini.clue').gen_clues.square_brackets()"; }
+            # { __raw = "require('mini.clue').gen_clues.marks()"; }
+            # { __raw = "require('mini.clue').gen_clues.registers()"; }
+            # { __raw = "require('mini.clue').gen_clues.builtin_completion()"; }
+          ];
           window.delay = 100;
         };
         comment = {};

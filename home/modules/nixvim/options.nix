@@ -14,9 +14,10 @@
       ignorecase = true;
       smartcase = true;
       termguicolors = true;
-      hidden = false;
+      hidden = true;
       bufhidden = "wipe";
       swapfile = true;
+      scrolloff = 5;
       updatecount = 200;
       updatetime = 1000;
     };
