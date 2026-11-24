@@ -7,6 +7,7 @@
       servers.texlab.enable = true;
       servers.rust_analyzer.enable = true;
       servers.nixd.enable = true;
+      servers.clangd.enable = true;
     };
     plugins.blink-cmp = {
       enable = true;

@@ -6,6 +6,8 @@
 
     nil nixd
 
+    clang-tools
+
     marksman
 
     (python3.withPackages (ps: with ps; [

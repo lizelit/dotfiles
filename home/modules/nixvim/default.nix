@@ -8,6 +8,7 @@
   ];
   programs.nixvim = {
     enable = true;
+    defaultEditor = true;
 
     extraPlugins = with pkgs.vimPlugins; [
       Coqtail
