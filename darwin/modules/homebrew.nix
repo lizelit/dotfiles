@@ -32,7 +32,7 @@
     casks  = [
       "karabiner-elements"
       "spotify"
-      "alacritty"
+      # "alacritty"
       "ghostty"
       "font-jetbrains-mono-nerd-font"
       "font-udev-gothic-nf"
@@ -51,7 +51,6 @@
       "zed"
       "orbstack"
       "sf-symbols"
-      "omniwm"
       # "android-studio"
       "mtgto/macskk/macskk"
       # "flutter"

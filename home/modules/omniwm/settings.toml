@@ -6,16 +6,16 @@ tabRailAppIcons = true
 
 [borders]
 enabled = false
-width = 5.0
+width = 3.0
 
 [borders.color]
+red = 0.20
+green = 0.48
+blue = 0.52
 alpha = 1.0
-blue = 0.979300037944676
-green = 1.0
-red = 0.08458520228437894
 
 [clipboard]
-historyEnabled = false
+historyEnabled = true
 ignoredTypes = []
 maxItemBytes = 8388608
 maxItems = 200
@@ -41,17 +41,17 @@ moveMouseToFocusedWindow = false
 raiseOnMouseFocus = false
 
 [gaps]
-fullscreenUsesOuterGaps = false
-size = 6.0
+fullscreenUsesOuterGaps = true
+size = 8.0
 
 [gaps.outer]
-bottom = 0.0
-left = 0.0
-right = 0.0
-top = 0.0
+bottom = 8.0
+left = 8.0
+right = 8.0
+top = 8.0
 
 [general]
-animationSpeed = 1.0
+animationSpeed = 1.4
 animationsEnabled = true
 defaultLayoutType = "niri"
 hotkeysEnabled = true
@@ -84,10 +84,10 @@ windowMoveEnabled = false
 windowMoveFingerCount = 4
 windowResizeEnabled = false
 windowResizeFingerCount = 3
-workspaceSwipeAxis = "vertical"
-workspaceSwipeEdgeBehavior = "cycle"
-workspaceSwipeEnabled = false
-workspaceSwipeFingerCount = 3
+workspaceSwipeAxis = "horizontal"
+workspaceSwipeEdgeBehavior = "none"
+workspaceSwipeEnabled = true
+workspaceSwipeFingerCount = 4
 
 [hiddenBar]
 enabled = false
@@ -117,7 +117,7 @@ allowOverscroll = false
 alwaysCenterSingleColumn = false
 centerFocusedColumn = "never"
 containerPrimarySpanPresets = [0.3333333333333333, 0.5, 0.6666666666666666]
-edgeGaps = true
+edgeGaps = false
 infiniteLoop = false
 moveWindowStacksIntoColumn = true
 overscrollVisibleStripPercent = 5

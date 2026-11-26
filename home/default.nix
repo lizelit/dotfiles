@@ -15,9 +15,6 @@ in {
   };
 
   imports = [
-    ./modules/alacritty.nix
-    ./modules/base.nix
-    ./modules/btop.nix
     ./modules/development.nix
     ./modules/helix.nix
     ./modules/nixvim
