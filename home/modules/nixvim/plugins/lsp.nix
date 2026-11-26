@@ -17,6 +17,7 @@
         sources.per_filetype = {
           tex = ["lsp" "path" "snippets" ];
           typst = ["lsp" "path" "snippets" ];
+          md = ["lsp" "path" "snippets" ];
         };
       };
     };

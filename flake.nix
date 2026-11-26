@@ -34,6 +34,11 @@
       flake = false;
     };
 
+    skk-nvim = {
+      url = "github:nabehan/skk.nvim";
+      flake = false;
+    };
+
     nvim-spotify = {
       url = "github:lizelit/mac-spotify.nvim";
       flake = false;

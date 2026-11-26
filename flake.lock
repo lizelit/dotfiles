@@ -308,8 +308,25 @@
         "nixpkgs": "nixpkgs",
         "nixvim": "nixvim",
         "nvim-spotify": "nvim-spotify",
+        "skk-nvim": "skk-nvim",
         "sshfs-nvim": "sshfs-nvim",
         "stylix": "stylix"
+      }
+    },
+    "skk-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1788594275,
+        "narHash": "sha256-f7mNJkEvjsROjeQsY5Pf0pn41zC4b6r2aRT8ObKCCiw=",
+        "owner": "nabehan",
+        "repo": "skk.nvim",
+        "rev": "d3dd0a3857dc7f95156ab9e7c9d4d89ce1f300a7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nabehan",
+        "repo": "skk.nvim",
+        "type": "github"
       }
     },
     "sshfs-nvim": {
