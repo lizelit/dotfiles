@@ -1,7 +1,7 @@
 { inputs, ... }:
 
 let
-  inherit (inputs) nixpkgs nix-darwin home-manager agenix stylix nixvim;
+  inherit (inputs) nix-darwin home-manager agenix stylix nixvim;
 
   username = "lizelit";
   hostname = "TMBA-2";

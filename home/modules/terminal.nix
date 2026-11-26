@@ -92,9 +92,7 @@ fn main() {
 }" > $contest/src/bin/$prob.rs
       end
 
-      # Nix環境でも確実に動くように、ワンライナーの perl（または拡張sed）で members の末尾に追記
       if test -f Cargo.toml
-          # ] の手前にインデント付きで新しいクレート名を追加
           perl -i -pe "s/^(\s*)]/    \"$contest\",\n\$1]/" Cargo.toml
       end
     end

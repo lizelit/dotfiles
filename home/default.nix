@@ -1,4 +1,4 @@
-{ config, lib, inputs, pkgs, username, homeDirectory, nixvim, ... }:
+{ config, lib, inputs, username, homeDirectory, ... }:
 
 let
   decryptedTokenPath = config.age.secrets.ai_token.path;

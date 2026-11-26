@@ -12,8 +12,6 @@
 
   ids.gids.nixbld = 350;
 
-  # security.pam.services.sudo_local.touchIdAuth = true;
-
   programs.fish.enable = true;
 
   system = {

@@ -23,10 +23,6 @@
         name = "neurosnap/tap";
         trusted = true;
       }
-      #{
-      #  name = "TheBoredTeam/boring-notch";
-      #  trusted = true;
-      #}
     ];
 
     casks  = [

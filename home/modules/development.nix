@@ -46,8 +46,6 @@
     sshfs-fuse
 
     mas
-
-    # concord-tui
   ];
 
 
