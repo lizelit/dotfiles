@@ -80,16 +80,6 @@ in
             { mode = ["i" "c"]; keys = "<C-r>"; }
             { mode = "i"; keys = "<C-x>"; }
           ];
-
-           clues = [
-            # { __raw = "require('mini.clue').gen_clues.g()"; }
-            # { __raw = "require('mini.clue').gen_clues.z()"; }
-            # { __raw = "require('mini.clue').gen_clues.windows()"; }
-            # { __raw = "require('mini.clue').gen_clues.square_brackets()"; }
-            # { __raw = "require('mini.clue').gen_clues.marks()"; }
-            # { __raw = "require('mini.clue').gen_clues.registers()"; }
-            # { __raw = "require('mini.clue').gen_clues.builtin_completion()"; }
-          ];
           window.delay = 100;
         };
         comment = {};
@@ -124,6 +114,7 @@ in
               pattern = "%f[%w]()NOTE()%f[%W]";
               group = "MiniHipatternsNote";
             };
+            hex_color.__raw = "require('mini.hipatterns').gen_highlighter.hex_color()";
           };
         };
       };

@@ -33,5 +33,9 @@
     colorschemes.kanagawa-paper.enable = false;
 
     colorscheme = "nordic";
+
+    highlightOverride.Visual = {
+      bg = "#3B5068";
+    };
   };
 }
