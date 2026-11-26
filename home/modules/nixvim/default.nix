@@ -11,7 +11,7 @@
     defaultEditor = true;
 
     extraPlugins = with pkgs.vimPlugins; [
-      Coqtail
+      Coqtail nordic-nvim
     ];
 
     extraPackages = [
@@ -30,6 +30,8 @@
       enable = false;
     };
 
-    colorschemes.kanagawa-paper.enable = true;
+    colorschemes.kanagawa-paper.enable = false;
+
+    colorscheme = "nordic";
   };
 }
